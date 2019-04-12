@@ -1,4 +1,4 @@
-﻿using DataBase;
+using DataBase;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -10,6 +10,34 @@ namespace BusinessLogic
 {
     public class EncargadoDAO : IEncargadoDAO
     {
+
+        public Encargado GetEncargadoByID(string toSearch)
+        {
+            Encargado encargado = new Encargado();
+            DbConnection dbconnection = new DbConnection();
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Encargado WHERE ID_Encargado = @idToSearch", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("idToSearch", toSearch));
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        encargado.IdEncargado = reader["ID_Encargado"].ToString();
+                        encargado.NombreEncargado = reader["Nombre"].ToString();
+                        encargado.CorreoEncargado = reader["Correo"].ToString();
+                        encargado.CargoOrganizacion = reader["CARGO"].ToString();
+                        encargado.TelefonoEncargado = reader["TELEFONO"].ToString();
+                        encargado.Organizacion.NombreOrganizacion = reader["ORGANIZACION"].ToString();
+                    }
+                }
+                connection.Close();
+            }
+
+            return encargado;
+        }        
         
         public List<Encargado> GetEncargado()
         {
