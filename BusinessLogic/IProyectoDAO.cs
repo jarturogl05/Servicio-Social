@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +10,7 @@ namespace BusinessLogic
     {
        List<Proyecto> GetProyectos();
        void AddProyecto(Proyecto proyecto);
-
+        Proyecto GetProyectoByID(String idToSearch);
        
 
     
