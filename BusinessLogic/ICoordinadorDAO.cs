@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +8,8 @@ namespace BusinessLogic
 {
     public interface ICoordinadorDAO
     {
+        List<Encargado> GetEncargado();        
         void AddCoordinador(Coordinador coordinador);
+        Encargado GetEncargadoByID(string toSearch); 
     }
 }

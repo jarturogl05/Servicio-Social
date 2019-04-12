@@ -1,4 +1,4 @@
-﻿using DataBase;
+using DataBase;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -10,6 +10,34 @@ namespace BusinessLogic
 {
     public class ProyectoDAO : IProyectoDAO
     {
+
+        public Proyecto GetProyectoByID(String toSearch)
+        {
+            Proyecto proyecto = new Proyecto();
+            DbConnection dbConnection = new DbConnection();
+            using (SqlConnection connection = dbConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Proyecto WHERE ID_Proyecto=@idToSearch", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("@idToSearch", toSearch));
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        proyecto.Actividades = reader["Actividades"].ToString();
+                        proyecto.NombreProyecto = reader["Nombre"].ToString();
+                        proyecto.NumeroAlumnos = Convert.ToInt32(reader["Numero_Alumnos"].ToString());
+                        proyecto.Horario = reader["Horario"].ToString();
+                        proyecto.Lugar = reader["Lugar"].ToString();
+                        proyecto.Requisitos = reader["Requisitos"].ToString();
+                    }
+
+                }
+                connection.Close();
+            }
+            return proyecto;
+
+
         public void AddProyecto(Proyecto proyecto)
         {
             DbConnection dbConnection = new DbConnection();
