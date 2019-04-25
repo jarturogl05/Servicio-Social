@@ -48,9 +48,11 @@
     <Compile Include="EncargadoDAO.cs" />
     <Compile Include="ICoordinadorDAO.cs" />
     <Compile Include="IEncargadoDAO.cs" />
+    <Compile Include="IOrganizacionDAO.cs" />
     <Compile Include="IProyectoDAO.cs" />
     <Compile Include="ISolicitudDAO.cs" />
     <Compile Include="Organizacion.cs" />
+    <Compile Include="OrganizacionDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proyecto.cs" />
     <Compile Include="ProyectoDAO.cs" />
