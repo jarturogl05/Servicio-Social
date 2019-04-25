@@ -8,6 +8,7 @@ namespace BusinessLogic
 {
     public class Organizacion
     {
+        public String rfc { get; set; }
         public string NombreOrganizacion { get; set; }
         public string DireccionOrganizacion { get; set; }
         public string TelefonoOrganizacion { get; set; }
