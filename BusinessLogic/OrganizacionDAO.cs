@@ -10,8 +10,9 @@ namespace BusinessLogic
 {
     class OrganizacionDAO : IOrganizacionDAO
     {
-        public void AddOrganizacion(Organizacion organizacion)
+        public bool AddOrganizacion(Organizacion organizacion)
         {
+            bool resultado = false;
             DbConnection dbConnection = new DbConnection();
             using (SqlConnection connection = dbConnection.GetConnection())
             {
@@ -25,9 +26,11 @@ namespace BusinessLogic
                     command.Parameters.Add(new SqlParameter("@Telefono", organizacion.TelefonoOrganizacion));
                     command.Parameters.Add(new SqlParameter("@correo", organizacion.CorreoOrganizacion));
                     command.ExecuteNonQuery();
+                    resultado = true;
                 }
                 connection.Close();
             }
+            return resultado;
         }
         public List<Organizacion> GetOrganizacion()
         {

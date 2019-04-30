@@ -15,5 +15,17 @@ namespace BusinessLogic
         public string Sector { get; set; }
         public string CorreoOrganizacion { get; set; }
 
+        public Organizacion()
+        {
+        }
+        public Organizacion(string rfc, string nombre, string direccion, string telefono, string sector, string correo)
+        {
+            this.rfc = rfc;
+            this.NombreOrganizacion = nombre;
+            this.DireccionOrganizacion = direccion;
+            this.TelefonoOrganizacion = telefono;
+            this.Sector = sector;
+            this.CorreoOrganizacion = correo;
+        }
     }
 }

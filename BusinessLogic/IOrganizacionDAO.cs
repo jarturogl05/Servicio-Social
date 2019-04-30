@@ -10,6 +10,6 @@ namespace BusinessLogic
     {
         List<Organizacion> GetOrganizacion();
         Organizacion GetOrganizacionByID(String idToSearch);
-        void AddOrganizacion(Organizacion organizacion);
+        bool AddOrganizacion(Organizacion organizacion);
     }
 }
