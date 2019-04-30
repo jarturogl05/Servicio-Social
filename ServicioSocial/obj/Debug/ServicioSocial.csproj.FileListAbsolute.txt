@@ -13,3 +13,18 @@ C:\Users\j_art\source\repos\ServicioSocial\ServicioSocial\obj\Debug\ServicioSoci
 C:\Users\j_art\source\repos\ServicioSocial\ServicioSocial\obj\Debug\ServicioSocial.csproj.CoreCompileInputs.cache
 C:\Users\j_art\source\repos\ServicioSocial\ServicioSocial\obj\Debug\ServicioSocial.exe
 C:\Users\j_art\source\repos\ServicioSocial\ServicioSocial\obj\Debug\ServicioSocial.pdb
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\ServicioSocial.exe.config
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\ServicioSocial.exe
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\ServicioSocial.pdb
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csprojAssemblyReference.cache
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\MainWindow.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\App.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial_MarkupCompile.cache
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial_MarkupCompile.lref
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\MainWindow.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.g.resources
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.Properties.Resources.resources
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csproj.GenerateResource.cache
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csproj.CoreCompileInputs.cache
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.exe
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.pdb
