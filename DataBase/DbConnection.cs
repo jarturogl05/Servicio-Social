@@ -17,7 +17,7 @@ namespace DataBase
 
 
         {
-            connectionString = "Data Source=Muterk;Initial Catalog=ServicioSocial;Integrated Security=True"; //ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString;
+            connectionString = "Data Source=Muterk;Initial Catalog=ServicioSocial;Integrated Security=True";//ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString;
 
             connection = new SqlConnection(connectionString);
 
