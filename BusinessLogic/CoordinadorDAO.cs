@@ -22,7 +22,7 @@ namespace BusinessLogic
                 {
                     command.Parameters.Add(new SqlParameter("@Numero_Personal", coordinador.NumeroPersonal));
                     command.Parameters.Add(new SqlParameter("@Nombre", coordinador.NombreCoordinador));
-                    command.Parameters.Add(new SqlParameter("@Correo", coordinador.Carrera));
+                    command.Parameters.Add(new SqlParameter("@Carrera", coordinador.Carrera));
                     command.ExecuteNonQuery();
                 }
                 connection.Close();
