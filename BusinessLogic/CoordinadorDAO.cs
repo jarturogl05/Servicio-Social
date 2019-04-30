@@ -11,9 +11,9 @@ namespace BusinessLogic
     public class CoordinadorDAO : ICoordinadorDAO
     {
 
-        public void AddCoordinador(Coordinador coordinador)
+        public bool AddCoordinador(Coordinador coordinador)
         {
-            
+            bool respuesta = false;
             DbConnection dbConnection = new DbConnection();
             using (SqlConnection connection = dbConnection.GetConnection())
             {
@@ -22,11 +22,13 @@ namespace BusinessLogic
                 {
                     command.Parameters.Add(new SqlParameter("@Numero_Personal", coordinador.NumeroPersonal));
                     command.Parameters.Add(new SqlParameter("@Nombre", coordinador.NombreCoordinador));
-                    command.Parameters.Add(new SqlParameter("@Correo", coordinador.Carrera));
+                    command.Parameters.Add(new SqlParameter("@Carrera", coordinador.Carrera));
                     command.ExecuteNonQuery();
+                    respuesta = true;
                 }
                 connection.Close();
             }
+            return respuesta;
         }
 
    
