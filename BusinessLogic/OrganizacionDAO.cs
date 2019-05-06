@@ -8,15 +8,31 @@ using System.Data.SqlClient;
 
 namespace BusinessLogic
 {
-    class OrganizacionDAO : IOrganizacionDAO
+    public enum AddResult
     {
-        public bool AddOrganizacion(Organizacion organizacion)
+        Success,
+        NullOrganization,
+        InvalidOrganization,
+        UnknownFail,
+        SQLFail,
+    }
+    public class OrganizacionDAO : IOrganizacionDAO
+    {
+        public AddResult AddOrganizacion(Organizacion organizacion)
         {
-            bool resultado = false;
+            AddResult resultado = AddResult.UnknownFail;
             DbConnection dbConnection = new DbConnection();
             using (SqlConnection connection = dbConnection.GetConnection())
             {
-                connection.Open();
+                try
+                {
+                    connection.Open();
+                }catch(SqlException)
+                {
+                    resultado = AddResult.SQLFail;
+                    return resultado;
+                }
+
                 using (SqlCommand command = new SqlCommand("INSERT INTO dbo.Organizacion VALUES(@rfc, @nombre, @direccion,@sector, @telefono, @correo)", connection))
                 {
                     command.Parameters.Add(new SqlParameter("@rfc", organizacion.rfc));
@@ -26,7 +42,7 @@ namespace BusinessLogic
                     command.Parameters.Add(new SqlParameter("@Telefono", organizacion.TelefonoOrganizacion));
                     command.Parameters.Add(new SqlParameter("@correo", organizacion.CorreoOrganizacion));
                     command.ExecuteNonQuery();
-                    resultado = true;
+                    resultado = AddResult.Success;
                 }
                 connection.Close();
             }
@@ -38,8 +54,14 @@ namespace BusinessLogic
             DbConnection dbconnection = new DbConnection();
             using (SqlConnection connection = dbconnection.GetConnection())
             {
-                connection.Open();
-
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException ex)
+                {
+                    throw (ex);
+                }
                 using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Organizacion", connection))
                 {
                     SqlDataReader reader = command.ExecuteReader();
@@ -58,26 +80,32 @@ namespace BusinessLogic
             }
             return listaOrganizacion;
         }
-        public Organizacion GetOrganizacionByID(String toSearchInBD)
+        public Organizacion GetOrganizacionByName(String toSearchInBD)
         {
             Organizacion organizacion = new Organizacion();
             DbConnection dbconnection = new DbConnection();
             using (SqlConnection connection = dbconnection.GetConnection())
             {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Organizacion WHERE RFC = @rfcToSearch", connection))
+                try
                 {
-                    command.Parameters.Add(new SqlParameter("rfcToSearch", toSearchInBD));
+                    connection.Open();
+                }
+                catch (SqlException ex)
+                {
+                    throw (ex);
+                }
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Organizacion WHERE Nombre = @NameToSearch", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("NameToSearch", toSearchInBD));
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
                         organizacion.rfc = reader["RFC"].ToString();
                         organizacion.NombreOrganizacion = reader["Nombre"].ToString();
-                        organizacion.NombreOrganizacion = reader["Direccion"].ToString();
+                        organizacion.DireccionOrganizacion = reader["Direccion"].ToString();
                         organizacion.Sector = reader["Sector"].ToString();
-                        organizacion.TelefonoOrganizacion = reader.ToString();
-                        organizacion.CorreoOrganizacion = reader.ToString();
+                        organizacion.TelefonoOrganizacion = reader["Telefono"].ToString();
+                        organizacion.CorreoOrganizacion = reader["Correo"].ToString();
                     }
                 }
                 connection.Close();
