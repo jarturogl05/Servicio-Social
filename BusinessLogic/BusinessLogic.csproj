@@ -42,10 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Alumno.cs" />
+    <Compile Include="AlumnoDAO.cs" />
     <Compile Include="Coordinador.cs" />
     <Compile Include="CoordinadorDAO.cs" />
     <Compile Include="Encargado.cs" />
     <Compile Include="EncargadoDAO.cs" />
+    <Compile Include="IAlumnoDAO.cs" />
     <Compile Include="ICoordinadorDAO.cs" />
     <Compile Include="IEncargadoDAO.cs" />
     <Compile Include="IOrganizacionDAO.cs" />

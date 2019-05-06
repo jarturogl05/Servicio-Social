@@ -9,7 +9,7 @@ namespace BusinessLogic
     interface IOrganizacionDAO
     {
         List<Organizacion> GetOrganizacion();
-        Organizacion GetOrganizacionByID(String idToSearch);
-        bool AddOrganizacion(Organizacion organizacion);
+        Organizacion GetOrganizacionByName(String idToSearch);
+        AddResult AddOrganizacion(Organizacion organizacion);
     }
 }
