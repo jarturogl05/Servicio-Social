@@ -37,7 +37,7 @@ namespace BusinessLogic
             }
             return proyecto;
 
-
+        }
         public void AddProyecto(Proyecto proyecto)
         {
             DbConnection dbConnection = new DbConnection();
