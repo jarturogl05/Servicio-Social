@@ -53,7 +53,7 @@ namespace BusinessLogic.Tests
         }
 
         [TestMethod()]
-        public void GetOrganizacionByIDTest()
+        public void GetOrganizacionByNameTest()
         {
             OrganizacionDAO organizacionDAO = new OrganizacionDAO();
             Organizacion organizacion = new Organizacion("BADD990524I55", "David", "Facultad de Economia", "2288455625", "Educativo", "davisbd100@gmail.com");
