@@ -1,8 +1,5 @@
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\obj\Debug\BusinessLogicTests.csprojAssemblyReference.cache
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\obj\Debug\BusinessLogicTests.csproj.CoreCompileInputs.cache
-C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
-C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
-C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\bin\Debug\BusinessLogicTests.dll.config
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\bin\Debug\BusinessLogicTests.dll
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\bin\Debug\BusinessLogicTests.pdb
@@ -17,3 +14,6 @@ C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\Busines
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\obj\Debug\BusinessLogicTests.csproj.CopyComplete
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\obj\Debug\BusinessLogicTests.dll
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\obj\Debug\BusinessLogicTests.pdb
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogicTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
