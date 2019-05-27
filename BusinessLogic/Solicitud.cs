@@ -13,5 +13,21 @@ namespace BusinessLogic
         public List<Proyecto> Proyectos { get; set; }
         public Alumno Alumno { get; set; }
 
-    }
+        public Solicitud()
+        {
+
+        }
+
+        public Solicitud (String FechaSolicitud, string EstadoSolicitud,List<Proyecto> proyectos, Alumno alumno)
+        {
+            this.FechaSolicitud = FechaSolicitud;
+            this.EstadoSolicitud = EstadoSolicitud;
+            this.Proyectos = proyectos;
+            this.Alumno = alumno;
+
+        }
+
+     
+
+         }
 }
