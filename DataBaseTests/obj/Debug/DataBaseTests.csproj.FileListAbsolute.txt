@@ -14,3 +14,19 @@ C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\DataBas
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\DataBaseTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\DataBaseTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\DataBaseTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\bin\Debug\DataBaseTests.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\bin\Debug\DataBaseTests.pdb
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\bin\Debug\DataBase.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\bin\Debug\DataBase.pdb
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\obj\Debug\DataBaseTests.csprojAssemblyReference.cache
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\obj\Debug\DataBaseTests.csproj.CoreCompileInputs.cache
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\obj\Debug\DataBaseTests.csproj.CopyComplete
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\obj\Debug\DataBaseTests.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\DataBaseTests\obj\Debug\DataBaseTests.pdb

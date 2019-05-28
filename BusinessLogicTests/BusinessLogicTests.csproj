@@ -58,8 +58,12 @@
   </Choose>
   <ItemGroup>
     <Compile Include="AlumnoDAOTests.cs" />
+    <Compile Include="CoordinadorDAOTests.cs" />
+    <Compile Include="EncargadoDAOTests.cs" />
     <Compile Include="OrganizacionDAOTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProyectoDAOTests.cs" />
+    <Compile Include="SolicitudDAOTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
