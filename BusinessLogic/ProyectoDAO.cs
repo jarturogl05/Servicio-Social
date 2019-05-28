@@ -42,7 +42,7 @@ namespace BusinessLogic
 
         public AddResult AddProyecto(Proyecto proyecto)
         {
-            AddResult resultado = AddResult.UnknowFail;
+            AddResult resultado = AddResult.UnknownFail;
             DbConnection dbConnection = new DbConnection();
             using (SqlConnection connection = dbConnection.GetConnection())
             {

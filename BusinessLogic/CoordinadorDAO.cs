@@ -14,7 +14,7 @@ namespace BusinessLogic
 
         public AddResult AddCoordinador(Coordinador coordinador)
         {
-            AddResult resultado = AddResult.UnknowFail;
+            AddResult resultado = AddResult.UnknownFail;
             DbConnection dbConnection = new DbConnection();
             using (SqlConnection connection = dbConnection.GetConnection())
             {
@@ -22,7 +22,7 @@ namespace BusinessLogic
                 {
                     connection.Open();
                 }
-                catch(SqlException ex)
+                catch(SqlException)
                 {
                     resultado = AddResult.SQLFail;
 
