@@ -74,7 +74,7 @@ namespace BusinessLogic
 
         public AddResult AddEncargado(Encargado encargado)
         {
-            AddResult resultado = AddResult.UnknowFail;
+            AddResult resultado = AddResult.UnknownFail;
             
             DbConnection dbConnection = new DbConnection();
             using (SqlConnection connection = dbConnection.GetConnection())
@@ -83,7 +83,7 @@ namespace BusinessLogic
                 {
                     connection.Open();
                 }
-                catch (SqlException ex)
+                catch (SqlException)
                 {
                     resultado = AddResult.SQLFail;
                 }
