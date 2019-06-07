@@ -20,7 +20,7 @@ namespace BusinessLogic
 
         }
 
-        public ResultadosValidación validarPassword( string contraseña)
+        public ResultadosValidación ValidarPassword( string contraseña)
         {
             string patrón = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,50}$";
 
@@ -32,9 +32,9 @@ namespace BusinessLogic
 
         }
 
-        public ResultadosValidación validarNúmero(string número)
+        public ResultadosValidación ValidarNúmero(string número)
         {
-            string patrón = @" /^[0 - 9] +$/ ";
+            string patrón = @"^[0-9]*$";
             if(Regex.IsMatch( número, patrón))
             {
                 return ResultadosValidación.NúmeroVálido;
