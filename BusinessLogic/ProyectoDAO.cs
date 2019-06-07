@@ -12,7 +12,7 @@ namespace BusinessLogic
     public class ProyectoDAO : IProyectoDAO
     {
 
-        public Proyecto GetProyectoByID(String toSearch)
+         public Proyecto GetProyectoByID(String toSearch)
         {
             Proyecto proyecto = new Proyecto();
             DbConnection dbConnection = new DbConnection();
