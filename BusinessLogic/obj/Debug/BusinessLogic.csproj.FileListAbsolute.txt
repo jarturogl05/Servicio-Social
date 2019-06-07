@@ -9,3 +9,12 @@ C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\Busines
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogic\obj\Debug\BusinessLogic.dll
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\BusinessLogic\obj\Debug\BusinessLogic.pdb
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\BusinessLogic\bin\Debug\BusinessLogic.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\BusinessLogic\bin\Debug\BusinessLogic.pdb
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\BusinessLogic\bin\Debug\DataBase.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\BusinessLogic\bin\Debug\DataBase.pdb
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyReference.cache
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\BusinessLogic\obj\Debug\BusinessLogic.csproj.CopyComplete
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\BusinessLogic\obj\Debug\BusinessLogic.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\BusinessLogic\obj\Debug\BusinessLogic.pdb
