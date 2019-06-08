@@ -68,7 +68,7 @@ namespace ServicioSocial
 
         private bool ValidarPassword()
         {
-            if(validarCampos.validarPassword(psb_Contraseña.Password) == ValidarCampos.ResultadosValidación.ContraseñaInválida)
+            if(validarCampos.ValidarPassword(psb_Contraseña.Password) == ValidarCampos.ResultadosValidación.ContraseñaInválida)
             {
                 MessageBox.Show("Las contraseñas deben de tener por lo menos 8 carácteres, alfanumérica y por lo menos una letra mayúscula");
                 return false;
@@ -79,7 +79,7 @@ namespace ServicioSocial
 
         private bool ValidarNúmeroPersonal()
         {
-            if(validarCampos.validarNúmero(txb_NúmeroPersonal.Text) == ValidarCampos.ResultadosValidación.NúmeroInválido)
+            if(validarCampos.ValidarNúmero(txb_NúmeroPersonal.Text) == ValidarCampos.ResultadosValidación.NúmeroInválido)
             {
                 MessageBox.Show("El campo Número personal solo acepta números");
                 return false;

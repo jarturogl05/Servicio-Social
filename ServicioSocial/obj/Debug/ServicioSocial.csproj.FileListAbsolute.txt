@@ -28,3 +28,33 @@ C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\Servici
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csproj.CoreCompileInputs.cache
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.exe
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.pdb
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csprojAssemblyReference.cache
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\MainWindow.g.cs
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\P_InfoProyecto.g.cs
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\P_ProyectosEspera.g.cs
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarEncargado.g.cs
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarProyecto.g.cs
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\P_Registrar_Cooordinador.g.cs
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\App.g.cs
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial_MarkupCompile.cache
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial_MarkupCompile.lref
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.exe
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.pdb
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\bin\Debug\ServicioSocial.exe.config
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\bin\Debug\ServicioSocial.exe
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\bin\Debug\ServicioSocial.pdb
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\bin\Debug\BusinessLogic.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\bin\Debug\DataBase.dll
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\bin\Debug\BusinessLogic.pdb
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\bin\Debug\DataBase.pdb
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\MainWindow.baml
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\P_InfoProyecto.baml
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\P_ProyectosEspera.baml
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarEncargado.baml
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarProyecto.baml
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\P_Registrar_Cooordinador.baml
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.g.resources
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.Properties.Resources.resources
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csproj.GenerateResource.cache
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csproj.CoreCompileInputs.cache
+C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csproj.CopyComplete
