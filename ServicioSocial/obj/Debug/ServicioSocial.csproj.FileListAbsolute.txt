@@ -58,3 +58,8 @@ C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Deb
 C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csproj.GenerateResource.cache
 C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csproj.CoreCompileInputs.cache
 C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csproj.CopyComplete
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_InfoProyecto.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ProyectosEspera.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarEncargado.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarProyecto.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_Registrar_Cooordinador.g.cs

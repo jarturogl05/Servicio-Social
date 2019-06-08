@@ -1,0 +1,9 @@
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\LoginAuth\bin\Debug\LoginAuth.dll
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\LoginAuth\bin\Debug\LoginAuth.pdb
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\LoginAuth\bin\Debug\DataBase.dll
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\LoginAuth\bin\Debug\DataBase.pdb
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\LoginAuth\obj\Debug\LoginAuth.csprojAssemblyReference.cache
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\LoginAuth\obj\Debug\LoginAuth.csproj.CoreCompileInputs.cache
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\LoginAuth\obj\Debug\LoginAuth.csproj.CopyComplete
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\LoginAuth\obj\Debug\LoginAuth.dll
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\LoginAuth\obj\Debug\LoginAuth.pdb
