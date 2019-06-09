@@ -16,7 +16,7 @@ namespace BusinessLogic.Tests
         public void AddOrganizacionAddTest()
         {
             OrganizacionDAO organizacionDAO = new OrganizacionDAO();
-            Organizacion organizacion = new Organizacion("BADD990524I55", "David", "Facultad de Economia", "2288455625", "Educativo", "davisbd100@gmail.com");
+            Organizacion organizacion = new Organizacion("ICVD920524R55", "UV", "Facultad de Economia", "2288455625", "Educativo", "davisbd100@gmail.com");
             Assert.AreEqual(AddResult.Success, organizacionDAO.AddOrganizacion(organizacion));
         }
 

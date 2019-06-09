@@ -9,7 +9,7 @@ namespace BusinessLogic
     public class ControladorCoordinador
     {
         CoordinadorDAO coordinadorDAO = new CoordinadorDAO();
-        AddEnum AddEnum = new AddEnum();
+        
 
 
 
