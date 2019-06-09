@@ -44,6 +44,9 @@
     <Compile Include="AddEnum.cs" />
     <Compile Include="Alumno.cs" />
     <Compile Include="AlumnoDAO.cs" />
+    <Compile Include="ControladorCoordinador.cs" />
+    <Compile Include="ControladorEncargado.cs" />
+    <Compile Include="ControladorOrganización.cs" />
     <Compile Include="Coordinador.cs" />
     <Compile Include="CoordinadorDAO.cs" />
     <Compile Include="Encargado.cs" />
@@ -61,6 +64,7 @@
     <Compile Include="ProyectoDAO.cs" />
     <Compile Include="Solicitud.cs" />
     <Compile Include="SolicitudDAO.cs" />
+    <Compile Include="ValidarCampos.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DataBase\DataBase.csproj">

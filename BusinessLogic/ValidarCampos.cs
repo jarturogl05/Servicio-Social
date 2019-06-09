@@ -14,6 +14,7 @@ namespace BusinessLogic
             ContraseñaInválida,
             ContraseñaVálida,
             Correoinválido,
+            CorreoVálido,
             TeléfonoInválido,
             NúmeroInválido,
             NúmeroVálido
@@ -32,15 +33,24 @@ namespace BusinessLogic
 
         }
 
-        public ResultadosValidación ValidarNúmero(string número)
+        public ResultadosValidación ValidarNúmero(string númeroInt)
         {
             string patrón = @"^[0-9]*$";
-            if(Regex.IsMatch( número, patrón))
+            if(Regex.IsMatch( númeroInt, patrón))
             {
                 return ResultadosValidación.NúmeroVálido;
             }
             return ResultadosValidación.NúmeroInválido;
         }
 
+        public ResultadosValidación ValidarCorreo(string correo)
+        {
+            string patrón = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
+            if (Regex.IsMatch(correo, patrón))
+            {
+                return ResultadosValidación.CorreoVálido;
+            }
+            return ResultadosValidación.Correoinválido;
+        }
     }
 }

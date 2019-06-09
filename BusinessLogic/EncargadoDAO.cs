@@ -88,9 +88,8 @@ namespace BusinessLogic
                     resultado = AddResult.SQLFail;
                 }
                 
-                using (SqlCommand command = new SqlCommand("INSERT INTO dbo.Encargado VALUES(@ID_Encargado, @Nombre, @Cargo, @Correo, @Telefono, @Organizacion)", connection))
+                using (SqlCommand command = new SqlCommand("INSERT INTO dbo.Encargado VALUES(@Nombre, @Correo, @Cargo, @Telefono, @Organizacion)", connection))
                 {
-                    command.Parameters.Add(new SqlParameter("@ID_Encargado", encargado.IdEncargado));
                     command.Parameters.Add(new SqlParameter("@Nombre",encargado.NombreEncargado));
                     command.Parameters.Add(new SqlParameter("@Cargo", encargado.CargoOrganizacion));
                     command.Parameters.Add(new SqlParameter("@Correo", encargado.CorreoEncargado));

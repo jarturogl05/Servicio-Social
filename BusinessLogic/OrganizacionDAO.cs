@@ -33,14 +33,14 @@ namespace BusinessLogic
                     return resultado;
                 }
 
-                using (SqlCommand command = new SqlCommand("INSERT INTO dbo.Organizacion VALUES(@rfc, @nombre, @direccion,@sector, @telefono, @correo)", connection))
+                using (SqlCommand command = new SqlCommand("INSERT INTO dbo.Empresa VALUES(@RFC, @Nombre, @Direccion,@Sector, @Telefono, @Correo)", connection))
                 {
-                    command.Parameters.Add(new SqlParameter("@rfc", organizacion.rfc));
-                    command.Parameters.Add(new SqlParameter("@nombre", organizacion.NombreOrganizacion));
-                    command.Parameters.Add(new SqlParameter("@direccion", organizacion.DireccionOrganizacion));
+                    command.Parameters.Add(new SqlParameter("@RFC", organizacion.rfc));
+                    command.Parameters.Add(new SqlParameter("@Nombre", organizacion.NombreOrganizacion));
+                    command.Parameters.Add(new SqlParameter("@Direccion", organizacion.DireccionOrganizacion));
                     command.Parameters.Add(new SqlParameter("@Sector", organizacion.Sector));
                     command.Parameters.Add(new SqlParameter("@Telefono", organizacion.TelefonoOrganizacion));
-                    command.Parameters.Add(new SqlParameter("@correo", organizacion.CorreoOrganizacion));
+                    command.Parameters.Add(new SqlParameter("@Correo", organizacion.CorreoOrganizacion));
                     command.ExecuteNonQuery();
                     resultado = AddResult.Success;
                 }
@@ -62,7 +62,7 @@ namespace BusinessLogic
                 {
                     throw (ex);
                 }
-                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Organizacion", connection))
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Empresa", connection))
                 {
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
@@ -70,16 +70,18 @@ namespace BusinessLogic
                         Organizacion organizacion = new Organizacion();
                         organizacion.rfc = reader["RFC"].ToString();
                         organizacion.NombreOrganizacion = reader["Nombre"].ToString();
-                        organizacion.NombreOrganizacion = reader["Direccion"].ToString();
+                        organizacion.DireccionOrganizacion = reader["Direccion"].ToString();
                         organizacion.Sector = reader["Sector"].ToString();
-                        organizacion.TelefonoOrganizacion = reader.ToString();
-                        organizacion.CorreoOrganizacion = reader.ToString();
+                        organizacion.TelefonoOrganizacion = reader["Telefono"].ToString();
+                        organizacion.CorreoOrganizacion = reader["Correo"].ToString();
+                        listaOrganizacion.Add(organizacion);
                     }
                 }
                 connection.Close();
             }
             return listaOrganizacion;
         }
+
         public Organizacion GetOrganizacionByName(String toSearchInBD)
         {
             Organizacion organizacion = new Organizacion();
@@ -94,7 +96,7 @@ namespace BusinessLogic
                 {
                     throw (ex);
                 }
-                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Organizacion WHERE Nombre = @NameToSearch", connection))
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Empresa WHERE Nombre = @NameToSearch", connection))
                 {
                     command.Parameters.Add(new SqlParameter("NameToSearch", toSearchInBD));
                     SqlDataReader reader = command.ExecuteReader();
