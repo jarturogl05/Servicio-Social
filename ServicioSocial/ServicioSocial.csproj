@@ -61,6 +61,9 @@
     <Compile Include="P_ProyectosEspera.xaml.cs">
       <DependentUpon>P_ProyectosEspera.xaml</DependentUpon>
     </Compile>
+    <Compile Include="P_RegisterUser.xaml.cs">
+      <DependentUpon>P_RegisterUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="P_RegistrarEncargado.xaml.cs">
       <DependentUpon>P_RegistrarEncargado.xaml</DependentUpon>
     </Compile>
@@ -90,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="P_ProyectosEspera.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_RegisterUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

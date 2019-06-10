@@ -10,11 +10,11 @@ namespace BusinessLogic
     {
         public enum AddResult
         {
-            Success,
-            NullOrganization,
-            InvalidOrganization,
-            UnknowFail,
-            SQLFail,
+            Success = 1,
+            NullOrganization = 2,
+            InvalidOrganization = 3,
+            UnknowFail = 0,
+            SQLFail = 4,
         }
     }
 }

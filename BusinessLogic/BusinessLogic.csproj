@@ -55,6 +55,7 @@
     <Compile Include="IOrganizacionDAO.cs" />
     <Compile Include="IProyectoDAO.cs" />
     <Compile Include="ISolicitudDAO.cs" />
+    <Compile Include="IUsuarioDAO.cs" />
     <Compile Include="Organizacion.cs" />
     <Compile Include="OrganizacionDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +63,8 @@
     <Compile Include="ProyectoDAO.cs" />
     <Compile Include="Solicitud.cs" />
     <Compile Include="SolicitudDAO.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="UsuarioDAO.cs" />
     <Compile Include="ValidarCampos.cs" />
   </ItemGroup>
   <ItemGroup>

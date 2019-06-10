@@ -8,11 +8,14 @@ namespace Controller
 {
     public class OrganizacionController
     {
-        //public enum OperationResult
-        //{
-        //    Success = 1,
-        //    Failed = 0
-        //}
+        public enum OperationResult
+        {
+            Success = 1,
+            NullOrganization = 2,
+            InvalidOrganization = 3,
+            UnknowFail = 0,
+            SQLFail = 4,
+        }
         //public OperationResult AddOrganizacion()
         //{
 
