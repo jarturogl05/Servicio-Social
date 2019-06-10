@@ -18,13 +18,17 @@
         <Label x:Name="labelPass" Content="Contraseña" HorizontalAlignment="Left" Margin="21.8,403,0,0" VerticalAlignment="Top" FontSize="20" Grid.Column="1"/>
         <TextBox x:Name="textboxName" Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="260.8,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
         <TextBox x:Name="textboxEmail" Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="260.8,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
-        <TextBox x:Name="textboxUserType" Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="260.8,243,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
         <TextBox x:Name="textboxUserName" Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="260.8,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
-        <TextBox x:Name="textbpxPass" Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="260.8,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
+        <TextBox x:Name="textboxPass" Grid.Column="1" HorizontalAlignment="Left" Height="28" Margin="260.8,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
         <TextBlock x:Name="titleTextblock" Grid.Column="1" HorizontalAlignment="Left" Margin="169.8,24,0,0" TextWrapping="Wrap" Text="Registrar Usuario" VerticalAlignment="Top" FontSize="24"/>
         <Button x:Name="buttonAceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="11,614,0,0" VerticalAlignment="Top" Width="183" FontSize="24" Grid.ColumnSpan="2" Click="ButtonAceptar_Click"/>
         <Button x:Name="buttonCancelar" Content="Cancelar" Grid.Column="1" HorizontalAlignment="Left" Margin="169.8,614,0,0" VerticalAlignment="Top" Width="183" FontSize="24" Click="ButtonCancelar_Click"/>
         <Button x:Name="buttonLimpiar" Content="Limpiar Campos" Grid.Column="1" HorizontalAlignment="Left" Margin="368.8,614,0,0" VerticalAlignment="Top" Width="183" FontSize="24" Click="ButtonLimpiar_Click"/>
+        <ComboBox x:Name="comboboxUserType" Grid.Column="1" HorizontalAlignment="Left" Margin="260.8,243,0,0" VerticalAlignment="Top" Width="202" FontSize="20">
+            <ComboBoxItem Content="Coordinador"/>
+            <ComboBoxItem Content="Técnico"/>
+            <ComboBoxItem Content="Alumno"/>
+        </ComboBox>
 
     </Grid>
 </Window>

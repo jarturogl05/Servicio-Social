@@ -13,7 +13,7 @@ namespace BusinessLogic
             Success = 1,
             NullOrganization = 2,
             InvalidOrganization = 3,
-            UnknowFail = 0,
+            UnknownFail = 0,
             SQLFail = 4,
         }
     }

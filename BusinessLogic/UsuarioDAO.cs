@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
@@ -13,6 +14,7 @@ namespace BusinessLogic
         public AddResult AddUsuario(Usuario usuario)
         {
             AddResult resultado = AddResult.UnknownFail;
+            int bake = (int)AddResult.Success;
             DbConnection dbConnection = new DbConnection();
             using (SqlConnection connection = dbConnection.GetConnection())
             {

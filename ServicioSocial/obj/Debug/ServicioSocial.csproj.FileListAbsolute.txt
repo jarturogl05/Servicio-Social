@@ -79,3 +79,5 @@ C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\Servici
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\LoginAuth.dll
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\Controller.pdb
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\LoginAuth.pdb
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegisterUser.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegisterUser.baml

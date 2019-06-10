@@ -5,17 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using DataBase;
 using System.Data.SqlClient;
+using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
-    public enum AddResult
-    {
-        Success,
-        NullOrganization,
-        InvalidOrganization,
-        UnknownFail,
-        SQLFail,
-    }
+    
     public class OrganizacionDAO : IOrganizacionDAO
     {
         public AddResult AddOrganizacion(Organizacion organizacion)

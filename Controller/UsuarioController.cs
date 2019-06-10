@@ -21,8 +21,7 @@ namespace Controller
             user.Password = contraseña;
             user.RegisterDate = DateTime.Today;
             UsuarioDAO usuarioDAO = new UsuarioDAO();
-            int enumRes = (int) usuarioDAO.AddUsuario(user);
-            operation = (OperationResult)enumRes;
+            operation = (OperationResult)usuarioDAO.AddUsuario(user);
 
             return operation;
         }
