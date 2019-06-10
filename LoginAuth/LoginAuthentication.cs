@@ -28,16 +28,16 @@ namespace LoginAuth
             using (SqlConnection connection = dbConnection.GetConnection())
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("SELECT [Tipo_Usuario] FROM [dbo].[Usuarios] WHERE Usuario = @usuario AND Contraseña = @password"))
+                using (SqlCommand command = new SqlCommand("SELECT [Tipo_Usuario] FROM [dbo].[Usuarios] WHERE Usuario = @usuario AND Contraseña = @password", connection))
                 {
                     command.Parameters.Add(new SqlParameter("@usuario", user));
-                    command.Parameters.Add(new SqlParameter("password", pass));
+                    command.Parameters.Add(new SqlParameter("@password", pass));
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
                         tipoString = reader["Tipo_Usuario"].ToString();
                     }
-                    
+
                     if (String.IsNullOrEmpty(tipoString))
                     {
                         result = validationResult.UserOrPasswordIncorrect;
@@ -50,7 +50,29 @@ namespace LoginAuth
                 }
 
             }
-            return result;    
+            return result;
+        }
+        public String GetUserType(String user, String pass)
+        {
+            String result = "";
+            DbConnection dbConnection = new DbConnection();
+            using (SqlConnection connection = dbConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT [Tipo_Usuario] FROM [dbo].[Usuarios] WHERE Usuario = @usuario AND Contraseña = @password", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("@usuario", user));
+                    command.Parameters.Add(new SqlParameter("@password", pass));
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        result = reader["Tipo_Usuario"].ToString();
+                    }
+
+                }
+
+            }
+            return result;
         }
     }
 }

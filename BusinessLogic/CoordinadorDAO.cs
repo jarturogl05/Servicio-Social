@@ -25,7 +25,6 @@ namespace BusinessLogic
                 catch(SqlException)
                 {
                     resultado = AddResult.SQLFail;
-
                 }
 
                 using (SqlCommand command = new SqlCommand("INSERT INTO dbo.Coordinador VALUES (@Numero_Personal, @Nombre, @Carrera)", connection))
