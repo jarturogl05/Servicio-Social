@@ -38,8 +38,48 @@ namespace BusinessLogic
             }
 
             return encargado;
-        }        
-        
+        }
+
+        public List<Encargado> GetEncargadoByOrganización(string organización)
+        {
+            List<Encargado> listaEncargados = new List<Encargado>();
+            DbConnection dbconnection = new DbConnection();
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException)
+                {
+                    return listaEncargados;
+                }
+
+
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Encargado WHERE ORGANIZACIÓN = @organización", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("idToSearch", organización));
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Encargado encargado = new Encargado();
+                        encargado.IdEncargado = reader["ID_Encargado"].ToString();
+                        encargado.NombreEncargado = reader["Nombre"].ToString();
+                        encargado.CorreoEncargado = reader["Correo"].ToString();
+                        encargado.CargoOrganizacion = reader["CARGO"].ToString();
+                        encargado.TelefonoEncargado = reader["TELEFONO"].ToString();
+                        encargado.Organizacion.NombreOrganizacion = reader["ORGANIZACION"].ToString();
+                        listaEncargados.Add(encargado);
+                    }
+                }
+                connection.Close();
+            }
+
+            return listaEncargados;
+        }
+
+
+
         public List<Encargado> GetEncargado()
         {
             List<Encargado> listaEncargado = new List<Encargado>();

@@ -17,5 +17,10 @@ namespace BusinessLogic
             Encargado encargado = new Encargado(nombre, cargo, correo, teléfono, organizacion);
             return encargadoDAO.AddEncargado(encargado);
         }
+
+        public List<Encargado> GetEncargados(string organización)
+        {
+            return encargadoDAO.GetEncargadoByOrganización(organización);
+        }
     }
 }
