@@ -81,3 +81,13 @@ C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\Servici
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\LoginAuth.pdb
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegisterUser.g.cs
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegisterUser.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ConsultarDocumento.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_VisorDocumento.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ConsultarDocumento.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_VisorDocumento.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ConsultarEmpresa.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarEmpresa.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ConsultarEmpresa.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarEmpresa.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_DatosEmpresa.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_DatosEmpresa.baml

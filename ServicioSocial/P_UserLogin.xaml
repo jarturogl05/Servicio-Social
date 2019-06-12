@@ -12,8 +12,8 @@
         <Label x:Name="labelUser" Content="Usuario&#xD;&#xA;" HorizontalAlignment="Left" Margin="169,115,0,0" VerticalAlignment="Top" FontSize="24" Height="47" FontFamily="Arial Black"/>
         <Label x:Name="labelPass" Content="Contraseña" HorizontalAlignment="Left" Margin="149,248,0,0" VerticalAlignment="Top" FontSize="24" FontFamily="Arial Black"/>
         <TextBox x:Name="textboxUser" HorizontalAlignment="Left" Height="31" Margin="139,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="181" FontSize="20"/>
-        <Image x:Name="imageUV" HorizontalAlignment="Left" Height="135" Margin="45,10,0,0" VerticalAlignment="Top" Width="124" Source="C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\Images\UV.png"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="298,10,0,0" VerticalAlignment="Top" Width="100" Source="C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\Images\FEI.png"/>
+        <Image x:Name="imageUV" HorizontalAlignment="Left" Height="135" Margin="45,10,0,0" VerticalAlignment="Top" Width="124" Source="pack://siteoforigin:,,,/Resources/UV.png"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="298,10,0,0" VerticalAlignment="Top" Width="100" Source="pack://siteoforigin:,,,/Resources/FEI.png"/>
         <PasswordBox x:Name="passwordBoxPass" HorizontalAlignment="Left" Margin="139,320,0,0" VerticalAlignment="Top" Width="181" Height="29"/>
         <CheckBox x:Name="rememberMeCheckbox" Content="Recuérdame" HorizontalAlignment="Left" Margin="45,383,0,0" VerticalAlignment="Top" Height="32" Width="124" FontSize="18"/>
 

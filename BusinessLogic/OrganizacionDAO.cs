@@ -64,10 +64,11 @@ namespace BusinessLogic
                         Organizacion organizacion = new Organizacion();
                         organizacion.rfc = reader["RFC"].ToString();
                         organizacion.NombreOrganizacion = reader["Nombre"].ToString();
-                        organizacion.NombreOrganizacion = reader["Direccion"].ToString();
+                        organizacion.DireccionOrganizacion = reader["Direccion"].ToString();
                         organizacion.Sector = reader["Sector"].ToString();
-                        organizacion.TelefonoOrganizacion = reader.ToString();
-                        organizacion.CorreoOrganizacion = reader.ToString();
+                        organizacion.TelefonoOrganizacion = reader["Telefono"].ToString();
+                        organizacion.CorreoOrganizacion = reader["Correo"].ToString();
+                        listaOrganizacion.Add(organizacion);
                     }
                 }
                 connection.Close();
@@ -91,6 +92,38 @@ namespace BusinessLogic
                 using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Organizacion WHERE Nombre = @NameToSearch", connection))
                 {
                     command.Parameters.Add(new SqlParameter("NameToSearch", toSearchInBD));
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        organizacion.rfc = reader["RFC"].ToString();
+                        organizacion.NombreOrganizacion = reader["Nombre"].ToString();
+                        organizacion.DireccionOrganizacion = reader["Direccion"].ToString();
+                        organizacion.Sector = reader["Sector"].ToString();
+                        organizacion.TelefonoOrganizacion = reader["Telefono"].ToString();
+                        organizacion.CorreoOrganizacion = reader["Correo"].ToString();
+                    }
+                }
+                connection.Close();
+            }
+            return organizacion;
+        }
+        public Organizacion GetOrganizacionByRFC(String toSearchInBD)
+        {
+            Organizacion organizacion = new Organizacion();
+            DbConnection dbconnection = new DbConnection();
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException ex)
+                {
+                    throw (ex);
+                }
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Organizacion WHERE RFC = @RFCToSearch", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("RFCToSearch", toSearchInBD));
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {

@@ -14,7 +14,6 @@ namespace BusinessLogic
         public AddResult AddUsuario(Usuario usuario)
         {
             AddResult resultado = AddResult.UnknownFail;
-            int bake = (int)AddResult.Success;
             DbConnection dbConnection = new DbConnection();
             using (SqlConnection connection = dbConnection.GetConnection())
             {
