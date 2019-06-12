@@ -75,7 +75,15 @@ namespace BusinessLogic
             DbConnection dbConnection = new DbConnection();
             using(SqlConnection connection = dbConnection.GetConnection())
             {
-                connection.Open();
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException)
+                {
+                    return proyectos;
+                }
+                
                 using(SqlCommand command = new SqlCommand("SELECT * FROM PROYECTO", connection))
                 {
                     SqlDataReader reader = command.ExecuteReader();

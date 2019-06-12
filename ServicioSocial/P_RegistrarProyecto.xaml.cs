@@ -28,6 +28,7 @@ namespace ServicioSocial
         ValidarCampos validarCampos = new ValidarCampos();
         ControladorOrganización controladorOrganización = new ControladorOrganización();
         ControladorEncargado controladorEncargado = new ControladorEncargado();
+        ControladorProyecto ControladorProyecto = new ControladorProyecto();
 
         private void Cbb_organización_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -39,7 +40,19 @@ namespace ServicioSocial
 
         private void Btn_Aceptar_Click(object sender, RoutedEventArgs e)
         {
+            if(ValidarCamposVacios() && ValidarNumAlumnos())
+            {
+                if(ControladorProyecto.AddProyecto(txb_NombreProyecto.Text, int.Parse(txb_NúmeroAlumnos.Text),txb_Lugar.Text,
+                    txb_Horario.Text,txb_Actividades.Text, txb_Requisitos.Text, cbb_Responsable.Text) == AddResult.Success)
+                {
+                    MessageBox.Show("Proyecto agregado con éxito");
 
+                }
+                else
+                {
+                    MessageBox.Show("Ocurrio un error al agregar el proyecto");
+                }
+            }
         }
 
 
@@ -93,7 +106,7 @@ namespace ServicioSocial
             List<Encargado> encargados = controladorEncargado.GetEncargados(cbb_organización.Text);
             if (!encargados.Any())
             {
-                MessageBox.Show("No se econtraron encargados");
+                MessageBox.Show("No se encontraron encargados");
             }
             else
             {

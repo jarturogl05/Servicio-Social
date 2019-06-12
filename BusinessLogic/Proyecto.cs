@@ -25,10 +25,10 @@ namespace BusinessLogic
 
         }
 
-        public Proyecto(int IdProyecto,string NombreProyecto,int NumeroAlumnos, string EstadoProyecto, string Horario,
+        public Proyecto(string NombreProyecto,int NumeroAlumnos, string EstadoProyecto, string Horario,
             string Lugar, string Actividades, string Requisitos, Coordinador coordinador, Encargado encargado )
         {
-            this.IDProyecto = IDProyecto;
+
             this.NombreProyecto = NombreProyecto;
             this.NumeroAlumnos = NumeroAlumnos;
             this.EstadoProyecto = EstadoProyecto;

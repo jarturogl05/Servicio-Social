@@ -47,6 +47,7 @@
     <Compile Include="ControladorCoordinador.cs" />
     <Compile Include="ControladorEncargado.cs" />
     <Compile Include="ControladorOrganización.cs" />
+    <Compile Include="ControladorProyecto.cs" />
     <Compile Include="Coordinador.cs" />
     <Compile Include="CoordinadorDAO.cs" />
     <Compile Include="Encargado.cs" />
