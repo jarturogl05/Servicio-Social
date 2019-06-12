@@ -32,6 +32,14 @@ namespace ServicioSocial
             textboxSector.Text = organizacion.Sector;
             textboxTelefono.Text = organizacion.TelefonoOrganizacion;
         }
+        public enum OperationResult
+        {
+            Success = 1,
+            NullOrganization = 2,
+            InvalidOrganization = 3,
+            UnknowFail = 0,
+            SQLFail = 4,
+        }
 
         private void ButtonGuardar_Click(object sender, RoutedEventArgs e)
         {
@@ -40,12 +48,30 @@ namespace ServicioSocial
 
         private void ButtonEliminar_Click(object sender, RoutedEventArgs e)
         {
+            if ((MessageBox.Show("Esta es una operacion destructiva. \n ¿Desea Continuar?", "¿Esta seguro?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes))
+            {
+                OrganizacionController organizacionController = new OrganizacionController();
+                ComprobarResultado((OperationResult)organizacionController.DeleteOrganizacion(textboxRFC.Text));
 
+            }
         }
 
         private void ButtonCancelar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+        public void ComprobarResultado(OperationResult result)
+        {
+            if (result == OperationResult.Success)
+            {
+                MessageBox.Show("Operacion realizada con exito");
+                this.Close();
+            }else if(result == OperationResult.UnknowFail){
+                MessageBox.Show("Error desconocido");
+            }else if (result == OperationResult.SQLFail)
+            {
+                MessageBox.Show("Error de la base de datos, intente mas tarde");
+            }
         }
     }
 }

@@ -25,7 +25,6 @@ namespace ServicioSocial
             {
                 textboxUser.Text = Properties.Settings.Default.Username.ToString();
                 rememberMeCheckbox.IsChecked = true;
-                MessageBox.Show(Properties.Settings.Default.Remember.ToString());
             }
         }
         private void CheckRemember()

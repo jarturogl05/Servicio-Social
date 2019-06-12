@@ -139,5 +139,30 @@ namespace BusinessLogic
             }
             return organizacion;
         }
+        public AddResult DeleteOrganizacionByRFC(String toDeleteInDB)
+        {
+            DbConnection dbconnection = new DbConnection();
+            AddResult result = AddResult.UnknownFail;
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException ex)
+                {
+                    throw (ex);
+                }
+                using (SqlCommand command = new SqlCommand("DELETE FROM dbo.Organizacion WHERE RFC = @RFCToSearch", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("RFCToSearch", toDeleteInDB));
+                    command.ExecuteNonQuery();
+                    result = AddResult.Success;
+                }
+                connection.Close();
+            }
+            return result;
+
+        }
     }
 }

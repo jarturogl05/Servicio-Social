@@ -31,6 +31,7 @@ namespace ServicioSocial
         {
             P_DatosEmpresa p_DatosEmpresa = new P_DatosEmpresa(gridOrganizacion.SelectedValue.ToString());
             p_DatosEmpresa.ShowDialog();
+            UpdateGrid();
         }
 
         private void ButtonCancelar_Click(object sender, RoutedEventArgs e)

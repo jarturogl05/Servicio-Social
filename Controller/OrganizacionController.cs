@@ -44,6 +44,11 @@ namespace Controller
             OrganizacionDAO organizacionDAO = new OrganizacionDAO();
             return organizacionDAO.GetOrganizacionByRFC(RFC);
         }
+        public OperationResult DeleteOrganizacion(String RFC)
+        {
+            OrganizacionDAO organizacionDAO = new OrganizacionDAO();
+            return (OperationResult)organizacionDAO.DeleteOrganizacionByRFC(RFC);
+        }
         //public OperationResult EditOrganizacion()
         //{
 
