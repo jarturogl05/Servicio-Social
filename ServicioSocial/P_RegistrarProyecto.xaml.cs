@@ -103,7 +103,8 @@ namespace ServicioSocial
         private void LlenarEncargados()
         {
             int contador = 0;
-            List<Encargado> encargados = controladorEncargado.GetEncargados(cbb_organización.Text);
+            
+            List<Encargado> encargados = controladorEncargado.GetEncargados(cbb_organización.SelectedItem.ToString());
             if (!encargados.Any())
             {
                 MessageBox.Show("No se encontraron encargados");

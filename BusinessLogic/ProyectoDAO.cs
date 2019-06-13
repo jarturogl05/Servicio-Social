@@ -84,7 +84,7 @@ namespace BusinessLogic
                     return proyectos;
                 }
                 
-                using(SqlCommand command = new SqlCommand("SELECT * FROM PROYECTO", connection))
+                using(SqlCommand command = new SqlCommand("SELECT * FROM PROYECTO WHERE Estado_Proyecto = Disponible", connection))
                 {
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
