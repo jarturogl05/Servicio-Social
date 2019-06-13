@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
     public class ControladorCoordinador
     {
         CoordinadorDAO coordinadorDAO = new CoordinadorDAO();
-        
+        AddEnum AddEnum = new AddEnum();
 
 
 

@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using BusinessLogic;
 
 namespace ServicioSocial
 {
@@ -23,28 +22,6 @@ namespace ServicioSocial
         public P_ProyectosEspera()
         {
             InitializeComponent();
-            LlenarGrid();
         }
-
-        ControladorProyecto ControladorProyecto = new ControladorProyecto();
-
-
-
-        public void LlenarGrid()
-        {
-            List<Proyecto> proyectos = ControladorProyecto.obtenerProyectos();
-            if (!proyectos.Any())
-            {
-                MessageBox.Show("No se encontraron proyectos");
-
-            }
-            else
-            {
-                dgrid_ProyectosEspera.ItemsSource = proyectos;
-            }
-
-        }
-
-
     }
 }

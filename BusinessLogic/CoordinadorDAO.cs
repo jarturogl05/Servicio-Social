@@ -25,7 +25,6 @@ namespace BusinessLogic
                 catch(SqlException)
                 {
                     resultado = AddResult.SQLFail;
-
                 }
 
                 using (SqlCommand command = new SqlCommand("INSERT INTO dbo.Coordinador VALUES (@Numero_Personal, @Nombre, @Carrera)", connection))
@@ -33,16 +32,8 @@ namespace BusinessLogic
                     command.Parameters.Add(new SqlParameter("@Numero_Personal", coordinador.NumeroPersonal));
                     command.Parameters.Add(new SqlParameter("@Nombre", coordinador.NombreCoordinador));
                     command.Parameters.Add(new SqlParameter("@Carrera", coordinador.Carrera));
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                        resultado = AddResult.Success;
-                    }
-                    catch(InvalidOperationException){
-                        resultado = AddResult.UnknownFail;
-                    }
-                   
-                    
+                    command.ExecuteNonQuery();
+                    resultado = AddResult.Success;
                 }
                 connection.Close();
             }

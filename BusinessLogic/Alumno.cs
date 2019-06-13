@@ -31,5 +31,10 @@ namespace BusinessLogic
             this.Estado = estado;
             this.Visibilidad = visibilidad;
         }
+
+        public override string ToString()
+        {
+            return Matricula;
+        }
     }
 }
