@@ -47,14 +47,18 @@
     <Compile Include="ControladorCoordinador.cs" />
     <Compile Include="Coordinador.cs" />
     <Compile Include="CoordinadorDAO.cs" />
+    <Compile Include="Documento.cs" />
+    <Compile Include="DocumentoDAO.cs" />
     <Compile Include="Encargado.cs" />
     <Compile Include="EncargadoDAO.cs" />
     <Compile Include="IAlumnoDAO.cs" />
     <Compile Include="ICoordinadorDAO.cs" />
+    <Compile Include="IDocumentoDAO.cs" />
     <Compile Include="IEncargadoDAO.cs" />
     <Compile Include="IOrganizacionDAO.cs" />
     <Compile Include="IProyectoDAO.cs" />
     <Compile Include="ISolicitudDAO.cs" />
+    <Compile Include="IUsuarioDAO.cs" />
     <Compile Include="Organizacion.cs" />
     <Compile Include="OrganizacionDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +66,8 @@
     <Compile Include="ProyectoDAO.cs" />
     <Compile Include="Solicitud.cs" />
     <Compile Include="SolicitudDAO.cs" />
+    <Compile Include="Usuario.cs" />
+    <Compile Include="UsuarioDAO.cs" />
     <Compile Include="ValidarCampos.cs" />
   </ItemGroup>
   <ItemGroup>

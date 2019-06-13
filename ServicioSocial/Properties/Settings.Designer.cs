@@ -46,5 +46,14 @@ namespace ServicioSocial.Properties {
                 this["Remember"] = value;
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("@estudiantes.uv.mx")]
+        public string CurrenEmailAddress {
+            get {
+                return ((string)(this["CurrenEmailAddress"]));
+            }
+        }
     }
 }

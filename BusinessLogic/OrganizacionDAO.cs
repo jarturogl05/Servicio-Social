@@ -5,17 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using DataBase;
 using System.Data.SqlClient;
+using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
-    public enum AddResult
-    {
-        Success,
-        NullOrganization,
-        InvalidOrganization,
-        UnknownFail,
-        SQLFail,
-    }
+    
     public class OrganizacionDAO : IOrganizacionDAO
     {
         public AddResult AddOrganizacion(Organizacion organizacion)
@@ -70,10 +64,11 @@ namespace BusinessLogic
                         Organizacion organizacion = new Organizacion();
                         organizacion.rfc = reader["RFC"].ToString();
                         organizacion.NombreOrganizacion = reader["Nombre"].ToString();
-                        organizacion.NombreOrganizacion = reader["Direccion"].ToString();
+                        organizacion.DireccionOrganizacion = reader["Direccion"].ToString();
                         organizacion.Sector = reader["Sector"].ToString();
-                        organizacion.TelefonoOrganizacion = reader.ToString();
-                        organizacion.CorreoOrganizacion = reader.ToString();
+                        organizacion.TelefonoOrganizacion = reader["Telefono"].ToString();
+                        organizacion.CorreoOrganizacion = reader["Correo"].ToString();
+                        listaOrganizacion.Add(organizacion);
                     }
                 }
                 connection.Close();
@@ -111,6 +106,63 @@ namespace BusinessLogic
                 connection.Close();
             }
             return organizacion;
+        }
+        public Organizacion GetOrganizacionByRFC(String toSearchInBD)
+        {
+            Organizacion organizacion = new Organizacion();
+            DbConnection dbconnection = new DbConnection();
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException ex)
+                {
+                    throw (ex);
+                }
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Organizacion WHERE RFC = @RFCToSearch", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("RFCToSearch", toSearchInBD));
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        organizacion.rfc = reader["RFC"].ToString();
+                        organizacion.NombreOrganizacion = reader["Nombre"].ToString();
+                        organizacion.DireccionOrganizacion = reader["Direccion"].ToString();
+                        organizacion.Sector = reader["Sector"].ToString();
+                        organizacion.TelefonoOrganizacion = reader["Telefono"].ToString();
+                        organizacion.CorreoOrganizacion = reader["Correo"].ToString();
+                    }
+                }
+                connection.Close();
+            }
+            return organizacion;
+        }
+        public AddResult DeleteOrganizacionByRFC(String toDeleteInDB)
+        {
+            DbConnection dbconnection = new DbConnection();
+            AddResult result = AddResult.UnknownFail;
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException ex)
+                {
+                    throw (ex);
+                }
+                using (SqlCommand command = new SqlCommand("DELETE FROM dbo.Organizacion WHERE RFC = @RFCToSearch", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("RFCToSearch", toDeleteInDB));
+                    command.ExecuteNonQuery();
+                    result = AddResult.Success;
+                }
+                connection.Close();
+            }
+            return result;
+
         }
     }
 }

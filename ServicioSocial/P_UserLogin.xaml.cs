@@ -25,7 +25,6 @@ namespace ServicioSocial
             {
                 textboxUser.Text = Properties.Settings.Default.Username.ToString();
                 rememberMeCheckbox.IsChecked = true;
-                MessageBox.Show(Properties.Settings.Default.Remember.ToString());
             }
         }
         private void CheckRemember()
@@ -70,6 +69,12 @@ namespace ServicioSocial
         private void OpenWindow()
         {
             MessageBox.Show("Not implemented Exception, jeje");
+        }
+
+        private void ButtonSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            P_RegistrarAlumno p_RegistrarAlumno = new P_RegistrarAlumno();
+            p_RegistrarAlumno.ShowDialog();
         }
     }
 }
