@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
-        Title="P_RegistrarEncargado" Height="700" Width="640">
+        Title="P_RegistrarEncargado" Height="800" Width="640">
     <Grid>
         <Label Content="Nombre Completo" HorizontalAlignment="Left" Margin="42,151,0,0" VerticalAlignment="Top" Height="38" Width="174" FontSize="20"/>
         <Label Content="Correo Electrónico" HorizontalAlignment="Left" Margin="42,242,0,0" VerticalAlignment="Top" Width="174" FontSize="20"/>
@@ -13,12 +13,12 @@
         <Label Content="Cargo" HorizontalAlignment="Left" Margin="42,409,0,0" VerticalAlignment="Top" FontSize="20" RenderTransformOrigin="1.284,0.65"/>
         <Label Content="Organización" HorizontalAlignment="Left" Margin="42,488,0,0" VerticalAlignment="Top" FontSize="20"/>
         <TextBox x:Name="txb_NombreCompleto" HorizontalAlignment="Left" Height="38" Margin="253,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354" FontSize="20"/>
-        <TextBox x:Name="tbx_CorreoElectrónico" HorizontalAlignment="Left" Height="38" Margin="253,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354" FontSize="20"/>
+        <TextBox x:Name="tbx_CorreoElectrónico" HorizontalAlignment="Left" Height="38" Margin="253,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354"/>
         <TextBox x:Name="txt_Teléfono" HorizontalAlignment="Left" Height="38" Margin="253,327,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354" FontSize="20"/>
         <TextBox x:Name="txb_Cargo" HorizontalAlignment="Left" Height="38" Margin="253,409,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="354" FontSize="20"/>
-        <ComboBox x:Name="cbb_Organización" HorizontalAlignment="Left" Margin="253,488,0,0" VerticalAlignment="Top" Width="354" Height="38" FontSize="20" />
-        <Button x:Name="btn_Aceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="253,595,0,0" VerticalAlignment="Top" Width="119" Height="35" FontSize="20" Click="Btn_Aceptar_Click"/>
-        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="438,595,0,0" VerticalAlignment="Top" Width="118" Height="35" FontSize="20"/>
+        <ComboBox x:Name="cbb_Organización" HorizontalAlignment="Left" Margin="253,488,0,0" VerticalAlignment="Top" Width="354" Height="38" FontSize="20"/>
+        <Button x:Name="btn_Aceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="253,658,0,0" VerticalAlignment="Top" Width="119" Height="35" FontSize="20"/>
+        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="442,658,0,0" VerticalAlignment="Top" Width="119" Height="35" FontSize="20"/>
 
     </Grid>
 </Window>
