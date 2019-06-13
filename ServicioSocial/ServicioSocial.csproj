@@ -35,8 +35,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ReachFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +57,56 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="P_ConsultarAlumno.xaml.cs">
+      <DependentUpon>P_ConsultarAlumno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_DatosEmpresa.xaml.cs">
+      <DependentUpon>P_DatosEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_ConsultarDocumento.xaml.cs">
+      <DependentUpon>P_ConsultarDocumento.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_ConsultarEmpresa.xaml.cs">
+      <DependentUpon>P_ConsultarEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_InfoProyecto.xaml.cs">
+      <DependentUpon>P_InfoProyecto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_ProyectosEspera.xaml.cs">
+      <DependentUpon>P_ProyectosEspera.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_RegisterUser.xaml.cs">
+      <DependentUpon>P_RegisterUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_DatosAlumno.xaml.cs">
+      <DependentUpon>P_DatosAlumno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_RegistrarAlumno.xaml.cs">
+      <DependentUpon>P_RegistrarAlumno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_RegistrarEmpresa.xaml.cs">
+      <DependentUpon>P_RegistrarEmpresa.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_RegistrarEncargado.xaml.cs">
+      <DependentUpon>P_RegistrarEncargado.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_RegistrarProyecto.xaml.cs">
+      <DependentUpon>P_RegistrarProyecto.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_Registrar_Cooordinador.xaml.cs">
+      <DependentUpon>P_Registrar_Cooordinador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_UserLogin.xaml.cs">
+      <DependentUpon>P_UserLogin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_VisorDocumento.xaml.cs">
+      <DependentUpon>P_VisorDocumento.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -67,15 +119,70 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="P_ConsultarAlumno.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="P_DatosEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_ConsultarDocumento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_ConsultarEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_InfoProyecto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_ProyectosEspera.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_RegisterUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_DatosAlumno.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="P_RegistrarAlumno.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="P_RegistrarEmpresa.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_RegistrarEncargado.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_RegistrarProyecto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_Registrar_Cooordinador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_UserLogin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_VisorDocumento.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -86,15 +193,34 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config">
-      <SubType>Designer</SubType>
-    </None>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj">
+      <Project>{9ee9073a-cac7-4b81-b575-d441c1b7406b}</Project>
+      <Name>BusinessLogic</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Controller\Controller.csproj">
+      <Project>{F6EDAB22-AB97-484B-8DEB-10682DB52D8D}</Project>
+      <Name>Controller</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LoginAuth\LoginAuth.csproj">
+      <Project>{44D10CBD-72C6-4D1A-B528-6642F283550B}</Project>
+      <Name>LoginAuth</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PDF_Target.pdf" />
+    <None Include="Resources\UV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\FEI.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

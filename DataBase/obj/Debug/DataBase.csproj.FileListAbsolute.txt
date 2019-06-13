@@ -1,6 +1,0 @@
-C:\Users\j_art\source\repos\ServicioSocial\DataBase\bin\Debug\DataBase.dll
-C:\Users\j_art\source\repos\ServicioSocial\DataBase\bin\Debug\DataBase.pdb
-C:\Users\j_art\source\repos\ServicioSocial\DataBase\obj\Debug\DataBase.csprojAssemblyReference.cache
-C:\Users\j_art\source\repos\ServicioSocial\DataBase\obj\Debug\DataBase.csproj.CoreCompileInputs.cache
-C:\Users\j_art\source\repos\ServicioSocial\DataBase\obj\Debug\DataBase.dll
-C:\Users\j_art\source\repos\ServicioSocial\DataBase\obj\Debug\DataBase.pdb

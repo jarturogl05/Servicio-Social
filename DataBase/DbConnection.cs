@@ -17,7 +17,7 @@ namespace DataBase
 
 
         {
-            connectionString = ConfigurationManager.ConnectionStrings["SqlConnection"].ConnectionString;
+            connectionString = ConfigurationManager.ConnectionStrings["ConnectionToSQL"].ConnectionString;
 
             connection = new SqlConnection(connectionString);
 

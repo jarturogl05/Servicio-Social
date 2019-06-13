@@ -1,2 +1,0 @@
-C:\Users\j_art\source\repos\ServicioSocial\BusinessLogic\obj\Debug\BusinessLogic.csprojAssemblyReference.cache
-C:\Users\j_art\source\repos\ServicioSocial\BusinessLogic\obj\Debug\BusinessLogic.csproj.CoreCompileInputs.cache
