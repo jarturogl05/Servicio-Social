@@ -33,19 +33,7 @@ namespace BusinessLogic
             this.Organizacion = organizacion;
         }
 
-        public Encargado( string NombreEncargado, string CargoOrganizacion,
-            string CorreoEncargado, string TelefonoEncargado, Organizacion organizacion)
-        {            
-            this.NombreEncargado = NombreEncargado;
-            this.CargoOrganizacion = CargoOrganizacion;
-            this.CorreoEncargado = CorreoEncargado;
-            this.TelefonoEncargado = TelefonoEncargado;
-            this.Organizacion = organizacion;
-        }
-
-
-
-
+       
 
     }
 }

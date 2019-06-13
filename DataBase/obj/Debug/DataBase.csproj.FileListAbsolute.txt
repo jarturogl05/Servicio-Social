@@ -6,7 +6,8 @@ C:\Users\j_art\source\repos\ServicioSocial\DataBase\obj\Debug\DataBase.dll
 C:\Users\j_art\source\repos\ServicioSocial\DataBase\obj\Debug\DataBase.pdb
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\DataBase\bin\Debug\DataBase.dll
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\DataBase\bin\Debug\DataBase.pdb
-C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\DataBase\obj\Debug\DataBase.csprojAssemblyReference.cache
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\DataBase\obj\Debug\DataBase.csproj.CoreCompileInputs.cache
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\DataBase\obj\Debug\DataBase.dll
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\DataBase\obj\Debug\DataBase.pdb
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\DataBase\bin\Debug\DataBase.dll.CodeAnalysisLog.xml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\DataBase\bin\Debug\DataBase.dll.lastcodeanalysissucceeded

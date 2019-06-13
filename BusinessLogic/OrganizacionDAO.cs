@@ -5,17 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using DataBase;
 using System.Data.SqlClient;
+using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
-    public enum AddResult
-    {
-        Success,
-        NullOrganization,
-        InvalidOrganization,
-        UnknownFail,
-        SQLFail,
-    }
+    
     public class OrganizacionDAO : IOrganizacionDAO
     {
         public AddResult AddOrganizacion(Organizacion organizacion)
@@ -33,14 +27,14 @@ namespace BusinessLogic
                     return resultado;
                 }
 
-                using (SqlCommand command = new SqlCommand("INSERT INTO dbo.Empresa VALUES(@RFC, @Nombre, @Direccion,@Sector, @Telefono, @Correo)", connection))
+                using (SqlCommand command = new SqlCommand("INSERT INTO dbo.Organizacion VALUES(@rfc, @nombre, @direccion,@sector, @telefono, @correo)", connection))
                 {
-                    command.Parameters.Add(new SqlParameter("@RFC", organizacion.rfc));
-                    command.Parameters.Add(new SqlParameter("@Nombre", organizacion.NombreOrganizacion));
-                    command.Parameters.Add(new SqlParameter("@Direccion", organizacion.DireccionOrganizacion));
+                    command.Parameters.Add(new SqlParameter("@rfc", organizacion.rfc));
+                    command.Parameters.Add(new SqlParameter("@nombre", organizacion.NombreOrganizacion));
+                    command.Parameters.Add(new SqlParameter("@direccion", organizacion.DireccionOrganizacion));
                     command.Parameters.Add(new SqlParameter("@Sector", organizacion.Sector));
                     command.Parameters.Add(new SqlParameter("@Telefono", organizacion.TelefonoOrganizacion));
-                    command.Parameters.Add(new SqlParameter("@Correo", organizacion.CorreoOrganizacion));
+                    command.Parameters.Add(new SqlParameter("@correo", organizacion.CorreoOrganizacion));
                     command.ExecuteNonQuery();
                     resultado = AddResult.Success;
                 }
@@ -62,7 +56,7 @@ namespace BusinessLogic
                 {
                     throw (ex);
                 }
-                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Empresa", connection))
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Organizacion", connection))
                 {
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
@@ -81,7 +75,6 @@ namespace BusinessLogic
             }
             return listaOrganizacion;
         }
-
         public Organizacion GetOrganizacionByName(String toSearchInBD)
         {
             Organizacion organizacion = new Organizacion();
@@ -96,7 +89,7 @@ namespace BusinessLogic
                 {
                     throw (ex);
                 }
-                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Empresa WHERE Nombre = @NameToSearch", connection))
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Organizacion WHERE Nombre = @NameToSearch", connection))
                 {
                     command.Parameters.Add(new SqlParameter("NameToSearch", toSearchInBD));
                     SqlDataReader reader = command.ExecuteReader();
@@ -113,6 +106,63 @@ namespace BusinessLogic
                 connection.Close();
             }
             return organizacion;
+        }
+        public Organizacion GetOrganizacionByRFC(String toSearchInBD)
+        {
+            Organizacion organizacion = new Organizacion();
+            DbConnection dbconnection = new DbConnection();
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException ex)
+                {
+                    throw (ex);
+                }
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Organizacion WHERE RFC = @RFCToSearch", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("RFCToSearch", toSearchInBD));
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        organizacion.rfc = reader["RFC"].ToString();
+                        organizacion.NombreOrganizacion = reader["Nombre"].ToString();
+                        organizacion.DireccionOrganizacion = reader["Direccion"].ToString();
+                        organizacion.Sector = reader["Sector"].ToString();
+                        organizacion.TelefonoOrganizacion = reader["Telefono"].ToString();
+                        organizacion.CorreoOrganizacion = reader["Correo"].ToString();
+                    }
+                }
+                connection.Close();
+            }
+            return organizacion;
+        }
+        public AddResult DeleteOrganizacionByRFC(String toDeleteInDB)
+        {
+            DbConnection dbconnection = new DbConnection();
+            AddResult result = AddResult.UnknownFail;
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException ex)
+                {
+                    throw (ex);
+                }
+                using (SqlCommand command = new SqlCommand("DELETE FROM dbo.Organizacion WHERE RFC = @RFCToSearch", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("RFCToSearch", toDeleteInDB));
+                    command.ExecuteNonQuery();
+                    result = AddResult.Success;
+                }
+                connection.Close();
+            }
+            return result;
+
         }
     }
 }

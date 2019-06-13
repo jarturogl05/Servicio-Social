@@ -58,3 +58,42 @@ C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Deb
 C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csproj.GenerateResource.cache
 C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csproj.CoreCompileInputs.cache
 C:\Users\j_art\OneDrive\Documentos\GitHub\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csproj.CopyComplete
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_InfoProyecto.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ProyectosEspera.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarEncargado.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarProyecto.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_Registrar_Cooordinador.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\BusinessLogic.dll
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\DataBase.dll
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\BusinessLogic.pdb
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\DataBase.pdb
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_UserLogin.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_InfoProyecto.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ProyectosEspera.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarEncargado.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarProyecto.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_Registrar_Cooordinador.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_UserLogin.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\ServicioSocial.csproj.CopyComplete
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\Controller.dll
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\LoginAuth.dll
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\Controller.pdb
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\bin\Debug\LoginAuth.pdb
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegisterUser.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegisterUser.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ConsultarDocumento.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_VisorDocumento.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ConsultarDocumento.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_VisorDocumento.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ConsultarEmpresa.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarEmpresa.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ConsultarEmpresa.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarEmpresa.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_DatosEmpresa.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_DatosEmpresa.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ConsultarAlumno.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_DatosAlumno.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarAlumno.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ConsultarAlumno.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_DatosAlumno.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarAlumno.baml
