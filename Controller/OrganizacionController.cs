@@ -36,7 +36,7 @@ namespace Controller
         {
             OrganizacionDAO organizacionDAO = new OrganizacionDAO();
             List<Organizacion> list = organizacionDAO.GetOrganizacion();
-            return organizacionDAO.GetOrganizacion();
+            return list;
         }
 
         public Organizacion GetOrganizacionByRFC(String RFC)

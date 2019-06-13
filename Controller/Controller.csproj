@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlumnoController.cs" />
     <Compile Include="AuthenticationController.cs" />
     <Compile Include="DocumentoController.cs" />
     <Compile Include="OrganizacionController.cs" />

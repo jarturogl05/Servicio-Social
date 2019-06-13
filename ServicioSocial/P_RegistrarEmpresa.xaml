@@ -21,7 +21,7 @@
         <TextBox x:Name="textboxSector" HorizontalAlignment="Left" Height="29" Margin="321,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
         <Button x:Name="buttonGuardar" Content="Aceptar" HorizontalAlignment="Left" Margin="139,610,0,0" VerticalAlignment="Top" Width="129" FontSize="20" FontFamily="Arial" Click="ButtonGuardar_Click" Height="38"/>
         <Button x:Name="buttonCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="386,610,0,0" VerticalAlignment="Top" Width="129" FontSize="20" FontFamily="Arial" Click="ButtonCancelar_Click" Height="38"/>
-        <TextBlock x:Name="textblocTitle" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Registrar Empresa" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <TextBlock x:Name="textblockTitle" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Registrar Empresa" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
 
     </Grid>
 </Window>

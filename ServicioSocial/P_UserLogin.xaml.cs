@@ -70,5 +70,11 @@ namespace ServicioSocial
         {
             MessageBox.Show("Not implemented Exception, jeje");
         }
+
+        private void ButtonSignUp_Click(object sender, RoutedEventArgs e)
+        {
+            P_RegistrarAlumno p_RegistrarAlumno = new P_RegistrarAlumno();
+            p_RegistrarAlumno.ShowDialog();
+        }
     }
 }

@@ -12,5 +12,6 @@ namespace BusinessLogic
         List<Alumno> GetAlumno();
         Alumno GetAlumnoByName(String idToSearch);
         AddResult AddAlumno(Alumno alumno);
+        
     }
 }

@@ -91,3 +91,9 @@ C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\Servici
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarEmpresa.baml
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_DatosEmpresa.g.cs
 C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_DatosEmpresa.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ConsultarAlumno.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_DatosAlumno.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarAlumno.g.cs
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_ConsultarAlumno.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_DatosAlumno.baml
+C:\Users\bestr\Desktop\Facultad\4to Periodo\Construccion\Servicio-Social\ServicioSocial\obj\Debug\P_RegistrarAlumno.baml

@@ -32,7 +32,7 @@ namespace ServicioSocial
             textboxSector.Text = organizacion.Sector;
             textboxTelefono.Text = organizacion.TelefonoOrganizacion;
         }
-        public enum OperationResult
+        private enum OperationResult
         {
             Success = 1,
             NullOrganization = 2,
@@ -60,7 +60,7 @@ namespace ServicioSocial
         {
             this.Close();
         }
-        public void ComprobarResultado(OperationResult result)
+        private void ComprobarResultado(OperationResult result)
         {
             if (result == OperationResult.Success)
             {
