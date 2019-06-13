@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
@@ -33,7 +34,7 @@ namespace BusinessLogic
                     command.Parameters.Add(new SqlParameter("@Correo", alumno.Correo));
                     command.Parameters.Add(new SqlParameter("@Bloque", alumno.Bloque));
                     command.Parameters.Add(new SqlParameter("@Nombre", alumno.NombreAlumno));
-                    command.Parameters.Add(new SqlParameter("@Carrera", alumno.Visibilidad));
+                    command.Parameters.Add(new SqlParameter("@Carrera", alumno.Carrera));
                     command.Parameters.Add(new SqlParameter("@Estado", alumno.Estado));
                     command.Parameters.Add(new SqlParameter("@Visibilidad", alumno.Visibilidad));
                     command.ExecuteNonQuery();
@@ -71,6 +72,7 @@ namespace BusinessLogic
                         alumno.Carrera = reader["Carrera"].ToString();
                         alumno.Estado = reader["Estado_Asignacion"].ToString();
                         alumno.Visibilidad = reader["Visibilidad"].ToString();
+                        listaAlumno.Add(alumno);
                     }
                 }
                 connection.Close();
@@ -110,6 +112,64 @@ namespace BusinessLogic
                 connection.Close();
             }
             return alumno;
+        }
+        public Alumno GetAlumnoByMatricula(String toSearchInBD)
+        {
+            Alumno alumno = new Alumno();
+            DbConnection dbconnection = new DbConnection();
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException ex)
+                {
+                    throw (ex);
+                }
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Alumno WHERE Matricula = @MatriculaToSearch", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("MatriculaToSearch", toSearchInBD));
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        alumno.Matricula = reader["Matricula"].ToString();
+                        alumno.Seccion = reader["Seccion"].ToString();
+                        alumno.Correo = reader["Correo"].ToString();
+                        alumno.Bloque = reader["Bloque"].ToString();
+                        alumno.NombreAlumno = reader["Nombre"].ToString();
+                        alumno.Carrera = reader["Carrera"].ToString();
+                        alumno.Estado = reader["Estado_Asignacion"].ToString();
+                        alumno.Visibilidad = reader["Visibilidad"].ToString();
+                    }
+                }
+                connection.Close();
+            }
+            return alumno;
+        }
+        public AddResult DeleteAlumnoByMatricula(String toSearchInBD)
+        {
+            AddResult result = AddResult.UnknownFail;
+            DbConnection dbconnection = new DbConnection();
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException ex)
+                {
+                    throw (ex);
+                }
+                using (SqlCommand command = new SqlCommand("DELETE FROM dbo.Alumno WHERE Matricula = @MatriculaToSearch", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("MatriculaToSearch", toSearchInBD));
+                    command.ExecuteNonQuery();
+                    result = AddResult.Success;
+                }
+                connection.Close();
+            }
+            return result;
         }
     }
 }
