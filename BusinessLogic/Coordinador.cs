@@ -25,6 +25,11 @@ namespace BusinessLogic
             this.NumeroPersonal = NumeroPersonal;
         }
 
+        public Coordinador(string NombreCoordinador)
+        {
+            this.NombreCoordinador = NombreCoordinador;
+        }
+
 
     }
 }

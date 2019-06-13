@@ -77,11 +77,19 @@ namespace ServicioSocial
             
             int contador = 0;
             List<Organizacion> organizacions = controladorOrganización.ObtenerOrganizaciones();
-            foreach (Organizacion organizacion in organizacions)
+            if (!organizacions.Any())
             {
-                cbb_Organización.Items.Add(organizacions[contador].NombreOrganizacion);
-                contador++;
+                MessageBox.Show("No se encontraron organizaciones");
             }
+            else
+            {
+                foreach (Organizacion organizacion in organizacions)
+                {
+                    cbb_Organización.Items.Add(organizacions[contador].NombreOrganizacion);
+                    contador++;
+                }
+            }
+
             
         }
 

@@ -18,6 +18,7 @@ namespace BusinessLogic
             DbConnection dbconnection = new DbConnection();
             using (SqlConnection connection = dbconnection.GetConnection())
             {
+
                 connection.Open();
 
                 using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Encargado WHERE ID_Encargado = @idToSearch", connection))
@@ -38,16 +39,94 @@ namespace BusinessLogic
             }
 
             return encargado;
-        }        
-        
+        }
+
+        public Encargado GetEncargadoByNombre(string nombre)
+        {
+            Encargado encargado = new Encargado();
+            Organizacion organizacion = new Organizacion();
+            DbConnection dbconnection = new DbConnection();
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Encargado WHERE Nombre = @nombre", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("Nombre", nombre));
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        encargado.IdEncargado = reader["ID_Encargado"].ToString();
+                        encargado.NombreEncargado = reader["Nombre"].ToString();
+                        encargado.CorreoEncargado = reader["Correo"].ToString();
+                        encargado.CargoOrganizacion = reader["Cargo"].ToString();
+                        encargado.TelefonoEncargado = reader["Teléfono"].ToString();
+                        organizacion.NombreOrganizacion = reader["Organización"].ToString();
+                    }
+                }
+                connection.Close();
+            }
+            encargado.Organizacion = organizacion; 
+            return encargado;
+        }
+
+
+        public List<Encargado> GetEncargadoByOrganización(string organización)
+        {
+            List<Encargado> listaEncargados = new List<Encargado>();
+            DbConnection dbconnection = new DbConnection();
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException)
+                {
+                    return listaEncargados;
+                }
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Encargado WHERE Organización = @organizacion", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("@organizacion", organización));
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+
+                        while (reader.Read())
+                        {
+                            Encargado encargado = new Encargado();
+                            encargado.IdEncargado = reader["ID_Encargado"].ToString();
+                            encargado.NombreEncargado = reader["Nombre"].ToString();
+                            encargado.CorreoEncargado = reader["Correo"].ToString();
+                            encargado.CargoOrganizacion = reader["CARGO"].ToString();
+                            encargado.TelefonoEncargado = reader["Teléfono"].ToString();
+
+
+                            listaEncargados.Add(encargado);
+                        }
+                    }
+                }
+                connection.Close();
+            }
+
+            return listaEncargados;
+        }
+
+
+
         public List<Encargado> GetEncargado()
         {
             List<Encargado> listaEncargado = new List<Encargado>();
             DbConnection dbconnection = new DbConnection();
             using (SqlConnection connection = dbconnection.GetConnection())
             {
-                connection.Open();
-
+                try
+                {
+                 connection.Open();
+                }
+                catch (SqlException)
+                {
+                    return listaEncargado;
+                }
                 using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Encargado", connection))
                 {
                     SqlDataReader reader = command.ExecuteReader();
@@ -94,9 +173,17 @@ namespace BusinessLogic
                     command.Parameters.Add(new SqlParameter("@Cargo", encargado.CargoOrganizacion));
                     command.Parameters.Add(new SqlParameter("@Correo", encargado.CorreoEncargado));
                     command.Parameters.Add(new SqlParameter("@Telefono", encargado.TelefonoEncargado));
-                    command.Parameters.Add(new SqlParameter("Organizacion", encargado.Organizacion.NombreOrganizacion));
-                    command.ExecuteNonQuery();
-                    resultado = AddResult.Success;
+                    command.Parameters.Add(new SqlParameter("@Organizacion", encargado.Organizacion.NombreOrganizacion));
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        resultado = AddResult.Success;
+                    }
+                    catch (InvalidOperationException)
+                    {
+                        resultado = AddResult.UnknownFail;
+                    }
+
                 }
                 connection.Close();
             }

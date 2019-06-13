@@ -60,7 +60,8 @@ namespace BusinessLogic
                 }
                 catch (SqlException ex)
                 {
-                    throw (ex);
+                    //throw (ex);
+                    return listaOrganizacion;
                 }
                 using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Empresa", connection))
                 {

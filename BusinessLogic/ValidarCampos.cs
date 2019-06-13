@@ -52,5 +52,17 @@ namespace BusinessLogic
             }
             return ResultadosValidación.Correoinválido;
         }
+
+        public ResultadosValidación ValidarNumAlumnos(string numAlumnos)
+        {
+            string patrón = @"^[0-3]$";
+            if(Regex.IsMatch(numAlumnos, patrón))
+            {
+                return ResultadosValidación.NúmeroVálido;
+            }
+            return ResultadosValidación.NúmeroInválido;
+        }
+
+
     }
 }
