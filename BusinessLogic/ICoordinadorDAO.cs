@@ -1,13 +1,14 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
     public interface ICoordinadorDAO
-    {
-        void AddCoordinador(Coordinador coordinador);
+    {        
+        AddResult AddCoordinador(Coordinador coordinador);
     }
 }

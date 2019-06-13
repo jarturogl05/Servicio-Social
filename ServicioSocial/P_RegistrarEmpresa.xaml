@@ -1,0 +1,27 @@
+﻿<Window x:Class="ServicioSocial.P_RegistrarEmpresa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServicioSocial"
+        mc:Ignorable="d"
+        Title="Registrar Empresa" Height="800" Width="640">
+    <Grid>
+        <Label x:Name="labelRFC" Content="RFC" HorizontalAlignment="Left" Margin="43,81,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
+        <Label x:Name="labelCorreo" Content="Correo" HorizontalAlignment="Left" Margin="43,477,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
+        <Label x:Name="labelSector" Content="Sector" HorizontalAlignment="Left" Margin="43,315,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
+        <Label x:Name="labelDireccion" Content="Direccion" HorizontalAlignment="Left" Margin="43,247,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
+        <Label x:Name="labelTelefono" Content="Telefono" HorizontalAlignment="Left" Margin="43,395,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
+        <Label x:Name="labelNombre" Content="Nombre de la empresa" HorizontalAlignment="Left" Margin="43,162,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
+        <TextBox x:Name="textboxCorreo" HorizontalAlignment="Left" Height="29" Margin="321,482,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
+        <TextBox x:Name="textboxDireccion" HorizontalAlignment="Left" Height="29" Margin="321,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
+        <TextBox x:Name="textboxRFC" HorizontalAlignment="Left" Height="29" Margin="321,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
+        <TextBox x:Name="textboxNombre" HorizontalAlignment="Left" Height="29" Margin="321,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
+        <TextBox x:Name="textboxTelefono" HorizontalAlignment="Left" Height="29" Margin="321,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
+        <TextBox x:Name="textboxSector" HorizontalAlignment="Left" Height="29" Margin="321,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
+        <Button x:Name="buttonGuardar" Content="Aceptar" HorizontalAlignment="Left" Margin="139,610,0,0" VerticalAlignment="Top" Width="129" FontSize="20" FontFamily="Arial" Click="ButtonGuardar_Click" Height="38"/>
+        <Button x:Name="buttonCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="386,610,0,0" VerticalAlignment="Top" Width="129" FontSize="20" FontFamily="Arial" Click="ButtonCancelar_Click" Height="38"/>
+        <TextBlock x:Name="textblockTitle" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Registrar Empresa" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+
+    </Grid>
+</Window>
