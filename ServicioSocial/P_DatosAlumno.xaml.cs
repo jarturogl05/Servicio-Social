@@ -16,7 +16,7 @@ using System.Windows.Shapes;
 namespace ServicioSocial
 {
     /// <summary>
-    /// Interaction logic for P_RegistrarEmpresa.xaml
+    /// Interaction logic for P_DatosAlumno.xaml
     /// </summary>
     public partial class P_DatosAlumno : Window
     {
