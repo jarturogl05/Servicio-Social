@@ -40,8 +40,9 @@ namespace BusinessLogic
             this.Encargado = encargado;
         }
 
-        public Proyecto(string nombreproyecto, int numAlumnos, Encargado encargado)
+        public Proyecto(int idProyecto, string nombreproyecto, int numAlumnos, Encargado encargado)
         {
+            this.IDProyecto = idProyecto;
             this.NombreProyecto = nombreproyecto;
             this.NumeroAlumnos = numAlumnos;
             this.Encargado = Encargado;
