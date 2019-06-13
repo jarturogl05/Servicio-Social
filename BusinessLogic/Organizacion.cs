@@ -27,5 +27,9 @@ namespace BusinessLogic
             this.Sector = sector;
             this.CorreoOrganizacion = correo;
         }
+        public override String ToString()
+        {
+            return rfc;
+        }
     }
 }
