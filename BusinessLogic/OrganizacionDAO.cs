@@ -58,9 +58,9 @@ namespace BusinessLogic
                 {
                     connection.Open();
                 }
-                catch (SqlException ex)
+                catch (SqlException )
                 {
-                    //throw (ex);
+                    
                     return listaOrganizacion;
                 }
                 using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Empresa", connection))

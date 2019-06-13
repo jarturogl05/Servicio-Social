@@ -19,9 +19,9 @@ namespace BusinessLogic
             return proyectoDAO.AddProyecto(proyecto);
         }
 
-        public List<Proyecto> obtenerProyectos()
+        public List<Proyecto> ObtenerProyectos()
         {
-            List<Proyecto> proyectos = proyectoDAO.GetProyectos();
+            List<Proyecto> proyectos = proyectoDAO.GetProyectosGrid();
             return proyectos;
         }
     }

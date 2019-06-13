@@ -7,7 +7,15 @@
         mc:Ignorable="d"
         Title="P_ProyectosEspera" Height="450" Width="800">
     <Grid>
-        <DataGrid x:Name="dgrid_ProyectosEspera" HorizontalAlignment="Left" Height="229" Margin="61,61,0,0" VerticalAlignment="Top" Width="606"/>
+        <DataGrid x:Name="dgrid_ProyectosEspera" HorizontalAlignment="Left" Height="229" Margin="61,61,0,0" VerticalAlignment="Top" Width="606" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn/>
+                <DataGridTextColumn Header="Nombre" Binding="{Binding NombreProyecto}"/>
+                <DataGridTextColumn Header="Número de alumnos" Binding="{Binding NumeroAlumnos}"/>
+                
+
+            </DataGrid.Columns>
+        </DataGrid>
         <Button Content="Aceptar" HorizontalAlignment="Left" Margin="383,340,0,0" VerticalAlignment="Top" Width="127" FontSize="20"/>
         <Button Content="Cancelar" HorizontalAlignment="Left" Margin="565,340,0,0" VerticalAlignment="Top" Width="127" FontSize="20"/>
 

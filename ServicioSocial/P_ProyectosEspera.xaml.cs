@@ -32,7 +32,7 @@ namespace ServicioSocial
 
         public void LlenarGrid()
         {
-            List<Proyecto> proyectos = ControladorProyecto.obtenerProyectos();
+            List<Proyecto> proyectos = ControladorProyecto.ObtenerProyectos();
             if (!proyectos.Any())
             {
                 MessageBox.Show("No se encontraron proyectos");

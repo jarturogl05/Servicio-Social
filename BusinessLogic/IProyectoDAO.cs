@@ -10,6 +10,7 @@ namespace BusinessLogic
     interface IProyectoDAO
     {
        List<Proyecto> GetProyectos();
+        List<Proyecto> GetProyectosGrid();
        AddResult AddProyecto(Proyecto proyecto);
         Proyecto GetProyectoByID(String idToSearch);
        

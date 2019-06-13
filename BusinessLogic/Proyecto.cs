@@ -39,6 +39,13 @@ namespace BusinessLogic
             this.Coordinador = coordinador;
             this.Encargado = encargado;
         }
+
+        public Proyecto(string nombreproyecto, int numAlumnos, Encargado encargado)
+        {
+            this.NombreProyecto = nombreproyecto;
+            this.NumeroAlumnos = numAlumnos;
+            this.Encargado = Encargado;
+        }
     }
 
    
