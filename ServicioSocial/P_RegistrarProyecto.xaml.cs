@@ -43,7 +43,7 @@ namespace ServicioSocial
             if(ValidarCamposVacios() && ValidarNumAlumnos())
             {
                 if(ControladorProyecto.AddProyecto(txb_NombreProyecto.Text, int.Parse(txb_NúmeroAlumnos.Text),txb_Lugar.Text,
-                    txb_Horario.Text,txb_Actividades.Text, txb_Requisitos.Text, cbb_Responsable.Text) == AddEnum.AddResult.Success)
+                    txb_Horario.Text,txb_Actividades.Text, txb_Requisitos.Text, cbb_Responsable.SelectedItem) == AddEnum.AddResult.Success)
                 {
                     MessageBox.Show("Proyecto agregado con éxito");
 
@@ -83,7 +83,7 @@ namespace ServicioSocial
 
         public void LlenarOrganizaciones()
         {
-            int contador = 0;
+            
             List<Organizacion> organizacions = controladorOrganización.ObtenerOrganizaciones();
             if (!organizacions.Any())
             {
@@ -91,31 +91,23 @@ namespace ServicioSocial
             }
             else
             {
-                foreach (Organizacion organizacion in organizacions)
-                {
-                    cbb_organización.Items.Add(organizacions[contador].NombreOrganizacion);
-                    contador++;
-                }
+                cbb_organización.ItemsSource = organizacions;
             }
 
         }
 
         private void LlenarEncargados()
         {
-            int contador = 0;
+           
             
-            List<Encargado> encargados = controladorEncargado.GetEncargados(cbb_organización.SelectedItem.ToString());
+            List<Encargado> encargados = controladorEncargado.GetEncargados(cbb_organización.SelectedItem);
             if (!encargados.Any())
             {
                 MessageBox.Show("No se encontraron encargados");
             }
             else
             {
-                foreach (Encargado encargado in encargados)
-                {
-                    cbb_Responsable.Items.Add(encargados[contador].NombreEncargado);
-                    contador++;
-                }
+                cbb_Responsable.ItemsSource = encargados;
             } 
             
 

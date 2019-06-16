@@ -31,5 +31,10 @@ namespace BusinessLogic
         {
             return rfc;
         }
+
+        public Organizacion(string nombre)
+        {
+            this.NombreOrganizacion = nombre;
+        }
     }
 }

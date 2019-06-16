@@ -3,6 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        WindowStartupLocation="CenterScreen"
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
         Title="P_RegistrarProyecto" Height="952" Width="688">
@@ -22,8 +23,16 @@
             <TextBox x:Name="txb_Lugar" HorizontalAlignment="Left" Height="40" Margin="303,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20"/>
             <TextBox x:Name="txb_Horario" HorizontalAlignment="Left" Height="40" Margin="303,447,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20"/>
             <TextBox x:Name="txb_Requisitos" HorizontalAlignment="Left" Height="59" Margin="303,514,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20"/>
-            <ComboBox x:Name="cbb_organización" HorizontalAlignment="Left" Margin="303,613,0,0" VerticalAlignment="Top" Width="308" Height="40" FontSize="20" SelectionChanged="Cbb_organización_SelectionChanged"></ComboBox>
-            <ComboBox x:Name="cbb_Responsable" HorizontalAlignment="Left" Margin="303,688,0,0" VerticalAlignment="Top" Width="308" Height="40" FontSize="20"/>
+            <ComboBox x:Name="cbb_organización" HorizontalAlignment="Left" Margin="303,613,0,0" VerticalAlignment="Top" Width="308" Height="40" FontSize="20" SelectionChanged="Cbb_organización_SelectionChanged"
+                  ItemsSource="{Binding organizacions}" 
+                 DisplayMemberPath="NombreOrganizacion" 
+                 SelectedItem="{Binding Organizacion}"                      
+                      ></ComboBox>
+            <ComboBox x:Name="cbb_Responsable" HorizontalAlignment="Left" Margin="303,688,0,0" VerticalAlignment="Top" Width="308" Height="40" FontSize="20"
+                  ItemsSource="{Binding Encargados}" 
+                 DisplayMemberPath="NombreEncargado" 
+                 SelectedItem="{Binding Encargado}"                        
+                      />
             <Button x:Name="btn_Aceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="266,810,0,0" VerticalAlignment="Top" Width="110" Height="37" FontSize="20" Click="Btn_Aceptar_Click"/>
             <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="466,810,0,0" VerticalAlignment="Top" Width="110" Height="37" FontSize="20"/>
 

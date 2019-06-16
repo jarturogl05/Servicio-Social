@@ -15,5 +15,12 @@ namespace BusinessLogic
             return organizacions;
         }
 
+        public String GetOrganizacionByEmpleado(string IDEncargado)
+        {
+            OrganizacionDAO organizacionDAO = new OrganizacionDAO();
+            Organizacion organizacion = organizacionDAO.GetOrganizacionByEncargado(IDEncargado);
+            return organizacion.NombreOrganizacion;
+        }
+
     }
 }

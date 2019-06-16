@@ -24,6 +24,7 @@ namespace ServicioSocial
         {
 
             InitializeComponent();
+
             LlenarOrganizaciones();
 
 
@@ -39,7 +40,7 @@ namespace ServicioSocial
             if(ValidarCamposVacios() && ValidarCorreo())
             {
                 if(controladorEncargado.AñadirEncargado(txb_NombreCompleto.Text, txb_Cargo.Text, txt_Teléfono.Text , tbx_CorreoElectrónico.Text 
-                    ,cbb_Organización.Text) == AddEnum.AddResult.Success)
+                    ,cbb_Organización.SelectedItem) == AddEnum.AddResult.Success)
                 {
                     MessageBox.Show("Encargado Agregado con éxito");
                 }
@@ -75,7 +76,6 @@ namespace ServicioSocial
         private void LlenarOrganizaciones()
         {
             
-            int contador = 0;
             List<Organizacion> organizacions = controladorOrganización.ObtenerOrganizaciones();
             if (!organizacions.Any())
             {
@@ -83,16 +83,11 @@ namespace ServicioSocial
             }
             else
             {
-                foreach (Organizacion organizacion in organizacions)
-                {
-                    cbb_Organización.Items.Add(organizacions[contador].NombreOrganizacion);
-                    contador++;
-                }
+                cbb_Organización.ItemsSource = organizacions;
             }
 
             
         }
-
 
 
     }

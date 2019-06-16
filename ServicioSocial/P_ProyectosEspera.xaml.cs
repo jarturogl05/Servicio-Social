@@ -20,6 +20,8 @@ namespace ServicioSocial
     /// </summary>
     public partial class P_ProyectosEspera : Window
     {
+
+        const int POSICION_FUERARANGO = -1;
         public P_ProyectosEspera()
         {
             InitializeComponent();
@@ -45,6 +47,21 @@ namespace ServicioSocial
 
         }
 
+        private void Btn_MostrarInfo_Click(object sender, RoutedEventArgs e)
+        {
+            int posición = dgrid_ProyectosEspera.SelectedIndex;
+            if(posición != POSICION_FUERARANGO)
+            {
+                Proyecto proyecto = (Proyecto)dgrid_ProyectosEspera.SelectedItem;
+                P_InfoProyecto p_InfoProyecto = new P_InfoProyecto(proyecto);
+                p_InfoProyecto.Show();
 
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar un proyecto");
+            }
+
+        }
     }
 }
