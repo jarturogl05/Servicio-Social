@@ -47,10 +47,10 @@ namespace BusinessLogic
             using (SqlConnection connection = dbConnection.GetConnection())
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("INSERT INTO dbo.Proyecto VALUES (@IDProyecto, @Nombre, @NumeroDeAlumnos," +
+                using (SqlCommand command = new SqlCommand("INSERT INTO dbo.Proyecto VALUES (@Nombre, @NumeroDeAlumnos," +
                     " @EstadoProyecto, @Horario, @Lugar, @Actividades, @Requisitos, @Coordinador, @Encargado)", connection)) 
                 {
-                    command.Parameters.Add(new SqlParameter("@IDProyecto", proyecto.IDProyecto));
+                    
                     command.Parameters.Add(new SqlParameter("@Nombre",proyecto.NombreProyecto));
                     command.Parameters.Add(new SqlParameter("@NumeroDeAlumnos", proyecto.NumeroAlumnos));
                     command.Parameters.Add(new SqlParameter("@EstadoProyecto", proyecto.EstadoProyecto));
@@ -59,7 +59,7 @@ namespace BusinessLogic
                     command.Parameters.Add(new SqlParameter("@Actividades", proyecto.Actividades));
                     command.Parameters.Add(new SqlParameter("@Requisitos", proyecto.Requisitos));
                     command.Parameters.Add(new SqlParameter("@Coordinador", proyecto.Coordinador.NombreCoordinador));
-                    command.Parameters.Add(new SqlParameter("@Encargado", proyecto.Encargado.NombreEncargado));
+                    command.Parameters.Add(new SqlParameter("@Encargado", proyecto.Encargado.IdEncargado));
                     command.ExecuteNonQuery();
                     resultado = AddResult.Success;
                     
@@ -106,7 +106,7 @@ namespace BusinessLogic
                         proyecto.Coordinador.NombreCoordinador = reader["Coordinador"].ToString();
                         proyecto.Encargado.NombreEncargado = reader["Encargado"].ToString();
                         coordinador.NombreCoordinador = reader["Coordinador"].ToString();
-                        encargado.NombreEncargado = reader["Encargado"].ToString();
+                        encargado.IdEncargado = reader["Encargado"].ToString();
                         proyecto.Coordinador = coordinador;
                         proyecto.Encargado = encargado;
                         proyectos.Add(proyecto);

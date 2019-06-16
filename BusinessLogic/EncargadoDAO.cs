@@ -27,12 +27,11 @@ namespace BusinessLogic
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
-                        encargado.IdEncargado = reader["ID_Encargado"].ToString();
                         encargado.NombreEncargado = reader["Nombre"].ToString();
                         encargado.CorreoEncargado = reader["Correo"].ToString();
-                        encargado.CargoOrganizacion = reader["CARGO"].ToString();
-                        encargado.TelefonoEncargado = reader["TELEFONO"].ToString();
-                        encargado.Organizacion.NombreOrganizacion = reader["ORGANIZACION"].ToString();
+                        encargado.CargoOrganizacion = reader["Cargo"].ToString();
+                        encargado.TelefonoEncargado = reader["Teléfono"].ToString();
+
                     }
                 }
                 connection.Close();
@@ -61,7 +60,7 @@ namespace BusinessLogic
                         encargado.CorreoEncargado = reader["Correo"].ToString();
                         encargado.CargoOrganizacion = reader["Cargo"].ToString();
                         encargado.TelefonoEncargado = reader["Teléfono"].ToString();
-                        organizacion.NombreOrganizacion = reader["Organización"].ToString();
+                        organizacion.rfc = reader["Organización"].ToString();
                     }
                 }
                 connection.Close();
@@ -71,9 +70,10 @@ namespace BusinessLogic
         }
 
 
-        public List<Encargado> GetEncargadoByOrganización(string organización)
+        public List<Encargado> GetEncargadoByOrganización(Organizacion organización)
         {
             List<Encargado> listaEncargados = new List<Encargado>();
+            
             DbConnection dbconnection = new DbConnection();
             using (SqlConnection connection = dbconnection.GetConnection())
             {
@@ -87,7 +87,7 @@ namespace BusinessLogic
                 }
                 using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Encargado WHERE Organización = @organizacion", connection))
                 {
-                    command.Parameters.Add(new SqlParameter("@organizacion", organización));
+                    command.Parameters.Add(new SqlParameter("@organizacion", organización.rfc));
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
 
@@ -173,7 +173,7 @@ namespace BusinessLogic
                     command.Parameters.Add(new SqlParameter("@Cargo", encargado.CargoOrganizacion));
                     command.Parameters.Add(new SqlParameter("@Correo", encargado.CorreoEncargado));
                     command.Parameters.Add(new SqlParameter("@Telefono", encargado.TelefonoEncargado));
-                    command.Parameters.Add(new SqlParameter("@Organizacion", encargado.Organizacion.NombreOrganizacion));
+                    command.Parameters.Add(new SqlParameter("@Organizacion", encargado.Organizacion.rfc));
                     try
                     {
                         command.ExecuteNonQuery();

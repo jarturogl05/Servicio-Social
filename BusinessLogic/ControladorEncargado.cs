@@ -12,16 +12,24 @@ namespace BusinessLogic
         EncargadoDAO encargadoDAO = new EncargadoDAO();
         OrganizacionDAO organizacionDAO = new OrganizacionDAO();
 
-        public AddResult AñadirEncargado(string nombre, string cargo, string teléfono, string correo, string Nombreorganización)
+        public AddResult AñadirEncargado(string nombre, string cargo, string teléfono, string correo, Object organizacionSelected)
         {
-            Organizacion organizacion = organizacionDAO.GetOrganizacionByName(Nombreorganización);
-            Encargado encargado = new Encargado(nombre, cargo, correo, teléfono, organizacion);
+            //Organizacion organizacion = (Organizacion)organizacionSelected;
+           // Organizacion organizacion = organizacionDAO.GetOrganizacionByName(Nombreorganización);
+            Encargado encargado = new Encargado(nombre, cargo, correo, teléfono, (Organizacion)organizacionSelected);
             return encargadoDAO.AddEncargado(encargado);
         }
 
-        public List<Encargado> GetEncargados(string organización)
+        public List<Encargado> GetEncargados(Object organización)
         {
-            return encargadoDAO.GetEncargadoByOrganización(organización);
+            return encargadoDAO.GetEncargadoByOrganización((Organizacion) organización);
+        }
+
+        public string GetEncargado(string idEncarado)
+        {
+            Encargado encargado = encargadoDAO.GetEncargadoByID(idEncarado);
+            return encargado.NombreEncargado;
+
         }
     }
 }

@@ -11,6 +11,7 @@ namespace BusinessLogic
     {
         List<Organizacion> GetOrganizacion();
         Organizacion GetOrganizacionByName(String idToSearch);
+        Organizacion GetOrganizacionByEncargado(string OrganizacionEncargado);
         AddResult AddOrganizacion(Organizacion organizacion);
     }
 }

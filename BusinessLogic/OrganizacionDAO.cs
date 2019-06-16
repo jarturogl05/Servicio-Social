@@ -164,5 +164,37 @@ namespace BusinessLogic
             return result;
 
         }
+
+        public Organizacion GetOrganizacionByEncargado(string IDEncargado)
+        {
+            Organizacion organizacion = new Organizacion();
+            DbConnection dbconnection = new DbConnection();
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException ex)
+                {
+                    throw (ex);
+                }
+                using (SqlCommand command = new SqlCommand("Select Organizacion.Nombre From Organizacion, Encargado where Organizacion.RFC = Encargado.Organización and ID_Encargado = @IDEncargado", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("IDEncargado", IDEncargado));
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        organizacion.NombreOrganizacion = reader["Nombre"].ToString();
+
+
+                    }
+                }
+                connection.Close();
+            }
+            return organizacion;
+        }
+
+
     }
 }
