@@ -39,7 +39,7 @@ namespace ServicioSocial
             if(ValidarCamposVacios() && ValidarCorreo())
             {
                 if(controladorEncargado.AñadirEncargado(txb_NombreCompleto.Text, txb_Cargo.Text, txt_Teléfono.Text , tbx_CorreoElectrónico.Text 
-                    ,cbb_Organización.Text) == AddResult.Success)
+                    ,cbb_Organización.Text) == AddEnum.AddResult.Success)
                 {
                     MessageBox.Show("Encargado Agregado con éxito");
                 }

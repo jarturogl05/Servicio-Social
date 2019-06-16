@@ -14,7 +14,7 @@ namespace BusinessLogic
     {
         public AddResult AddOrganizacion(Organizacion organizacion)
         {
-            AddResult resultado = AddResult.UnknownFail;
+            AddResult resultado = AddResult.UnknowFail;
             DbConnection dbConnection = new DbConnection();
             using (SqlConnection connection = dbConnection.GetConnection())
             {
@@ -142,7 +142,7 @@ namespace BusinessLogic
         public AddResult DeleteOrganizacionByRFC(String toDeleteInDB)
         {
             DbConnection dbconnection = new DbConnection();
-            AddResult result = AddResult.UnknownFail;
+            AddResult result = AddResult.UnknowFail;
             using (SqlConnection connection = dbconnection.GetConnection())
             {
                 try

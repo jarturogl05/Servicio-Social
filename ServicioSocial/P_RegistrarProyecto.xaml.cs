@@ -43,7 +43,7 @@ namespace ServicioSocial
             if(ValidarCamposVacios() && ValidarNumAlumnos())
             {
                 if(ControladorProyecto.AddProyecto(txb_NombreProyecto.Text, int.Parse(txb_NúmeroAlumnos.Text),txb_Lugar.Text,
-                    txb_Horario.Text,txb_Actividades.Text, txb_Requisitos.Text, cbb_Responsable.Text) == AddResult.Success)
+                    txb_Horario.Text,txb_Actividades.Text, txb_Requisitos.Text, cbb_Responsable.Text) == AddEnum.AddResult.Success)
                 {
                     MessageBox.Show("Proyecto agregado con éxito");
 
