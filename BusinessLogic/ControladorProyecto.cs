@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
@@ -10,6 +11,7 @@ namespace BusinessLogic
     {
         ProyectoDAO proyectoDAO = new ProyectoDAO();
         EncargadoDAO encargadoDAO = new EncargadoDAO();
+
         public AddResult AddProyecto(string nombreProyecto, int numAlumnos, string lugar, string horario,
             string actividades, string requisitos, string responsable )
         {
@@ -19,7 +21,7 @@ namespace BusinessLogic
             return proyectoDAO.AddProyecto(proyecto);
         }
 
-        public List<Proyecto> obtenerProyectos()
+        public List<Proyecto> ObtenerProyectos()
         {
             List<Proyecto> proyectos = proyectoDAO.GetProyectos();
             return proyectos;

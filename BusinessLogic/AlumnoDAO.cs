@@ -13,7 +13,7 @@ namespace BusinessLogic
     {
         public AddResult AddAlumno(Alumno alumno)
         {
-            AddResult resultado = AddResult.UnknownFail;
+            AddResult resultado = AddResult.UnknowFail;
             DbConnection dbConnection = new DbConnection();
             using (SqlConnection connection = dbConnection.GetConnection())
             {
@@ -149,7 +149,7 @@ namespace BusinessLogic
         }
         public AddResult DeleteAlumnoByMatricula(String toSearchInBD)
         {
-            AddResult result = AddResult.UnknownFail;
+            AddResult result = AddResult.UnknowFail;
             DbConnection dbconnection = new DbConnection();
             using (SqlConnection connection = dbconnection.GetConnection())
             {

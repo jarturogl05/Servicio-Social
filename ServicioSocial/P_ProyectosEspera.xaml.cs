@@ -26,13 +26,13 @@ namespace ServicioSocial
             LlenarGrid();
         }
 
-        ControladorProyecto ControladorProyecto = new ControladorProyecto();
+        ControladorProyecto controladorProyecto = new ControladorProyecto();
 
 
 
         public void LlenarGrid()
         {
-            List<Proyecto> proyectos = ControladorProyecto.obtenerProyectos();
+            List<Proyecto> proyectos = controladorProyecto.ObtenerProyectos();
             if (!proyectos.Any())
             {
                 MessageBox.Show("No se encontraron proyectos");

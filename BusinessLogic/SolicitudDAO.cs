@@ -13,7 +13,7 @@ namespace BusinessLogic
     {
         public AddResult AddSolicitud(Solicitud solicitud)
         {
-            AddResult resultado = AddResult.UnknownFail;
+            AddResult resultado = AddResult.UnknowFail;
             DbConnection dbConnection = new DbConnection();
             using (SqlConnection connection = dbConnection.GetConnection())
             {

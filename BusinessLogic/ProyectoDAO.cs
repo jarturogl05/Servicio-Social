@@ -42,7 +42,7 @@ namespace BusinessLogic
 
         public AddResult AddProyecto(Proyecto proyecto)
         {
-            AddResult resultado = AddResult.UnknownFail;
+            AddResult resultado = AddResult.UnknowFail;
             DbConnection dbConnection = new DbConnection();
             using (SqlConnection connection = dbConnection.GetConnection())
             {
@@ -83,8 +83,8 @@ namespace BusinessLogic
                 {
                     return proyectos;
                 }
-                
-                using(SqlCommand command = new SqlCommand("SELECT * FROM PROYECTO WHERE Estado_Proyecto = Disponible", connection))
+
+                using (SqlCommand command = new SqlCommand("SELECT * FROM PROYECTO WHERE Estado_Proyecto = 'Disponible'", connection))
                 {
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
@@ -105,6 +105,10 @@ namespace BusinessLogic
                         proyecto.Requisitos = reader["Requisitos"].ToString();
                         proyecto.Coordinador.NombreCoordinador = reader["Coordinador"].ToString();
                         proyecto.Encargado.NombreEncargado = reader["Encargado"].ToString();
+                        coordinador.NombreCoordinador = reader["Coordinador"].ToString();
+                        encargado.NombreEncargado = reader["Encargado"].ToString();
+                        proyecto.Coordinador = coordinador;
+                        proyecto.Encargado = encargado;
                         proyectos.Add(proyecto);
                             
                     }
@@ -113,5 +117,44 @@ namespace BusinessLogic
             }
             return proyectos;
         }
+
+        public List<Proyecto> GetProyectosGrid()
+        {
+            List<Proyecto> proyectos = new List<Proyecto>();
+            DbConnection dbConnection = new DbConnection();
+            using (SqlConnection connection = dbConnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException)
+                {
+                    return proyectos;
+                }
+
+                using (SqlCommand command = new SqlCommand("SELECT ID_proyecto, Nombre, Número_Alumnos,Encargado FROM PROYECTO WHERE Estado_Proyecto = 'Disponible'", connection))
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        Proyecto proyecto = new Proyecto();
+                        Coordinador coordinador = new Coordinador();
+                        Encargado encargado = new Encargado();
+                        proyecto.IDProyecto = Convert.ToInt32(reader["ID_proyecto"].ToString());
+                        proyecto.NombreProyecto = reader["Nombre"].ToString();
+                        proyecto.NumeroAlumnos = Convert.ToInt32(reader["Número_Alumnos"].ToString());
+                        encargado.NombreEncargado = reader["Encargado"].ToString();
+                        proyecto.Encargado = encargado;
+                        proyectos.Add(proyecto);
+
+                    }
+                }
+                connection.Close();
+            }
+            return proyectos;
+        }
     }
 }
+
+
