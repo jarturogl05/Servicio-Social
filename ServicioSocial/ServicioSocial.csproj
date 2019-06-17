@@ -222,5 +222,8 @@
   <ItemGroup>
     <None Include="Resources\FEI.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="UV.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

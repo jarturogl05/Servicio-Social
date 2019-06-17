@@ -15,7 +15,7 @@ namespace BusinessLogic
         public AddResult AddProyecto(string nombreProyecto, int numAlumnos, string lugar, string horario,
             string actividades, string requisitos, Object responsable )
         {
-            Coordinador coordinador = new Coordinador("Juan");
+            Coordinador coordinador = new Coordinador(14254);
            
             Proyecto proyecto = new Proyecto(nombreProyecto, numAlumnos, "Disponible", horario, lugar, actividades, requisitos, coordinador, (Encargado)responsable);
             return proyectoDAO.AddProyecto(proyecto);

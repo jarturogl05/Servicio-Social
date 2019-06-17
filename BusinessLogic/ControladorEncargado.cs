@@ -14,8 +14,6 @@ namespace BusinessLogic
 
         public AddResult AñadirEncargado(string nombre, string cargo, string teléfono, string correo, Object organizacionSelected)
         {
-            //Organizacion organizacion = (Organizacion)organizacionSelected;
-           // Organizacion organizacion = organizacionDAO.GetOrganizacionByName(Nombreorganización);
             Encargado encargado = new Encargado(nombre, cargo, correo, teléfono, (Organizacion)organizacionSelected);
             return encargadoDAO.AddEncargado(encargado);
         }

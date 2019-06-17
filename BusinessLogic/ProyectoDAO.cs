@@ -58,7 +58,7 @@ namespace BusinessLogic
                     command.Parameters.Add(new SqlParameter("@Lugar", proyecto.Lugar));
                     command.Parameters.Add(new SqlParameter("@Actividades", proyecto.Actividades));
                     command.Parameters.Add(new SqlParameter("@Requisitos", proyecto.Requisitos));
-                    command.Parameters.Add(new SqlParameter("@Coordinador", proyecto.Coordinador.NombreCoordinador));
+                    command.Parameters.Add(new SqlParameter("@Coordinador", proyecto.Coordinador.NumeroPersonal));
                     command.Parameters.Add(new SqlParameter("@Encargado", proyecto.Encargado.IdEncargado));
                     command.ExecuteNonQuery();
                     resultado = AddResult.Success;
@@ -154,6 +154,8 @@ namespace BusinessLogic
             }
             return proyectos;
         }
+
+
     }
 }
 

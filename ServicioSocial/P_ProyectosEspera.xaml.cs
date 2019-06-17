@@ -30,6 +30,7 @@ namespace ServicioSocial
         }
 
         ControladorProyecto controladorProyecto = new ControladorProyecto();
+        ControladorSolicitud controladorSolicitud = new ControladorSolicitud();
 
 
 
@@ -67,14 +68,17 @@ namespace ServicioSocial
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            List<Proyecto> proyectosSeleccionados = SelecciónProyectos();
-            if (proyectosSeleccionados.Count ==3)
+            if (ValidarSeleccion())
             {
-
-            }
-            else
-            {     
-                    MessageBox.Show("Debes de elegir 3 proyectos");
+                List<Proyecto> proyectosSeleccionados = SelecciónProyectos();
+                if (controladorSolicitud.AñadirSolicitud(proyectosSeleccionados) == AddEnum.AddResult.Success)
+                {
+                    MessageBox.Show("Solicitud creada con éxito");
+                }
+                else
+                {
+                    MessageBox.Show("No se pudo registrar la solicitud");
+                }
             }
         }
 
@@ -94,8 +98,21 @@ namespace ServicioSocial
             return proyectos;
         }
 
-
-
-
+        public bool ValidarSeleccion()
+        {
+            if (SelecciónProyectos().Count == 3)
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Debes de elegir 3 proyectos");
+                return false;
+            }
+        }
     }
+
+
+
 }
+

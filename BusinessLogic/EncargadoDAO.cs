@@ -18,9 +18,15 @@ namespace BusinessLogic
             DbConnection dbconnection = new DbConnection();
             using (SqlConnection connection = dbconnection.GetConnection())
             {
-
-                connection.Open();
-
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException)
+                {
+                    return encargado;
+                }
+                
                 using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Encargado WHERE ID_Encargado = @idToSearch", connection))
                 {
                     command.Parameters.Add(new SqlParameter("idToSearch", toSearch));

@@ -39,7 +39,7 @@ namespace ServicioSocial
         {
 
 
-            if (ValidarCamposVacios() && ValidarPassword() && ValidarNúmeroPersonal())
+            if ( ValidarCamposVacios() && ValidarPassword() && ValidarNúmeroPersonal())
             {
                 if(controladorCoordinador.AñadirCoordinador(txb_NombreCompleto.Text,txb_NúmeroPersonal.Text, cbb_Carrera.Text) == AddEnum.AddResult.Success)
                 {
@@ -86,6 +86,8 @@ namespace ServicioSocial
             }
             return true;
         }
+
+
 
 
     
