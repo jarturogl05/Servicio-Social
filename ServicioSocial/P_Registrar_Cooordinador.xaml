@@ -6,24 +6,26 @@
         xmlns:local="clr-namespace:ServicioSocial"
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
-        Title="P_Registrar_Cooordinador" Height="700" Width="640">
+        Title="Registrar Cooordinador" Height="700" Width="640" ResizeMode="CanMinimize">
     <Grid>
         <Label Content="Nombre Completo" HorizontalAlignment="Left" Margin="34,202,0,0" VerticalAlignment="Top" Height="34" Width="187" FontSize="20"/>
         <Label Content="Número Personal" HorizontalAlignment="Left" Margin="34,274,0,0" VerticalAlignment="Top" Width="187" FontSize="20"/>
         <Label Content="Carrera" HorizontalAlignment="Left" Margin="34,358,0,0" VerticalAlignment="Top" Width="187" FontSize="20"/>
         <Label Content="Contraseña" HorizontalAlignment="Left" Margin="34,443,0,0" VerticalAlignment="Top" Width="187" FontSize="20"/>
-        <TextBox x:Name="txb_NombreCompleto" HorizontalAlignment="Left" Height="37" Margin="276,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310"  SpellCheck.IsEnabled="True" FontSize="20"/>
-        <TextBox x:Name="txb_NúmeroPersonal" HorizontalAlignment="Left" Height="37" Margin="276,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20"/>
+        <TextBox x:Name="txb_NombreCompleto" HorizontalAlignment="Left" Height="37" Margin="276,199,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="310"  SpellCheck.IsEnabled="True" FontSize="20" MaxLength="50"/>
+        <TextBox x:Name="txb_NúmeroPersonal" HorizontalAlignment="Left" Height="37" Margin="276,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" FontSize="20" MaxLength="15"/>
         <ComboBox x:Name="cbb_Carrera" HorizontalAlignment="Left" Margin="276,358,0,0" VerticalAlignment="Top" Width="310" Height="37" FontSize="20" SelectionChanged="Cbb_Carrera_SelectionChanged">
             <ComboBoxItem Content="Ingeniería De Software" HorizontalAlignment="Left" Width="270"/>
             <ComboBoxItem Content="Redes y Servicios de Cómputo" HorizontalAlignment="Left" Width="270"/>
             <ComboBoxItem Content="Tecnologías Computacionales" HorizontalAlignment="Left" Width="270"/>
             <ComboBoxItem Content="Estadística" HorizontalAlignment="Left" Width="270"/>
-          
+
         </ComboBox>
         <PasswordBox x:Name="psb_Contraseña" HorizontalAlignment="Left"  Height="37" Margin="276,443,0,0" VerticalAlignment="Top" Width="310" FontSize="20"/>
         <Button x:Name="btn_Aceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="276,558,0,0" VerticalAlignment="Top" Width="118" Height="35" FontSize="20" Click="Btn_Aceptar_Click"/>
         <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="453,558,0,0" VerticalAlignment="Top" Width="113" Height="35" FontSize="20"/>
+        <Image Margin="377,10,10,523" Source="UV.png" Stretch="Fill"/>
+        <TextBlock HorizontalAlignment="Left" Margin="34,72,0,0" TextWrapping="Wrap" Text="Registrar Coordinador" VerticalAlignment="Top" Height="74" Width="263" FontSize="22" TextDecorations="{x:Null}" FontWeight="Bold"/>
 
     </Grid>
 </Window>

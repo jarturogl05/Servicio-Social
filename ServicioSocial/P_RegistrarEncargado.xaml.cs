@@ -37,7 +37,7 @@ namespace ServicioSocial
 
         private void Btn_Aceptar_Click(object sender, RoutedEventArgs e)
         {
-            if(ValidarCamposVacios() && ValidarCorreo())
+            if(ValidarCamposVacios() && ValidarCorreo() && ValidarTeléfono())
             {
                 if(controladorEncargado.AñadirEncargado(txb_NombreCompleto.Text, txb_Cargo.Text, txt_Teléfono.Text , tbx_CorreoElectrónico.Text 
                     ,cbb_Organización.SelectedItem) == AddEnum.AddResult.Success)
@@ -87,6 +87,16 @@ namespace ServicioSocial
             }
 
             
+        }
+
+        private bool ValidarTeléfono()
+        {
+            if(ValidarCampos.ValidarNúmero(txt_Teléfono.Text) == ValidarCampos.ResultadosValidación.NúmeroInválido)
+            {
+                MessageBox.Show("Debes escribir un teléfono válido");
+                return false;
+            }
+            return true;
         }
 
 

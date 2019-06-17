@@ -6,7 +6,7 @@
         WindowStartupLocation="CenterScreen"
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
-        Title="P_RegistrarProyecto" Height="700" Width="688">
+        Title="Registra Proyecto" Height="700" Width="688" ResizeMode="CanMinimize">
     <ScrollViewer>
         <Grid Height="874" Width="632">
             <Label Content="Nombre del proyecto" HorizontalAlignment="Left" Margin="22,159,0,0" VerticalAlignment="Top" Width="203" Height="40" FontSize="20"/>
@@ -17,12 +17,12 @@
             <Label Content="Requisitos" HorizontalAlignment="Left" Margin="22,514,0,0" VerticalAlignment="Top" Width="203" Height="40" FontSize="20"/>
             <Label Content="Organización" HorizontalAlignment="Left" Margin="22,613,0,0" VerticalAlignment="Top" Height="40" FontSize="20" Width="203"/>
             <Label Content="Responsable" HorizontalAlignment="Left" Margin="22,688,0,0" VerticalAlignment="Top" Width="203" Height="40" FontSize="20"/>
-            <TextBox x:Name="txb_NombreProyecto" HorizontalAlignment="Left" Height="40" Margin="303,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20"/>
-            <TextBox x:Name="txb_NúmeroAlumnos" HorizontalAlignment="Left" Height="40" Margin="303,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20" TextChanged="Txb_NúmeroAlumnos_TextChanged"/>
-            <TextBox x:Name="txb_Actividades" HorizontalAlignment="Left" Margin="303,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="83" FontSize="20"/>
-            <TextBox x:Name="txb_Lugar" HorizontalAlignment="Left" Height="40" Margin="303,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20"/>
-            <TextBox x:Name="txb_Horario" HorizontalAlignment="Left" Height="40" Margin="303,447,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20"/>
-            <TextBox x:Name="txb_Requisitos" HorizontalAlignment="Left" Height="59" Margin="303,514,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20"/>
+            <TextBox x:Name="txb_NombreProyecto" HorizontalAlignment="Left" Height="40" Margin="303,159,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20" MaxLength="50"/>
+            <TextBox x:Name="txb_NúmeroAlumnos" HorizontalAlignment="Left" Height="40" Margin="303,221,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20" TextChanged="Txb_NúmeroAlumnos_TextChanged" MaxLength="2"/>
+            <TextBox x:Name="txb_Actividades" HorizontalAlignment="Left" Margin="303,280,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" Height="83" FontSize="20" MaxLength="241"/>
+            <TextBox x:Name="txb_Lugar" HorizontalAlignment="Left" Height="40" Margin="303,387,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20" MaxLength="50"/>
+            <TextBox x:Name="txb_Horario" HorizontalAlignment="Left" Height="40" Margin="303,447,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20" MaxLength="50"/>
+            <TextBox x:Name="txb_Requisitos" HorizontalAlignment="Left" Height="59" Margin="303,514,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20" MaxLength="240"/>
             <ComboBox x:Name="cbb_organización" HorizontalAlignment="Left" Margin="303,613,0,0" VerticalAlignment="Top" Width="308" Height="40" FontSize="20" SelectionChanged="Cbb_organización_SelectionChanged"
                   ItemsSource="{Binding organizacions}" 
                  DisplayMemberPath="NombreOrganizacion" 
@@ -35,6 +35,8 @@
                       />
             <Button x:Name="btn_Aceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="266,810,0,0" VerticalAlignment="Top" Width="110" Height="37" FontSize="20" Click="Btn_Aceptar_Click"/>
             <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="466,810,0,0" VerticalAlignment="Top" Width="110" Height="37" FontSize="20"/>
+            <Image Margin="389,10,21,720" Source="UV.png" Stretch="Fill"/>
+            <TextBlock HorizontalAlignment="Left" Margin="22,70,0,0" TextWrapping="Wrap" Text="Registrar Proyecto" VerticalAlignment="Top" Height="50" Width="223" FontSize="22" FontWeight="Bold"/>
 
 
         </Grid>

@@ -52,9 +52,9 @@ namespace BusinessLogic
                 {
                     connection.Open();
                 }
-                catch (SqlException ex)
+                catch (SqlException)
                 {
-                    throw (ex);
+                    return listaOrganizacion;
                 }
                 using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Organizacion", connection))
                 {
@@ -175,9 +175,9 @@ namespace BusinessLogic
                 {
                     connection.Open();
                 }
-                catch (SqlException ex)
+                catch (SqlException)
                 {
-                    throw (ex);
+                    return organizacion;
                 }
                 using (SqlCommand command = new SqlCommand("Select Organizacion.Nombre From Organizacion, Encargado where Organizacion.RFC = Encargado.Organización and ID_Encargado = @IDEncargado", connection))
                 {

@@ -6,9 +6,9 @@
         WindowStartupLocation="CenterScreen"
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
-        Title="P_ProyectosEspera" Height="450" Width="800">
+        Title="Proyectos en espera" Height="550" Width="800" ResizeMode="CanMinimize">
     <Grid>
-        <DataGrid x:Name="dgrid_ProyectosEspera" HorizontalAlignment="Left" Height="229" Margin="192,79,0,0" VerticalAlignment="Top" Width="500" AutoGenerateColumns="False" CanUserAddRows="false" CanUserDeleteRows="False" CanUserResizeRows="False" IsReadOnly="True">
+        <DataGrid x:Name="dgrid_ProyectosEspera" HorizontalAlignment="Left" Height="229" Margin="249,172,0,0" VerticalAlignment="Top" Width="500" AutoGenerateColumns="False" CanUserAddRows="false" CanUserDeleteRows="False" CanUserResizeRows="False" IsReadOnly="True">
             <DataGrid.Columns>
                 
                 <DataGridTextColumn Header="ID Proyecto" Binding="{Binding IDProyecto}"/>
@@ -19,9 +19,19 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Aceptar" HorizontalAlignment="Left" Margin="339,347,0,0" VerticalAlignment="Top" Width="127" FontSize="20" Click="Button_Click"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="544,347,0,0" VerticalAlignment="Top" Width="127" FontSize="20"/>
-        <Button x:Name="btn_MostrarInfo" Content="Mostrar &#xD;&#xA;Información" HorizontalAlignment="Left" Margin="10,201,0,0" VerticalAlignment="Top" Width="147" Height="67" FontSize="20" Click="Btn_MostrarInfo_Click"/>
+        <Button Content="Aceptar" HorizontalAlignment="Left" Margin="324,435,0,0" VerticalAlignment="Top" Width="127" FontSize="20" Click="Button_Click"/>
+        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="542,435,0,0" VerticalAlignment="Top" Width="127" FontSize="20"/>
+        <Button x:Name="btn_MostrarInfo" Content="Mostrar &#xD;&#xA;Información" HorizontalAlignment="Left" Margin="25,248,0,0" VerticalAlignment="Top" Width="147" Height="67" FontSize="20" Click="Btn_MostrarInfo_Click"/>
+        <Image Margin="561,12,37,368" Source="UV.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.136"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
 
     </Grid>
 </Window>

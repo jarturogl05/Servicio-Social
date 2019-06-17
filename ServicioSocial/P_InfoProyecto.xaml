@@ -6,7 +6,7 @@
         WindowStartupLocation="CenterScreen"
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
-        Title="P_InfoProyecto" Height="700" Width="640">
+        Title="Información del proyecto" Height="700" Width="640">
     <ScrollViewer>
         <Grid Height="792" Width="632">
             <Label Content="Organización Vinculada" HorizontalAlignment="Left" Margin="35,155,0,0" VerticalAlignment="Top" FontSize="20" Height="40"/>

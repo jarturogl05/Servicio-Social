@@ -36,5 +36,10 @@ namespace BusinessLogic
         {
             return Matricula;
         }
+
+        public Alumno(string matricula)
+        {
+            this.Matricula = matricula;
+        }
     }
 }
