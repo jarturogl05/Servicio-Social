@@ -6,7 +6,7 @@
         WindowStartupLocation="CenterScreen"
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
-        Title="P_RegistrarProyecto" Height="952" Width="688">
+        Title="P_RegistrarProyecto" Height="700" Width="688">
     <ScrollViewer>
         <Grid Height="874" Width="632">
             <Label Content="Nombre del proyecto" HorizontalAlignment="Left" Margin="22,159,0,0" VerticalAlignment="Top" Width="203" Height="40" FontSize="20"/>

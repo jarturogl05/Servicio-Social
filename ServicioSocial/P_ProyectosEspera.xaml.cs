@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -63,5 +64,38 @@ namespace ServicioSocial
             }
 
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            List<Proyecto> proyectosSeleccionados = SelecciónProyectos();
+            if (proyectosSeleccionados.Count ==3)
+            {
+
+            }
+            else
+            {     
+                    MessageBox.Show("Debes de elegir 3 proyectos");
+            }
+        }
+
+        private List<Proyecto> SelecciónProyectos()
+        {
+            List<Proyecto> proyectos = new List<Proyecto>();
+            foreach (var item in dgrid_ProyectosEspera.SelectedItems)
+            {
+                var proyecto1 = item as Proyecto;
+                proyectos.Add(proyecto1);
+            }
+
+            foreach (Proyecto proyecto2 in proyectos)
+            {
+                Console.WriteLine(proyecto2.IDProyecto);
+            }
+            return proyectos;
+        }
+
+
+
+
     }
 }
