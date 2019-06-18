@@ -22,7 +22,7 @@
                  DisplayMemberPath="NombreOrganizacion" 
                  SelectedItem="{Binding Organizacion}" />
         <Button x:Name="btn_Aceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="253,595,0,0" VerticalAlignment="Top" Width="119" Height="35" FontSize="20" Click="Btn_Aceptar_Click"/>
-        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="438,595,0,0" VerticalAlignment="Top" Width="118" Height="35" FontSize="20"/>
+        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="438,595,0,0" VerticalAlignment="Top" Width="118" Height="35" FontSize="20" Click="Btn_Cancelar_Click"/>
         <Image Margin="438,-1,3,523" Source="UV.png" Stretch="Fill"/>
         <TextBlock HorizontalAlignment="Left" Margin="42,65,0,0" TextWrapping="Wrap" Text="Registrar Encargado" VerticalAlignment="Top" Height="60" Width="225" FontSize="22" FontWeight="Bold"/>
 

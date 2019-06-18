@@ -99,6 +99,9 @@ namespace ServicioSocial
             return true;
         }
 
-
+        private void Btn_Cancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -20,11 +20,20 @@ namespace ServicioSocial
     /// </summary>
     public partial class P_RegistrarProyecto : Window
     {
+        Coordinador coordinador = new Coordinador();
         public P_RegistrarProyecto()
         {
             InitializeComponent();
             LlenarOrganizaciones();
         }
+
+        public P_RegistrarProyecto(Coordinador coordinador)
+        {
+            InitializeComponent();
+            LlenarOrganizaciones();
+            this.coordinador = coordinador;
+        }
+
         ValidarCampos validarCampos = new ValidarCampos();
         ControladorOrganización controladorOrganización = new ControladorOrganización();
         ControladorEncargado controladorEncargado = new ControladorEncargado();
@@ -43,7 +52,7 @@ namespace ServicioSocial
             if(ValidarCamposVacios() && ValidarNumAlumnos())
             {
                 if(ControladorProyecto.AddProyecto(txb_NombreProyecto.Text, int.Parse(txb_NúmeroAlumnos.Text),txb_Lugar.Text,
-                    txb_Horario.Text,txb_Actividades.Text, txb_Requisitos.Text, cbb_Responsable.SelectedItem) == AddEnum.AddResult.Success)
+                    txb_Horario.Text,txb_Actividades.Text, txb_Requisitos.Text, cbb_Responsable.SelectedItem, coordinador) == AddEnum.AddResult.Success)
                 {
                     MessageBox.Show("Proyecto agregado con éxito");
 
@@ -116,6 +125,11 @@ namespace ServicioSocial
         private void Txb_NúmeroAlumnos_TextChanged(object sender, TextChangedEventArgs e)
         {
             
+        }
+
+        private void Btn_Cancelar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

@@ -24,7 +24,7 @@
         </ComboBox>
         <PasswordBox x:Name="psb_Contraseña" HorizontalAlignment="Left"  Height="37" Margin="276,511,0,0" VerticalAlignment="Top" Width="310" FontSize="20"/>
         <Button x:Name="btn_Aceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="276,598,0,0" VerticalAlignment="Top" Width="118" Height="35" FontSize="20" Click="Btn_Aceptar_Click"/>
-        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="453,598,0,0" VerticalAlignment="Top" Width="113" Height="35" FontSize="20"/>
+        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="453,598,0,0" VerticalAlignment="Top" Width="113" Height="35" FontSize="20" Click="Btn_Cancelar_Click"/>
         <Image Margin="377,10,10,523" Source="UV.png" Stretch="Fill"/>
         <TextBlock HorizontalAlignment="Left" Margin="34,72,0,0" TextWrapping="Wrap" Text="Registrar Coordinador" VerticalAlignment="Top" Height="74" Width="263" FontSize="22" TextDecorations="{x:Null}" FontWeight="Bold"/>
         <Label Content="Correo" HorizontalAlignment="Left" Margin="34,436,0,0" VerticalAlignment="Top" Width="132" FontSize="20"/>

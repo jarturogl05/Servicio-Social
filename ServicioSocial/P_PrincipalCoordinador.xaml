@@ -1,0 +1,18 @@
+﻿<Window x:Class="ServicioSocial.P_PrincipalCoordinador"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServicioSocial"
+        mc:Ignorable="d"
+        Title="Pantalla Principal" Height="600" Width="600" ResizeMode="CanMinimize">
+    <Grid>
+        <Label Content="¿Qué Desea Hacer?" HorizontalAlignment="Left" Margin="37,64,0,0" VerticalAlignment="Top" Height="51" Width="225" FontSize="24"/>
+        <Image Margin="454,10,10,406" Source="UV.png" Stretch="Fill"/>
+        <Button x:Name="btn_AgregarEncargado" Content="Agregar Encargado" HorizontalAlignment="Left" Margin="37,193,0,0" VerticalAlignment="Top" Width="200" Height="77" FontSize="20" Click="Btn_AgregarEncargado_Click" />
+        <Button x:Name="btn_CerrarSesión" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="421,511,0,0" VerticalAlignment="Top" Width="129" Height="33" FontSize="20" Click="Btn_CerrarSesión_Click"/>
+        <Button x:Name="btn_AgregarOrganización" Content="Agregar Organización" HorizontalAlignment="Left" Margin="350,193,0,0" VerticalAlignment="Top" Width="200" Height="77" FontSize="20" Click="Btn_AgregarOrganización_Click"/>
+        <Button x:Name="btn_AgregarProyecto" Content="Agregar Proyecto" HorizontalAlignment="Left" Margin="37,309,0,0" VerticalAlignment="Top" Width="200" Height="77" FontSize="20" Click="Btn_AgregarProyecto_Click"/>
+
+    </Grid>
+</Window>

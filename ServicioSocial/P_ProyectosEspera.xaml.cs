@@ -23,10 +23,21 @@ namespace ServicioSocial
     {
 
         const int POSICION_FUERARANGO = -1;
+        Alumno alumno = new Alumno(); 
+
         public P_ProyectosEspera()
         {
             InitializeComponent();
             LlenarGrid();
+            
+        }
+
+        public P_ProyectosEspera(Alumno alumno)
+        {
+            InitializeComponent();
+            LlenarGrid();
+            this.alumno = alumno;
+
         }
 
         ControladorProyecto controladorProyecto = new ControladorProyecto();
@@ -70,10 +81,12 @@ namespace ServicioSocial
         {
             if (ValidarSeleccion())
             {
+                
                 List<Proyecto> proyectosSeleccionados = SelecciónProyectos();
-                if (controladorSolicitud.AñadirSolicitud(proyectosSeleccionados) == AddEnum.AddResult.Success)
+                if (controladorSolicitud.AñadirSolicitud(proyectosSeleccionados, alumno ) == AddEnum.AddResult.Success)
                 {
                     MessageBox.Show("Solicitud creada con éxito");
+                    this.Close();
                 }
                 else
                 {
@@ -110,6 +123,14 @@ namespace ServicioSocial
                 return false;
             }
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+
+
     }
 
 
