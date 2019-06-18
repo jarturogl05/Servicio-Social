@@ -44,6 +44,7 @@ namespace ServicioSocial
                 if(controladorCoordinador.AñadirCoordinador(txb_NombreCompleto.Text,txb_NúmeroPersonal.Text, cbb_Carrera.Text, txb_Correo.Text, psb_Contraseña.Password) == AddEnum.AddResult.Success)
                 {
                     MessageBox.Show("Coordinador agregado con éxito");
+                    
                 }
                 else
                 {
@@ -97,10 +98,10 @@ namespace ServicioSocial
             return true;
         }
 
-
-
-    
-
-
+        private void Btn_Cancelar_Click(object sender, RoutedEventArgs e)
+        {
+            
+            this.Close();
+        }
     }
 }

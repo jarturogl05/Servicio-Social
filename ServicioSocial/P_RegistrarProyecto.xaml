@@ -34,7 +34,7 @@
                  SelectedItem="{Binding Encargado}"                        
                       />
             <Button x:Name="btn_Aceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="266,810,0,0" VerticalAlignment="Top" Width="110" Height="37" FontSize="20" Click="Btn_Aceptar_Click"/>
-            <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="466,810,0,0" VerticalAlignment="Top" Width="110" Height="37" FontSize="20"/>
+            <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="466,810,0,0" VerticalAlignment="Top" Width="110" Height="37" FontSize="20" Click="Btn_Cancelar_Click"/>
             <Image Margin="389,10,21,720" Source="UV.png" Stretch="Fill"/>
             <TextBlock HorizontalAlignment="Left" Margin="22,70,0,0" TextWrapping="Wrap" Text="Registrar Proyecto" VerticalAlignment="Top" Height="50" Width="223" FontSize="22" FontWeight="Bold"/>
 

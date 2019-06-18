@@ -19,8 +19,8 @@
 
             </DataGrid.Columns>
         </DataGrid>
-        <Button Content="Aceptar" HorizontalAlignment="Left" Margin="324,435,0,0" VerticalAlignment="Top" Width="127" FontSize="20" Click="Button_Click"/>
-        <Button Content="Cancelar" HorizontalAlignment="Left" Margin="542,435,0,0" VerticalAlignment="Top" Width="127" FontSize="20"/>
+        <Button x:Name="btn_Aceptar" Content="Aceptar" HorizontalAlignment="Left" Margin="324,435,0,0" VerticalAlignment="Top" Width="127" FontSize="20" Click="Button_Click"/>
+        <Button x:Name="btn_Cancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="542,435,0,0" VerticalAlignment="Top" Width="127" FontSize="20" Click="Button_Click_1" />
         <Button x:Name="btn_MostrarInfo" Content="Mostrar &#xD;&#xA;Información" HorizontalAlignment="Left" Margin="25,248,0,0" VerticalAlignment="Top" Width="147" Height="67" FontSize="20" Click="Btn_MostrarInfo_Click"/>
         <Image Margin="561,12,37,368" Source="UV.png" Stretch="Fill" RenderTransformOrigin="0.5,0.5">
             <Image.RenderTransform>

@@ -49,5 +49,36 @@ namespace BusinessLogic
             }
             return resultado;
         }
+
+        public Solicitud GetSolicitudByAlumno(Alumno alumno)
+        {
+            Solicitud solicitud = new Solicitud();
+            Alumno alumnoAuxiliar = new Alumno();
+            DbConnection dbconnection = new DbConnection();
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException )
+                {
+                    return solicitud;
+                }
+                using (SqlCommand command = new SqlCommand("SELECT Alumno FROM dbo.Solicitud WHERE Alumno = @AlumnoToSearch", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("AlumnoToSearch", alumno.Matricula));
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+
+                        alumnoAuxiliar.Matricula = reader["Alumno"].ToString();
+                    }
+                }
+                connection.Close();
+            }
+            solicitud.Alumno = alumnoAuxiliar;
+            return solicitud;
+        }
     }
 }

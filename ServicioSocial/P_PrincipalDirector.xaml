@@ -1,0 +1,17 @@
+﻿<Window x:Class="ServicioSocial.P_PrincipalDirector"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServicioSocial"
+        mc:Ignorable="d"
+        Title="Pantalla Principal" Height="500" Width="600" ResizeMode="CanMinimize">
+    <Grid>
+        <Image Margin="454,10,10,344" Source="UV.png" Stretch="Fill"/>
+        <Label Content="¿Qué Desea Hacer?" HorizontalAlignment="Left" Margin="32,66,0,0" VerticalAlignment="Top" Height="59" Width="255" FontSize="24"/>
+        <Button x:Name="btn_AgregarCoordinador" Content="Agregar Coordinador" HorizontalAlignment="Left" Margin="32,191,0,0" VerticalAlignment="Top" Width="208" Height="77" FontSize="20" Click="Btn_AgregarCoordinador_Click" />
+        <Button x:Name="btn_CerrarSesión" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="421,413,0,0" VerticalAlignment="Top" Width="129" Height="33" FontSize="20" Click="Btn_CerrarSesión_Click"/>
+
+
+    </Grid>
+</Window>

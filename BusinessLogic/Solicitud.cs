@@ -27,7 +27,11 @@ namespace BusinessLogic
 
         }
 
+        public Solicitud(Alumno alumno)
+        {
+            this.Alumno = alumno;
+        }
      
 
-         }
+    }
 }

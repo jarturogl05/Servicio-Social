@@ -77,6 +77,15 @@
     <Compile Include="P_InfoProyecto.xaml.cs">
       <DependentUpon>P_InfoProyecto.xaml</DependentUpon>
     </Compile>
+    <Compile Include="P_PrincipalAlumno.xaml.cs">
+      <DependentUpon>P_PrincipalAlumno.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_PrincipalCoordinador.xaml.cs">
+      <DependentUpon>P_PrincipalCoordinador.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="P_PrincipalDirector.xaml.cs">
+      <DependentUpon>P_PrincipalDirector.xaml</DependentUpon>
+    </Compile>
     <Compile Include="P_ProyectosEspera.xaml.cs">
       <DependentUpon>P_ProyectosEspera.xaml</DependentUpon>
     </Compile>
@@ -136,6 +145,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="P_InfoProyecto.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_PrincipalAlumno.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_PrincipalCoordinador.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="P_PrincipalDirector.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -224,6 +245,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="UV.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="FEI.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="add.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
