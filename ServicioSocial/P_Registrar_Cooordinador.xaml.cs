@@ -39,9 +39,9 @@ namespace ServicioSocial
         {
 
 
-            if ( ValidarCamposVacios() && ValidarPassword() && ValidarNúmeroPersonal())
+            if ( ValidarCamposVacios() && ValidarCorreo() && ValidarPassword() && ValidarNúmeroPersonal())
             {
-                if(controladorCoordinador.AñadirCoordinador(txb_NombreCompleto.Text,txb_NúmeroPersonal.Text, cbb_Carrera.Text) == AddEnum.AddResult.Success)
+                if(controladorCoordinador.AñadirCoordinador(txb_NombreCompleto.Text,txb_NúmeroPersonal.Text, cbb_Carrera.Text, txb_Correo.Text, psb_Contraseña.Password) == AddEnum.AddResult.Success)
                 {
                     MessageBox.Show("Coordinador agregado con éxito");
                 }
@@ -57,7 +57,7 @@ namespace ServicioSocial
 
         private bool ValidarCamposVacios()
         {
-            if(string.IsNullOrEmpty(txb_NombreCompleto.Text) || string.IsNullOrEmpty(txb_NúmeroPersonal.Text)
+            if(string.IsNullOrEmpty(txb_NombreCompleto.Text) || string.IsNullOrEmpty(txb_Correo.Text) || string.IsNullOrEmpty(txb_NúmeroPersonal.Text)
                 || cbb_Carrera.SelectedIndex == -1 || string.IsNullOrWhiteSpace(psb_Contraseña.Password))
             {
                 MessageBox.Show("Debes llenar todos los campos");
@@ -87,6 +87,15 @@ namespace ServicioSocial
             return true;
         }
 
+        private bool ValidarCorreo()
+        {
+            if(validarCampos.ValidarCorreo(txb_Correo.Text) == ValidarCampos.ResultadosValidación.Correoinválido)
+            {
+                MessageBox.Show("El correo es inválido");
+                return false;
+            }
+            return true;
+        }
 
 
 
