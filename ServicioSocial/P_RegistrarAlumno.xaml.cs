@@ -39,7 +39,7 @@ namespace ServicioSocial
         private CheckResult CheckEmptyFields()
         {
             CheckResult check = CheckResult.Failed;
-            if (textboxMatricula.Text == String.Empty || textboxNombre.Text == String.Empty || textboxBloque.Text == String.Empty || textboxSeccion.Text == String.Empty || comboCarrera.Text == String.Empty || alumnoPassword.Password == String.Empty)
+            if (textboxMatricula.Text == String.Empty || textboxNombre.Text == String.Empty || comboBloque.Text == String.Empty || comboSeccion.Text == String.Empty || comboCarrera.Text == String.Empty || alumnoPassword.Password == String.Empty)
             {
                 check = CheckResult.Failed;
             }

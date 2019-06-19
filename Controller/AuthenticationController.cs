@@ -34,6 +34,17 @@ namespace Controller
             }
             return loginData;
         }
+        public String GetUserName(String user, String pass)
+        {
+            LoginAuthentication login = new LoginAuthentication();
+            return login.GetUserName(user, pass);
+            
+        }
+        public String GetUserType(String user, String pass)
+        {
+            LoginAuthentication login = new LoginAuthentication();
+            return login.GetUserType(user, pass);
+        }
         
     }
 }

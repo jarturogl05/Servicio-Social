@@ -35,6 +35,15 @@ namespace ServicioSocial.Properties {
             }
         }
         
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("@estudiantes.uv.mx")]
+        public string CurrenEmailAddress {
+            get {
+                return ((string)(this["CurrenEmailAddress"]));
+            }
+        }
+        
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
@@ -47,12 +56,27 @@ namespace ServicioSocial.Properties {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("@estudiantes.uv.mx")]
-        public string CurrenEmailAddress {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UserType {
             get {
-                return ((string)(this["CurrenEmailAddress"]));
+                return ((string)(this["UserType"]));
+            }
+            set {
+                this["UserType"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string UserID {
+            get {
+                return ((string)(this["UserID"]));
+            }
+            set {
+                this["UserID"] = value;
             }
         }
     }

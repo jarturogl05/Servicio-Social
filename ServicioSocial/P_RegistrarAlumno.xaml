@@ -5,29 +5,42 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
-        Title="Registrar Alumno" Height="800" Width="640">
+        Title="Registrar Alumno" Height="800" Width="640" ResizeMode="NoResize">
     <Grid>
         <Label x:Name="labelMatricula" Content="Matrícula" HorizontalAlignment="Left" Margin="43,81,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
         <Label x:Name="labelNombre" Content="Nombre" HorizontalAlignment="Left" Margin="43,315,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
-        <Label x:Name="labelBloque" Content="Bloque" HorizontalAlignment="Left" Margin="43,247,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
+        <Label x:Name="labelBloque" Content="Bloque" HorizontalAlignment="Left" Margin="43,241,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
         <Label x:Name="labelCarrera" Content="Carrera" HorizontalAlignment="Left" Margin="43,395,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
         <Label x:Name="labelSeccion" Content="Seccion" HorizontalAlignment="Left" Margin="43,162,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
-        <TextBox x:Name="textboxBloque" HorizontalAlignment="Left" Height="29" Margin="321,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
-        <TextBox x:Name="textboxMatricula" HorizontalAlignment="Left" Height="29" Margin="321,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
-        <TextBox x:Name="textboxSeccion" HorizontalAlignment="Left" Height="29" Margin="321,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
-        <TextBox x:Name="textboxNombre" HorizontalAlignment="Left" Height="29" Margin="321,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20"/>
+        <TextBox x:Name="textboxMatricula" HorizontalAlignment="Left" Height="29" Margin="321,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20" MaxLength="9"/>
+        <ComboBox x:Name="comboSeccion" HorizontalAlignment="Left" Margin="321,162,0,0" VerticalAlignment="Top" Width="199" Height="29" SelectionChanged="ComboCarrera_SelectionChanged" FontSize="20">
+            <ComboBoxItem Content="1" FontSize="20"/>
+            <ComboBoxItem Content="2" FontSize="20"/>
+        </ComboBox>
+        <ComboBox x:Name="comboBloque" HorizontalAlignment="Left" Margin="323,241,0,0" VerticalAlignment="Top" Width="199" Height="29" SelectionChanged="ComboCarrera_SelectionChanged" FontSize="20">
+            <ComboBoxItem Content="5" FontSize="20"/>
+            <ComboBoxItem Content="6" FontSize="20"/>
+            <ComboBoxItem Content="7" FontSize="20"/>
+            <ComboBoxItem Content="8" FontSize="20"/>
+            <ComboBoxItem Content="9" FontSize="20"/>
+            <ComboBoxItem Content="10" FontSize="20"/>
+            <ComboBoxItem Content="11" FontSize="20"/>
+            <ComboBoxItem Content="12" FontSize="20"/>
+        </ComboBox>
+        <TextBox x:Name="textboxNombre" HorizontalAlignment="Left" Height="29" Margin="321,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20" MaxLength="50"/>
+        <ComboBox x:Name="comboCarrera" HorizontalAlignment="Left" Margin="321,400,0,0" VerticalAlignment="Top" Width="199" Height="29" SelectionChanged="ComboCarrera_SelectionChanged" FontSize="20">
+            <ComboBoxItem Content="Ingeniería de Software" FontSize="20"/>
+            <ComboBoxItem Content="Redes" FontSize="20"/>
+            <ComboBoxItem Content="Tecnologias computacionales" FontSize="20"/>
+        </ComboBox>
+        <PasswordBox x:Name="alumnoPassword" HorizontalAlignment="Left" Margin="321,478,0,0" VerticalAlignment="Top" Width="199" Height="28" MaxLength="50"/>
+        <PasswordBox x:Name="alumnoPasswordRepite" HorizontalAlignment="Left" Margin="321,560,0,0" VerticalAlignment="Top" Width="199" Height="28" MaxLength="50"/>
         <Button x:Name="buttonRegistrarse" Content="Registrarse" HorizontalAlignment="Left" Margin="139,672,0,0" VerticalAlignment="Top" Width="129" FontSize="20" FontFamily="Arial" Click="ButtonRegistrarse_Click" Height="38"/>
         <Button x:Name="buttonCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="393,672,0,0" VerticalAlignment="Top" Width="129" FontSize="20" FontFamily="Arial" Click="ButtonCancelar_Click" Height="38"/>
         <TextBlock x:Name="textblockTitle" HorizontalAlignment="Left" Margin="139,10,0,0" TextWrapping="Wrap" Text="Registrarse como Alumno" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
         <Label x:Name="labelContraseña" Content="Contraseña" HorizontalAlignment="Left" Margin="43,478,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
-        <PasswordBox x:Name="alumnoPassword" HorizontalAlignment="Left" Margin="321,478,0,0" VerticalAlignment="Top" Width="199" Height="28"/>
         <Label x:Name="labelContraseñaRepite" Content="Repetir Contraseña" HorizontalAlignment="Left" Margin="43,560,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
-        <PasswordBox x:Name="alumnoPasswordRepite" HorizontalAlignment="Left" Margin="321,560,0,0" VerticalAlignment="Top" Width="199" Height="28"/>
-        <ComboBox x:Name="comboCarrera" HorizontalAlignment="Left" Margin="321,400,0,0" VerticalAlignment="Top" Width="199" Height="29" SelectionChanged="ComboCarrera_SelectionChanged">
-            <ComboBoxItem Content="Ingeniería de Software" FontSize="20"/>
-            <ComboBoxItem Content="Redes"/>
-            <ComboBoxItem Content="Tecnologias computacionales"/>
-        </ComboBox>
+
 
     </Grid>
 </Window>
