@@ -74,5 +74,26 @@ namespace LoginAuth
             }
             return result;
         }
+        public String GetUserName(String user, String pass)
+        {
+            String result = "";
+            DbConnection dbConnection = new DbConnection();
+            using (SqlConnection connection = dbConnection.GetConnection())
+            {
+                connection.Open();
+                using (SqlCommand command = new SqlCommand("SELECT [Usuario] FROM [dbo].[Usuarios] WHERE Usuario = @usuario AND Contraseña = @password", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("@usuario", user));
+                    command.Parameters.Add(new SqlParameter("@password", pass));
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        result = reader["Usuario"].ToString();
+                    }
+
+                }
+            }
+            return result;
+        }
     }
 }

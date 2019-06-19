@@ -46,17 +46,18 @@ namespace ServicioSocial
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
-            CheckRemember();
             AuthenticationController authentication = new AuthenticationController();
             LoginData login = authentication.UserAuthentication(textboxUser.Text.ToString(), passwordBoxPass.Password);
-            if (login.Result.Equals(validationResult.PasswordIncorrect))
+            if (login.Result.Equals(validationResult.UserOrPasswordIncorrect))
             {
-                MessageBox.Show("Contraseña invalida");
-            }else if (login.Result.Equals(validationResult.UserOrPasswordIncorrect))
-            {
-                MessageBox.Show("Usurio y/o contraseña incorrecto");
+                MessageBox.Show("Usuario y/o contraseña incorrecto");
+                passwordBoxPass.Password = String.Empty;
             }else if (login.Result.Equals(validationResult.Success))
             {
+                Properties.Settings.Default.UserID = authentication.GetUserName(textboxUser.Text.ToString(), passwordBoxPass.Password);
+                Properties.Settings.Default.UserType = authentication.GetUserType(textboxUser.Text.ToString(), passwordBoxPass.Password);
+                CheckRemember();
+                this.Close();
                 OpenWindow();
             }
             else
