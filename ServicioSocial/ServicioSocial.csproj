@@ -253,8 +253,5 @@
   <ItemGroup>
     <Resource Include="FEI.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="add.png" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

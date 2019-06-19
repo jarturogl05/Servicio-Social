@@ -9,20 +9,18 @@ namespace BusinessLogic
 {
     public class ControladorProyecto
     {
-        ProyectoDAO proyectoDAO = new ProyectoDAO();
-        EncargadoDAO encargadoDAO = new EncargadoDAO();
 
         public AddResult AddProyecto(string nombreProyecto, int numAlumnos, string lugar, string horario,
             string actividades, string requisitos, Object responsable, Coordinador coordinador )
         {
-           
-           
+            ProyectoDAO proyectoDAO = new ProyectoDAO();
             Proyecto proyecto = new Proyecto(nombreProyecto, numAlumnos, "Disponible", horario, lugar, actividades, requisitos, coordinador, (Encargado)responsable);
             return proyectoDAO.AddProyecto(proyecto);
         }
 
         public List<Proyecto> ObtenerProyectos()
         {
+            ProyectoDAO proyectoDAO = new ProyectoDAO();
             List<Proyecto> proyectos = proyectoDAO.GetProyectos();
             return proyectos;
         }
