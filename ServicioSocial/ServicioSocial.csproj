@@ -107,6 +107,7 @@
     <Compile Include="P_VisorDocumento.xaml.cs">
       <DependentUpon>P_VisorDocumento.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ValidarCampos.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

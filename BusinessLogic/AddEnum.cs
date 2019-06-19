@@ -15,6 +15,7 @@ namespace BusinessLogic
             InvalidOrganization,
             UnknowFail,
             SQLFail,
+            ExistingRecord
         }
     }
 }

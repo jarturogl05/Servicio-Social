@@ -5,7 +5,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace BusinessLogic
+namespace ServicioSocial
 {
    public class ValidarCampos
     {
@@ -23,7 +23,7 @@ namespace BusinessLogic
 
         }
 
-        public ResultadosValidación ValidarPassword( string contraseña)
+        public ResultadosValidación ValidarPassword(string contraseña)
         {
             string patrón = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,50}$";
 

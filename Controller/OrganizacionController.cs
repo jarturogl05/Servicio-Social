@@ -11,24 +11,33 @@ namespace Controller
     {
         public enum OperationResult
         {
-            Success = 1,
-            NullOrganization = 2,
-            InvalidOrganization = 3,
-            UnknowFail = 0,
-            SQLFail = 4,
+            Success,
+            NullOrganization,
+            InvalidOrganization,
+            UnknowFail,
+            SQLFail,
+            ExistingRecord
         }
         public OperationResult AddOrganizacion(String RFC, String Nombre, String Direccion, String Sector, String Telefono, String Correo)
         {
             OperationResult operation = OperationResult.UnknowFail;
-            Organizacion organizacion = new Organizacion();
-            organizacion.CorreoOrganizacion = Correo;
-            organizacion.CorreoOrganizacion = Direccion;
-            organizacion.NombreOrganizacion = Nombre;
-            organizacion.rfc = RFC;
-            organizacion.Sector = Sector;
-            organizacion.TelefonoOrganizacion = Telefono;
-            OrganizacionDAO organizacionDAO = new OrganizacionDAO();
-            operation = (OperationResult)organizacionDAO.AddOrganizacion(organizacion);
+            if (GetOrganizacionByRFC(RFC) == null)
+            {
+                
+                Organizacion organizacion = new Organizacion();
+                organizacion.CorreoOrganizacion = Correo;
+                organizacion.DireccionOrganizacion = Direccion;
+                organizacion.NombreOrganizacion = Nombre;
+                organizacion.rfc = RFC;
+                organizacion.Sector = Sector;
+                organizacion.TelefonoOrganizacion = Telefono;
+                OrganizacionDAO organizacionDAO = new OrganizacionDAO();
+                operation = (OperationResult)organizacionDAO.AddOrganizacion(organizacion);
+            }
+            else
+            {
+                operation = OperationResult.ExistingRecord;
+            }
             return operation;
 
         }

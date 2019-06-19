@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
-        Title="Datos de la empresa" Height="800" Width="640">
+        Title="Datos de la empresa" Height="800" Width="640" ResizeMode="CanMinimize">
     <Grid>
         <Label x:Name="labelRFC" Content="RFC" HorizontalAlignment="Left" Margin="43,81,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
         <Label x:Name="labelCorreo" Content="Correo" HorizontalAlignment="Left" Margin="43,477,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
@@ -13,16 +13,16 @@
         <Label x:Name="labelDireccion" Content="Direccion" HorizontalAlignment="Left" Margin="43,247,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
         <Label x:Name="labelTelefono" Content="Telefono" HorizontalAlignment="Left" Margin="43,395,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
         <Label x:Name="labelNombre" Content="Nombre de la empresa" HorizontalAlignment="Left" Margin="43,162,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
-        <Button x:Name="buttonEditar" Content="Editar" HorizontalAlignment="Left" Margin="43,610,0,0" VerticalAlignment="Top" Width="129" FontSize="20" FontFamily="Arial" Click="ButtonGuardar_Click" Height="38"/>
-        <Button x:Name="buttonCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="452,610,0,0" VerticalAlignment="Top" Width="129" FontSize="20" FontFamily="Arial" Click="ButtonCancelar_Click" Height="38"/>
         <TextBlock x:Name="textblockTitle" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Datos de Empresa" VerticalAlignment="Top" FontSize="26" FontWeight="Bold"/>
+        <TextBox x:Name="textboxRFC" HorizontalAlignment="Left" Height="29" Margin="321,81,0,0" VerticalAlignment="Top" Width="201" FontSize="20" IsReadOnly="True" MaxLength="13"/>
+        <TextBox x:Name="textboxNombre" HorizontalAlignment="Left" Height="29" Margin="321,162,0,0" VerticalAlignment="Top" Width="201" FontSize="20" IsReadOnly="True" MaxLength="50"/>
+        <TextBox x:Name="textboxDireccion" HorizontalAlignment="Left" Height="29" Margin="321,241,0,0" VerticalAlignment="Top" Width="201" FontSize="20" IsReadOnly="True" MaxLength="50"/>
+        <TextBox x:Name="textboxSector" HorizontalAlignment="Left" Height="29" Margin="321,320,0,0" VerticalAlignment="Top" Width="201" FontSize="20" IsReadOnly="True" MaxLength="50"/>
+        <TextBox x:Name="textboxTelefono" HorizontalAlignment="Left" Height="29" Margin="321,400,0,0" VerticalAlignment="Top" Width="201" FontSize="20" IsReadOnly="True" MaxLength="15"/>
+        <TextBox x:Name="textboxCorreo" HorizontalAlignment="Left" Height="29" Margin="321,482,0,0" VerticalAlignment="Top" Width="201" FontSize="20" IsReadOnly="True" MaxLength="41"/>
+        <Button x:Name="buttonEditar" Content="Editar" HorizontalAlignment="Left" Margin="43,610,0,0" VerticalAlignment="Top" Width="129" FontSize="20" FontFamily="Arial" Click="ButtonGuardar_Click" Height="38"/>
         <Button x:Name="buttonEliminar" Content="Eliminar" HorizontalAlignment="Left" Margin="250,610,0,0" VerticalAlignment="Top" Width="115" Height="38" FontSize="20" FontFamily="Arial" Click="ButtonEliminar_Click"/>
-        <TextBox x:Name="textboxCorreo" HorizontalAlignment="Left" Height="29" Margin="321,482,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20" IsReadOnly="True"/>
-        <TextBox x:Name="textboxDireccion" HorizontalAlignment="Left" Height="29" Margin="321,241,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20" IsReadOnly="True"/>
-        <TextBox x:Name="textboxRFC" HorizontalAlignment="Left" Height="29" Margin="321,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20" IsReadOnly="True"/>
-        <TextBox x:Name="textboxNombre" HorizontalAlignment="Left" Height="29" Margin="321,162,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20" IsReadOnly="True"/>
-        <TextBox x:Name="textboxTelefono" HorizontalAlignment="Left" Height="29" Margin="321,400,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20" IsReadOnly="True"/>
-        <TextBox x:Name="textboxSector" HorizontalAlignment="Left" Height="29" Margin="321,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20" IsReadOnly="True"/>
+        <Button x:Name="buttonCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="452,610,0,0" VerticalAlignment="Top" Width="129" FontSize="20" FontFamily="Arial" Click="ButtonCancelar_Click" Height="38"/>
 
     </Grid>
 </Window>
