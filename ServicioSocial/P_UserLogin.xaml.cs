@@ -63,8 +63,8 @@ namespace ServicioSocial
                 Properties.Settings.Default.UserID = authentication.GetUserName(textboxUser.Text.ToString(), passwordBoxPass.Password);
                 Properties.Settings.Default.UserType = authentication.GetUserType(textboxUser.Text.ToString(), passwordBoxPass.Password);
                 CheckRemember();
-                this.Close();
                 OpenWindow();
+                this.Close();
             }
             else
             {
@@ -74,7 +74,24 @@ namespace ServicioSocial
 
         private void OpenWindow()
         {
-            MessageBox.Show("Not implemented Exception, jeje");
+            string typeUser = Properties.Settings.Default.UserType;
+            switch (typeUser)
+            {
+                case "Coordinador":
+                    P_PrincipalCoordinador p_PrincipalCoordinador = new P_PrincipalCoordinador();
+                    p_PrincipalCoordinador.Show();
+                    break;
+                case "Director":
+                    P_PrincipalDirector p_PrincipalDirector = new P_PrincipalDirector();
+                    p_PrincipalDirector.Show();
+                    break;
+                case "Alumno":
+                    P_PrincipalAlumno p_PrincipalAlumno = new P_PrincipalAlumno();
+                    p_PrincipalAlumno.Show();
+                    break;
+            }
+            
+
         }
 
         private void ButtonSignUp_Click(object sender, RoutedEventArgs e)
