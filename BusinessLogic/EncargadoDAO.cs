@@ -46,36 +46,6 @@ namespace BusinessLogic
             return encargado;
         }
 
-        public Encargado GetEncargadoByNombre(string nombre)
-        {
-            Encargado encargado = new Encargado();
-            Organizacion organizacion = new Organizacion();
-            DbConnection dbconnection = new DbConnection();
-            using (SqlConnection connection = dbconnection.GetConnection())
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Encargado WHERE Nombre = @nombre", connection))
-                {
-                    command.Parameters.Add(new SqlParameter("Nombre", nombre));
-                    SqlDataReader reader = command.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        encargado.IdEncargado = reader["ID_Encargado"].ToString();
-                        encargado.NombreEncargado = reader["Nombre"].ToString();
-                        encargado.CorreoEncargado = reader["Correo"].ToString();
-                        encargado.CargoOrganizacion = reader["Cargo"].ToString();
-                        encargado.TelefonoEncargado = reader["Teléfono"].ToString();
-                        organizacion.rfc = reader["Organización"].ToString();
-                    }
-                }
-                connection.Close();
-            }
-            encargado.Organizacion = organizacion; 
-            return encargado;
-        }
-
-
         public List<Encargado> GetEncargadoByOrganización(Organizacion organización)
         {
             List<Encargado> listaEncargados = new List<Encargado>();
@@ -117,8 +87,6 @@ namespace BusinessLogic
             return listaEncargados;
         }
 
-
-
         public List<Encargado> GetEncargado()
         {
             List<Encargado> listaEncargado = new List<Encargado>();
@@ -155,7 +123,6 @@ namespace BusinessLogic
 
             return listaEncargado;
         }
-
 
         public AddResult AddEncargado(Encargado encargado)
         {
@@ -195,13 +162,6 @@ namespace BusinessLogic
             }
             return resultado;
         }
-
-
-       
-
-
-
-
 
     }
 }
