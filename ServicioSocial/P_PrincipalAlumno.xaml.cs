@@ -24,13 +24,13 @@ namespace ServicioSocial
         {
             InitializeComponent();
         }
-        Alumno alumno = new Alumno("s17012945");
-        ControladorSolicitud controladorSolicitud = new ControladorSolicitud();
+        
 
         private void Btn_AgregarSolicitud_Click(object sender, RoutedEventArgs e)
         {
             if (BuscarSolicitud())
             {
+                Alumno alumno = new Alumno(Properties.Settings.Default.UserID);
                 P_ProyectosEspera p_ProyectosEspera = new P_ProyectosEspera(alumno);
                 p_ProyectosEspera.ShowDialog();
             }
@@ -38,6 +38,8 @@ namespace ServicioSocial
         }
         private bool BuscarSolicitud()
         {
+            ControladorSolicitud controladorSolicitud = new ControladorSolicitud();
+            Alumno alumno = new Alumno(Properties.Settings.Default.UserID);
             if (!controladorSolicitud.BuscarSolicitud(alumno))
             {
                 MessageBox.Show("Ya tienes una solicitud creada");
