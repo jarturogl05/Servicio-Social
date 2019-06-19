@@ -40,13 +40,10 @@ namespace ServicioSocial
 
         }
 
-        ControladorProyecto controladorProyecto = new ControladorProyecto();
-        ControladorSolicitud controladorSolicitud = new ControladorSolicitud();
-
-
 
         public void LlenarGrid()
         {
+            ControladorProyecto controladorProyecto = new ControladorProyecto();
             List<Proyecto> proyectos = controladorProyecto.ObtenerProyectos();
             if (!proyectos.Any())
             {
@@ -81,7 +78,7 @@ namespace ServicioSocial
         {
             if (ValidarSeleccion())
             {
-                
+                ControladorSolicitud controladorSolicitud = new ControladorSolicitud();
                 List<Proyecto> proyectosSeleccionados = SelecciónProyectos();
                 if (controladorSolicitud.AñadirSolicitud(proyectosSeleccionados, alumno ) == AddEnum.AddResult.Success)
                 {

@@ -34,10 +34,6 @@ namespace ServicioSocial
             this.coordinador = coordinador;
         }
 
-        ValidarCampos validarCampos = new ValidarCampos();
-        ControladorOrganización controladorOrganización = new ControladorOrganización();
-        ControladorEncargado controladorEncargado = new ControladorEncargado();
-        ControladorProyecto ControladorProyecto = new ControladorProyecto();
 
         private void Cbb_organización_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -51,11 +47,12 @@ namespace ServicioSocial
         {
             if(ValidarCamposVacios() && ValidarNumAlumnos())
             {
-                if(ControladorProyecto.AddProyecto(txb_NombreProyecto.Text, int.Parse(txb_NúmeroAlumnos.Text),txb_Lugar.Text,
+                ControladorProyecto ControladorProyecto = new ControladorProyecto();
+                if (ControladorProyecto.AddProyecto(txb_NombreProyecto.Text, int.Parse(txb_NúmeroAlumnos.Text),txb_Lugar.Text,
                     txb_Horario.Text,txb_Actividades.Text, txb_Requisitos.Text, cbb_Responsable.SelectedItem, coordinador) == AddEnum.AddResult.Success)
                 {
                     MessageBox.Show("Proyecto agregado con éxito");
-
+                    this.Close();
                 }
                 else
                 {
@@ -82,7 +79,8 @@ namespace ServicioSocial
 
         private bool ValidarNumAlumnos()
         {
-            if(validarCampos.ValidarNumAlumnos(txb_NúmeroAlumnos.Text) == ValidarCampos.ResultadosValidación.NúmeroInválido)
+            ValidarCampos validarCampos = new ValidarCampos();
+            if (validarCampos.ValidarNumAlumnos(txb_NúmeroAlumnos.Text) == ValidarCampos.ResultadosValidación.NúmeroInválido)
             {
                 MessageBox.Show("Los proyectos pueden tener hasta 3 alumnos, verfique su información");
                 return false;
@@ -92,7 +90,7 @@ namespace ServicioSocial
 
         public void LlenarOrganizaciones()
         {
-            
+            ControladorOrganización controladorOrganización = new ControladorOrganización();
             List<Organizacion> organizacions = controladorOrganización.ObtenerOrganizaciones();
             if (!organizacions.Any())
             {
@@ -107,8 +105,8 @@ namespace ServicioSocial
 
         private void LlenarEncargados()
         {
-           
-            
+
+            ControladorEncargado controladorEncargado = new ControladorEncargado();
             List<Encargado> encargados = controladorEncargado.GetEncargados(cbb_organización.SelectedItem);
             if (!encargados.Any())
             {

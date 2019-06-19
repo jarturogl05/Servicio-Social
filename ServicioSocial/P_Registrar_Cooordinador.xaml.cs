@@ -27,8 +27,6 @@ namespace ServicioSocial
             InitializeComponent();
         }
 
-        ValidarCampos validarCampos = new ValidarCampos();
-        ControladorCoordinador controladorCoordinador = new ControladorCoordinador();
 
         private void Cbb_Carrera_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -37,14 +35,13 @@ namespace ServicioSocial
 
         private void Btn_Aceptar_Click(object sender, RoutedEventArgs e)
         {
-
-
+            ControladorCoordinador controladorCoordinador = new ControladorCoordinador();
             if ( ValidarCamposVacios() && ValidarCorreo() && ValidarPassword() && ValidarNúmeroPersonal())
             {
                 if(controladorCoordinador.AñadirCoordinador(txb_NombreCompleto.Text,txb_NúmeroPersonal.Text, cbb_Carrera.Text, txb_Correo.Text, psb_Contraseña.Password) == AddEnum.AddResult.Success)
                 {
                     MessageBox.Show("Coordinador agregado con éxito");
-                    
+                    this.Close();
                 }
                 else
                 {
@@ -69,7 +66,8 @@ namespace ServicioSocial
 
         private bool ValidarPassword()
         {
-            if(validarCampos.ValidarPassword(psb_Contraseña.Password) == ValidarCampos.ResultadosValidación.ContraseñaInválida)
+            ValidarCampos validarCampos = new ValidarCampos();
+            if (validarCampos.ValidarPassword(psb_Contraseña.Password) == ValidarCampos.ResultadosValidación.ContraseñaInválida)
             {
                 MessageBox.Show("Las contraseñas deben de tener por lo menos 8 carácteres, alfanumérica y por lo menos una letra mayúscula");
                 return false;
@@ -80,7 +78,8 @@ namespace ServicioSocial
 
         private bool ValidarNúmeroPersonal()
         {
-            if(validarCampos.ValidarNúmero(txb_NúmeroPersonal.Text) == ValidarCampos.ResultadosValidación.NúmeroInválido)
+            ValidarCampos validarCampos = new ValidarCampos();
+            if (validarCampos.ValidarNúmero(txb_NúmeroPersonal.Text) == ValidarCampos.ResultadosValidación.NúmeroInválido)
             {
                 MessageBox.Show("El campo Número personal solo acepta números");
                 return false;
@@ -90,7 +89,8 @@ namespace ServicioSocial
 
         private bool ValidarCorreo()
         {
-            if(validarCampos.ValidarCorreo(txb_Correo.Text) == ValidarCampos.ResultadosValidación.Correoinválido)
+            ValidarCampos validarCampos = new ValidarCampos();
+            if (validarCampos.ValidarCorreo(txb_Correo.Text) == ValidarCampos.ResultadosValidación.Correoinválido)
             {
                 MessageBox.Show("El correo es inválido");
                 return false;

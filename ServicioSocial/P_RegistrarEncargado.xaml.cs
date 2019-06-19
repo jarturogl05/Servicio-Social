@@ -24,25 +24,22 @@ namespace ServicioSocial
         {
 
             InitializeComponent();
-
             LlenarOrganizaciones();
-
-
         }
 
-        ValidarCampos ValidarCampos = new ValidarCampos();
-        ControladorEncargado controladorEncargado = new ControladorEncargado();
-        ControladorOrganización controladorOrganización = new ControladorOrganización();
 
 
         private void Btn_Aceptar_Click(object sender, RoutedEventArgs e)
         {
-            if(ValidarCamposVacios() && ValidarCorreo() && ValidarTeléfono())
+
+            if (ValidarCamposVacios() && ValidarCorreo() && ValidarTeléfono())
             {
-                if(controladorEncargado.AñadirEncargado(txb_NombreCompleto.Text, txb_Cargo.Text, txt_Teléfono.Text , tbx_CorreoElectrónico.Text 
+                ControladorEncargado controladorEncargado = new ControladorEncargado();
+                if (controladorEncargado.AñadirEncargado(txb_NombreCompleto.Text, txb_Cargo.Text, txt_Teléfono.Text , tbx_CorreoElectrónico.Text 
                     ,cbb_Organización.SelectedItem) == AddEnum.AddResult.Success)
                 {
                     MessageBox.Show("Encargado Agregado con éxito");
+                    this.Close();
                 }
                 else
                 {
@@ -65,7 +62,8 @@ namespace ServicioSocial
 
         private bool ValidarCorreo()
         {
-            if(ValidarCampos.ValidarCorreo(tbx_CorreoElectrónico.Text) == ValidarCampos.ResultadosValidación.Correoinválido)
+            ValidarCampos ValidarCampos = new ValidarCampos();
+            if (ValidarCampos.ValidarCorreo(tbx_CorreoElectrónico.Text) == ValidarCampos.ResultadosValidación.Correoinválido)
             {
                 MessageBox.Show("Debes escribir un correo válido");
                 return false;
@@ -75,7 +73,7 @@ namespace ServicioSocial
 
         private void LlenarOrganizaciones()
         {
-            
+            ControladorOrganización controladorOrganización = new ControladorOrganización();
             List<Organizacion> organizacions = controladorOrganización.ObtenerOrganizaciones();
             if (!organizacions.Any())
             {
@@ -91,7 +89,8 @@ namespace ServicioSocial
 
         private bool ValidarTeléfono()
         {
-            if(ValidarCampos.ValidarNúmero(txt_Teléfono.Text) == ValidarCampos.ResultadosValidación.NúmeroInválido)
+            ValidarCampos ValidarCampos = new ValidarCampos();
+            if (ValidarCampos.ValidarNúmero(txt_Teléfono.Text) == ValidarCampos.ResultadosValidación.NúmeroInválido)
             {
                 MessageBox.Show("Debes escribir un teléfono válido");
                 return false;
