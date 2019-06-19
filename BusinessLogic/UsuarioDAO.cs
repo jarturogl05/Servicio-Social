@@ -43,5 +43,35 @@ namespace BusinessLogic
             }
             return resultado;
         }
+        public Usuario GetUsuarioByUsername(String username)
+        {
+            Usuario usuario = new Usuario();
+            DbConnection dbconnection = new DbConnection();
+            using (SqlConnection connection = dbconnection.GetConnection())
+            {
+                try
+                {
+                    connection.Open();
+                }
+                catch (SqlException ex)
+                {
+                    throw (ex);
+                }
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.Usuarios WHERE Usuario = @usernameToSearch", connection))
+                {
+                    command.Parameters.Add(new SqlParameter("usernameToSearch", username));
+                    SqlDataReader reader = command.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        usuario.Name = reader["Nombre"].ToString();
+                        usuario.Email = reader["Correo"].ToString();
+                        usuario.UserType = reader["Tipo_Usuario"].ToString();
+                        usuario.UserName = reader["Usuario"].ToString();
+                    }
+                }
+                connection.Close();
+            }
+            return usuario;
+        }
     }
 }

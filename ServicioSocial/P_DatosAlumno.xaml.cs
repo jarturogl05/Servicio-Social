@@ -24,42 +24,26 @@ namespace ServicioSocial
         {
             InitializeComponent();
         }
-        private enum CheckResult
-        {
-            Passed = 1,
-            Failed = 0
-        }
         public enum OperationResult
         {
-            Success = 1,
-            NullOrganization = 2,
-            InvalidOrganization = 3,
-            UnknowFail = 0,
-            SQLFail = 4,
-        }
-        private CheckResult CheckEmptyFields()
-        {
-            CheckResult check = CheckResult.Failed;
-            if (textboxMatricula.Text == String.Empty || textboxNombre.Text == String.Empty || textboxBloque.Text == String.Empty || textboxSeccion.Text == String.Empty || comboCarrera.Text == String.Empty)
-            {
-                check = CheckResult.Failed;
-            }
-            else
-            {
-                check = CheckResult.Passed;
-            }
-            return check;
+            Success,
+            NullOrganization,
+            InvalidOrganization,
+            UnknowFail,
+            SQLFail,
         }
         public P_DatosAlumno(String Matricula)
         {
             InitializeComponent();
             AlumnoController alumnoController = new AlumnoController();
             var alumno = alumnoController.GetAlumnoByMatricula(Matricula);
-            textboxBloque.Text = alumno.Bloque;
+            comboBloque.Text = alumno.Bloque;
+            comboAsignacion.Text = alumno.Estado;
+            comboSeccion.Text = alumno.Seccion;
+            comboCarrera.Text = alumno.Carrera;
             textboxMatricula.Text = alumno.Matricula;
             textboxNombre.Text = alumno.NombreAlumno;
-            textboxSeccion.Text = alumno.NombreAlumno;
-            comboCarrera.Text = alumno.Carrera;
+            textboxCorreo.Text = alumno.Correo;
         }
 
         private void ButtonGuardar_Click(object sender, RoutedEventArgs e)

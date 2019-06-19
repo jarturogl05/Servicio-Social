@@ -29,9 +29,16 @@ namespace ServicioSocial
 
         private void ButtonSeleccionar_Click(object sender, RoutedEventArgs e)
         {
-            P_DatosAlumno p_DatosAlumno = new P_DatosAlumno(gridAlumno.SelectedValue.ToString());
-            p_DatosAlumno.ShowDialog();
-            UpdateGrid();
+            if (gridAlumno.SelectedIndex != -1)
+            {
+                P_DatosAlumno p_DatosAlumno = new P_DatosAlumno(gridAlumno.SelectedValue.ToString());
+                p_DatosAlumno.ShowDialog();
+                UpdateGrid();
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar un alumno");
+            }
         }
 
         private void ButtonCancelar_Click(object sender, RoutedEventArgs e)
@@ -49,6 +56,7 @@ namespace ServicioSocial
             else
             {
                 MessageBox.Show("No se encuentran alumnos registrados");
+                this.Close();
             }
         }
     }

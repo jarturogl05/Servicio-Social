@@ -46,13 +46,19 @@ namespace ServicioSocial
 
         private void ButtonLogin_Click(object sender, RoutedEventArgs e)
         {
+            TryLogin();
+        }
+
+        private void TryLogin()
+        {
             AuthenticationController authentication = new AuthenticationController();
             LoginData login = authentication.UserAuthentication(textboxUser.Text.ToString(), passwordBoxPass.Password);
             if (login.Result.Equals(validationResult.UserOrPasswordIncorrect))
             {
                 MessageBox.Show("Usuario y/o contraseña incorrecto");
                 passwordBoxPass.Password = String.Empty;
-            }else if (login.Result.Equals(validationResult.Success))
+            }
+            else if (login.Result.Equals(validationResult.Success))
             {
                 Properties.Settings.Default.UserID = authentication.GetUserName(textboxUser.Text.ToString(), passwordBoxPass.Password);
                 Properties.Settings.Default.UserType = authentication.GetUserType(textboxUser.Text.ToString(), passwordBoxPass.Password);
@@ -65,7 +71,6 @@ namespace ServicioSocial
                 MessageBox.Show("Error no identificado");
             }
         }
-
 
         private void OpenWindow()
         {

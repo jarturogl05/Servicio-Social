@@ -16,7 +16,7 @@ namespace BusinessLogic.Tests
         public void AddAlumnoTest()
         {
             AlumnoDAO alumnoDAO = new AlumnoDAO();
-            Alumno alumno = new Alumno("S17012959", "2", "zS17012959@estudiantes.uv.mx", "4", "David Bárcenas Duran", "Ingeniería de Software", "No asignado", "Visible");
+            Alumno alumno = new Alumno("S17012959", "1", "zS17012959@estudiantes.uv.mx", "5", "David Bárcenas Duran", "Ingeniería de Software", "No Asignado", "Visible");
             Assert.AreEqual(AddResult.Success, alumnoDAO.AddAlumno(alumno));
         }
 

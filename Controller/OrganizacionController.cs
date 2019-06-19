@@ -21,7 +21,7 @@ namespace Controller
         public OperationResult AddOrganizacion(String RFC, String Nombre, String Direccion, String Sector, String Telefono, String Correo)
         {
             OperationResult operation = OperationResult.UnknowFail;
-            if (GetOrganizacionByRFC(RFC) == null)
+            if (GetOrganizacionByRFC(RFC).rfc == null)
             {
                 
                 Organizacion organizacion = new Organizacion();

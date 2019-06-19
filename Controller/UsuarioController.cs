@@ -13,17 +13,29 @@ namespace Controller
         public OperationResult AddUsuario(String nombre, String correo, String tipoUsuario, String usuario, String contraseña)
         {
             OperationResult operation = OperationResult.UnknowFail;
-            Usuario user = new Usuario();
-            user.Name = nombre;
-            user.Email = correo;
-            user.UserType = tipoUsuario;
-            user.UserName = usuario;
-            user.Password = contraseña;
-            user.RegisterDate = DateTime.Today;
-            UsuarioDAO usuarioDAO = new UsuarioDAO();
-            operation = (OperationResult)usuarioDAO.AddUsuario(user);
+            if (GetUsuarioByUsername(usuario).UserName == null)
+            {
+                Usuario user = new Usuario();
+                user.Name = nombre;
+                user.Email = correo;
+                user.UserType = tipoUsuario;
+                user.UserName = usuario;
+                user.Password = contraseña;
+                user.RegisterDate = DateTime.Today;
+                UsuarioDAO usuarioDAO = new UsuarioDAO();
+                operation = (OperationResult)usuarioDAO.AddUsuario(user);
+            }
+            else
+            {
+                operation = OperationResult.ExistingRecord;
+            }
 
             return operation;
+        }
+        public Usuario GetUsuarioByUsername(String username)
+        {
+            UsuarioDAO usuarioDAO = new UsuarioDAO();
+            return usuarioDAO.GetUsuarioByUsername(username);
         }
 
     }
