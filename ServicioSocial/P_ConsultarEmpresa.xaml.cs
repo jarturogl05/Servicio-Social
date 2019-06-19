@@ -29,9 +29,17 @@ namespace ServicioSocial
 
         private void ButtonSeleccionar_Click(object sender, RoutedEventArgs e)
         {
-            P_DatosEmpresa p_DatosEmpresa = new P_DatosEmpresa(gridOrganizacion.SelectedValue.ToString());
-            p_DatosEmpresa.ShowDialog();
-            UpdateGrid();
+            if (gridOrganizacion.SelectedIndex != -1)
+            {
+                P_DatosEmpresa p_DatosEmpresa = new P_DatosEmpresa(gridOrganizacion.SelectedValue.ToString());
+                p_DatosEmpresa.ShowDialog();
+                UpdateGrid();
+            }
+            else
+            {
+                MessageBox.Show("Debes seleccionar una empresa");
+            }
+            
         }
 
         private void ButtonCancelar_Click(object sender, RoutedEventArgs e)
@@ -49,7 +57,15 @@ namespace ServicioSocial
             else
             {
                 MessageBox.Show("No se encuentran organizaciones registradas");
+                this.Close();
             }
+        }
+
+        private void ButtonAgregar_Click(object sender, RoutedEventArgs e)
+        {
+            P_RegistrarEmpresa p_RegistrarEmpresa = new P_RegistrarEmpresa();
+            p_RegistrarEmpresa.ShowDialog();
+            UpdateGrid();
         }
     }
 }

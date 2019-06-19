@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -26,16 +27,17 @@ namespace ServicioSocial
         }
         private enum CheckResult
         {
-            Passed = 1,
-            Failed = 0
+            Passed,
+            Failed
         }
         public enum OperationResult
         {
-            Success = 1,
-            NullOrganization = 2,
-            InvalidOrganization = 3,
-            UnknowFail = 0,
-            SQLFail = 4,
+            Success,
+            NullOrganization,
+            InvalidOrganization,
+            UnknowFail,
+            SQLFail,
+            ExistingRecord
         }
         private CheckResult CheckEmptyFields()
         {
@@ -50,11 +52,40 @@ namespace ServicioSocial
             }
             return check;
         }
+        private CheckResult CheckFields()
+        {
+            CheckResult check = CheckResult.Failed;
+            ValidarCampos validarCampos = new ValidarCampos();
+            if (CheckEmptyFields() == CheckResult.Failed)
+            {
+                MessageBox.Show("Existen campos sin llenar");
+                check = CheckResult.Failed;
+            }
+            else if (validarCampos.ValidarRFC(textboxRFC.Text) == ValidarCampos.ResultadosValidación.RfcInválido)
+            {
+                MessageBox.Show("El RFC ingresado es inválido");
+            }
+            else if (validarCampos.ValidarNúmero(textboxTelefono.Text) == ValidarCampos.ResultadosValidación.NúmeroInválido)
+            {
+                MessageBox.Show("El numero contiene caracteres no validos");
+                check = CheckResult.Failed;
+            }
+            else if (validarCampos.ValidarCorreo(textboxCorreo.Text) == ValidarCampos.ResultadosValidación.Correoinválido)
+            {
+                MessageBox.Show("El correo ingresado no es valido");
+                check = CheckResult.Failed;
+            }
+            else
+            {
+                check = CheckResult.Passed;
+            }
+            return check;
+        }
         private void ComprobarResultado(OperationResult result)
         {
             if (result == OperationResult.Success)
             {
-                MessageBox.Show("Añadido con exito \n Intenta iniciar sesion");
+                MessageBox.Show("Añadido con exito");
                 this.Close();
             }
             else if (result == OperationResult.UnknowFail)
@@ -64,13 +95,18 @@ namespace ServicioSocial
             else if (result == OperationResult.SQLFail)
             {
                 MessageBox.Show("Error de la base de datos, intente mas tarde");
+            }else if (result == OperationResult.ExistingRecord)
+            {
+                MessageBox.Show("El registro ya existe en el sistema");
             }
         }
         private void ButtonGuardar_Click(object sender, RoutedEventArgs e)
         {
-            OrganizacionController organizacionController = new OrganizacionController();
-            ComprobarResultado ((OperationResult)organizacionController.AddOrganizacion(textboxRFC.Text, textboxNombre.Text, textboxDireccion.Text, textboxSector.Text, textboxTelefono.Text, textboxCorreo.Text));
-
+            if (CheckFields() == CheckResult.Passed)
+            {
+                OrganizacionController organizacionController = new OrganizacionController();
+                ComprobarResultado ((OperationResult)organizacionController.AddOrganizacion(textboxRFC.Text, textboxNombre.Text, textboxDireccion.Text, textboxSector.Text, textboxTelefono.Text, textboxCorreo.Text));
+            }
         }
 
         private void ButtonCancelar_Click(object sender, RoutedEventArgs e)

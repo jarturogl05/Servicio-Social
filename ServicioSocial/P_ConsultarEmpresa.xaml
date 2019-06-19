@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
-        Title="P_ConsultarEmpresa" Height="450" Width="800">
+        Title="P_ConsultarEmpresa" Height="450" Width="800" ResizeMode="CanMinimize">
     <Grid>
         <DataGrid x:Name="gridOrganizacion" HorizontalAlignment="Left" Height="330" Margin="10,10,0,0" VerticalAlignment="Top" Width="774"/>
-        <Button x:Name="buttonSeleccionar" Content="Seleccionar" HorizontalAlignment="Left" Margin="469,376,0,0" VerticalAlignment="Top" Width="140" FontSize="20" FontFamily="Arial" Height="29" Click="ButtonSeleccionar_Click"/>
+        <Button x:Name="buttonSeleccionar" Content="Ver datos" HorizontalAlignment="Left" Margin="469,376,0,0" VerticalAlignment="Top" Width="140" FontSize="20" FontFamily="Arial" Height="29" Click="ButtonSeleccionar_Click"/>
         <Button x:Name="buttonCancelar" Content="Cancelar" HorizontalAlignment="Left" Margin="642,376,0,0" VerticalAlignment="Top" Width="140" FontSize="20" FontFamily="Arial" Height="29" Click="ButtonCancelar_Click"/>
+        <Button x:Name="buttonAgregar" Content="Agregar nuevo" HorizontalAlignment="Left" Margin="299,376,0,0" VerticalAlignment="Top" Width="140" FontSize="20" FontFamily="Arial" Height="29" Click="ButtonAgregar_Click"/>
 
     </Grid>
 </Window>
