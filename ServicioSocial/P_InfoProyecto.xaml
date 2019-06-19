@@ -19,11 +19,11 @@
             <Button Content="Aceptar" FontSize="20" HorizontalAlignment="Left" Margin="331,751,0,0" VerticalAlignment="Top" Width="137"/>
             <TextBlock x:Name="txbk_NumAlumnos" HorizontalAlignment="Left" Margin="310,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="293" FontSize="20"/>
             <TextBlock x:Name="txbk_Organización" HorizontalAlignment="Left" Margin="310,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="293" FontSize="20"/>
-                <TextBlock x:Name="txbk_Actividades" TextWrapping="Wrap" FontSize="20" Height="62" Width="293"/>
+                <TextBlock x:Name="txbk_Actividades" TextWrapping="Wrap" FontSize="20" Height="62" Width="293" Margin="311,320,28,410"/>
             <TextBlock x:Name="txbk_Lugar" HorizontalAlignment="Left" Margin="310,419,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="293" FontSize="20"/>
             <TextBlock x:Name="txbk_Responsable" HorizontalAlignment="Left" Margin="310,502,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="293" FontSize="20"/>
             <TextBlock x:Name="txbk_Horario" HorizontalAlignment="Left" Margin="310,574,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="293" FontSize="20"/>
-                <TextBlock x:Name="txbl_Requisitos" TextWrapping="Wrap" FontSize="20" Height="66" Width="293"/>
+                <TextBlock x:Name="txbl_Requisitos" TextWrapping="Wrap" FontSize="20" Height="66" Width="293" Margin="310,656,28,70"/>
             <Image Margin="458,10,29,665" Source="UV.png" Stretch="Fill"/>
 
         </Grid>
