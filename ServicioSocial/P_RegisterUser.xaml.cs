@@ -26,13 +26,22 @@ namespace ServicioSocial
         }
         private enum CheckResult
         {
-            Passed = 1,
-            Failed = 0
+            Passed,
+            Failed
+        }
+        public enum OperationResult
+        {
+            Success,
+            NullOrganization,
+            InvalidOrganization,
+            UnknowFail,
+            SQLFail,
+            ExistingRecord
         }
         private CheckResult CheckEmptyFields()
         {
             CheckResult check = CheckResult.Failed;
-            if (textboxUserName.Text == String.Empty || textboxEmail.Text == String.Empty || textboxName.Text == String.Empty || textboxPass.Text == String.Empty || comboboxUserType.SelectedIndex == -1)
+            if (textboxUserName.Text == String.Empty || textboxEmail.Text == String.Empty || textboxName.Text == String.Empty || passwordBoxUserPass.Password == String.Empty || comboboxUserType.SelectedIndex == -1)
             {
                 check = CheckResult.Failed;
             }
@@ -42,25 +51,56 @@ namespace ServicioSocial
             }
             return check;
         }
-
-        private void ButtonAceptar_Click(object sender, RoutedEventArgs e)
+        private CheckResult CheckFields()
         {
-            if (CheckEmptyFields() == CheckResult.Passed)
+            CheckResult check = CheckResult.Failed;
+            ValidarCampos validarCampos = new ValidarCampos();
+            if (CheckEmptyFields() == CheckResult.Failed)
             {
-                UsuarioController usuarioController = new UsuarioController();
-                if ((int)usuarioController.AddUsuario(textboxName.Text, textboxEmail.Text,comboboxUserType.Text,textboxUserName.Text,textboxPass.Text) == 1)
-                {
-                    MessageBox.Show("Usuario Agregado con exito");
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Ocurrio un error al agregar el usuario");
-                }
+                MessageBox.Show("Existen campos sin llenar");
+                check = CheckResult.Failed;
+            }
+            else if (validarCampos.ValidarPassword(passwordBoxUserPass.Password) == ValidarCampos.ResultadosValidación.ContraseñaInválida)
+            {
+                MessageBox.Show("La contraseña es muy débil \n Intenta combinar letras mayúsculas, minúsculas y números");
+            }else if (validarCampos.ValidarCorreo(textboxEmail.Text) == ValidarCampos.ResultadosValidación.Correoinválido)
+            {
+                MessageBox.Show("El correo ingresado no es valido");
             }
             else
             {
-                MessageBox.Show("Debes llenar todos los campos");
+                check = CheckResult.Passed;
+            }
+            return check;
+        }
+        private void ComprobarResultado(OperationResult result)
+        {
+            if (result == OperationResult.Success)
+            {
+                MessageBox.Show("Añadido con exito");
+                this.Close();
+            }
+            else if (result == OperationResult.UnknowFail)
+            {
+                MessageBox.Show("Error desconocido");
+            }
+            else if (result == OperationResult.SQLFail)
+            {
+                MessageBox.Show("Error de la base de datos, intente mas tarde");
+            }
+            else if (result == OperationResult.ExistingRecord)
+            {
+                MessageBox.Show("El usuario ya existe en el sistema");
+            }
+        }
+
+
+        private void ButtonAceptar_Click(object sender, RoutedEventArgs e)
+        {
+            if (CheckFields() == CheckResult.Passed)
+            {
+                UsuarioController usuarioController = new UsuarioController();
+                ComprobarResultado((OperationResult)usuarioController.AddUsuario(textboxName.Text, textboxEmail.Text, comboboxUserType.Text, textboxUserName.Text, passwordBoxUserPass.Password));
             }
         }
 
@@ -74,7 +114,7 @@ namespace ServicioSocial
             textboxUserName.Text = String.Empty;
             textboxEmail.Text = String.Empty;
             textboxName.Text = String.Empty;
-            textboxPass.Text = String.Empty;
+            passwordBoxUserPass.Password = String.Empty;
             comboboxUserType.SelectedIndex = -1;
 
         }

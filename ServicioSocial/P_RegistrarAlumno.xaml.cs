@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Controller;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,16 +26,17 @@ namespace ServicioSocial
         }
         private enum CheckResult
         {
-            Passed = 1,
-            Failed = 0
+            Passed,
+            Failed
         }
         public enum OperationResult
         {
-            Success = 1,
-            NullOrganization = 2,
-            InvalidOrganization = 3,
-            UnknowFail = 0,
-            SQLFail = 4,
+            Success,
+            NullOrganization,
+            InvalidOrganization,
+            UnknowFail,
+            SQLFail,
+            ExistingRecord
         }
         private CheckResult CheckEmptyFields()
         {
@@ -49,11 +51,30 @@ namespace ServicioSocial
             }
             return check;
         }
+        private CheckResult CheckFields()
+        {
+            CheckResult check = CheckResult.Failed;
+            ValidarCampos validarCampos = new ValidarCampos();
+            if (CheckEmptyFields() == CheckResult.Failed)
+            {
+                MessageBox.Show("Existen campos sin llenar");
+                check = CheckResult.Failed;
+            }
+            else if (validarCampos.ValidarPassword(alumnoPassword.Password) == ValidarCampos.ResultadosValidación.ContraseñaInválida)
+            {
+                MessageBox.Show("La contraseña es muy débil \n Intenta combinar letras mayúsculas, minúsculas y números");
+            }
+            else
+            {
+                check = CheckResult.Passed;
+            }
+            return check;
+        }
         private void ComprobarResultado(OperationResult result)
         {
             if (result == OperationResult.Success)
             {
-                MessageBox.Show("Añadido con exito \n Intenta iniciar sesion");
+                MessageBox.Show("Añadido con exito");
                 this.Close();
             }
             else if (result == OperationResult.UnknowFail)
@@ -64,20 +85,27 @@ namespace ServicioSocial
             {
                 MessageBox.Show("Error de la base de datos, intente mas tarde");
             }
+            else if (result == OperationResult.ExistingRecord)
+            {
+                MessageBox.Show("El alumno ya existe en el sistema");
+            }
         }
 
         private void ButtonRegistrarse_Click(object sender, RoutedEventArgs e)
         {
             if (alumnoPassword.Password == alumnoPasswordRepite.Password)
             {
-                if (CheckEmptyFields() == CheckResult.Failed)
+                if (CheckFields() == CheckResult.Passed)
                 {
-                    MessageBox.Show("Debes llenar todos los campos");
+                    AlumnoController alumnoController = new AlumnoController();
+                    ComprobarResultado((OperationResult)alumnoController.AddAlumno(textboxMatricula.Text,textboxNombre.Text,comboSeccion.Text,comboBloque.Text,comboCarrera.Text,alumnoPassword.Password));
                 }
-                else
-                {
-                    
-                }
+            }
+            else
+            {
+                MessageBox.Show("Las contraseñas no coinciden");
+                alumnoPassword.Password = String.Empty;
+                alumnoPasswordRepite.Password = String.Empty;
             }
         }
 
@@ -86,9 +114,5 @@ namespace ServicioSocial
             this.Close();
         }
 
-        private void ComboCarrera_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }

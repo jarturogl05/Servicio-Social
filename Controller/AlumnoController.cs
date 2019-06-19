@@ -13,29 +13,39 @@ namespace Controller
         public OperationResult AddAlumno(String Matricula, String Nombre, String Seccion, String Bloque, String Carrera, String Contraseña)
         {
             OperationResult operation = OperationResult.UnknowFail;
-            Alumno alumno = new Alumno();
-            alumno.Matricula = Matricula;
-            alumno.NombreAlumno = Nombre;
-            alumno.Seccion = Seccion;
-            alumno.Visibilidad = "Visible";
-            alumno.Bloque = Bloque;
-            alumno.Correo = Matricula + "@estudiantes.uv.mx";
-            alumno.Estado = "No asignado";
-            AlumnoDAO alumnoDAO = new AlumnoDAO();
-            if ((OperationResult)alumnoDAO.AddAlumno(alumno) == OperationResult.Success)
+            if (GetAlumnoByMatricula(Matricula).Matricula == null)
             {
-                if (CreateUserForAlumno(Matricula, Contraseña, Nombre) == OperationResult.Success)
+                Alumno alumno = new Alumno();
+                alumno.Matricula = Matricula;
+                alumno.NombreAlumno = Nombre;
+                alumno.Seccion = Seccion;
+                alumno.Visibilidad = "Visible";
+                alumno.Bloque = Bloque;
+                alumno.Correo = Matricula + "@estudiantes.uv.mx";
+                alumno.Estado = "No asignado";
+                alumno.Carrera = Carrera;
+                AlumnoDAO alumnoDAO = new AlumnoDAO();
+                if ((OperationResult)alumnoDAO.AddAlumno(alumno) == OperationResult.Success)
                 {
-                    operation = OperationResult.Success;
+                    if (CreateUserForAlumno(Matricula, Contraseña, Nombre) == OperationResult.Success)
+                    {
+                        operation = OperationResult.Success;
+                    }
+                    else
+                    {
+                        DeleteAlumno(Matricula);
+                        operation = OperationResult.UnknowFail;
+                    }
                 }
                 else
                 {
                     operation = OperationResult.UnknowFail;
                 }
+
             }
             else
             {
-                operation = OperationResult.UnknowFail;
+                operation = OperationResult.ExistingRecord;
             }
             return operation;
 

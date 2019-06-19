@@ -34,11 +34,11 @@ namespace ServicioSocial
         }
         private enum OperationResult
         {
-            Success = 1,
-            NullOrganization = 2,
-            InvalidOrganization = 3,
-            UnknowFail = 0,
-            SQLFail = 4,
+            Success,
+            NullOrganization,
+            InvalidOrganization,
+            UnknowFail,
+            SQLFail,
         }
 
         private void ButtonGuardar_Click(object sender, RoutedEventArgs e)
