@@ -38,7 +38,7 @@ namespace BusinessLogic
                         command.ExecuteNonQuery();
                         resultado = AddResult.Success;
                     }
-                    catch(InvalidOperationException){
+                    catch(SqlException){
                         resultado = AddResult.UnknowFail;
                     }
                    

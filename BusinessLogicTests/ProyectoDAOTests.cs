@@ -19,7 +19,7 @@ namespace BusinessLogic.Tests
             {
                 Coordinador coordinador = new Coordinador(121231);
                 Encargado encargado = new Encargado("10");
-                Proyecto proyecto = new Proyecto("Desarrollo web", 1, "espera", "matutino", "xalapa", "desarollo", "ninguno", coordinador, encargado);
+                Proyecto proyecto = new Proyecto("Desarrollo web", 1, "Disponible", "matutino", "xalapa", "desarollo", "ninguno", coordinador, encargado);
                 ProyectoDAO proyectoDAO = new ProyectoDAO();
                 Assert.AreEqual(AddResult.Success, proyectoDAO.AddProyecto(proyecto));
             }

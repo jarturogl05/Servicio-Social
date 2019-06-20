@@ -19,7 +19,6 @@ namespace BusinessLogic.Tests
         public void AddEncargadoTestAñadir()
         {
             Organizacion organizacion = new Organizacion("IBM250101FM9");
-           
             Encargado encargado = new Encargado("Juan escutia", "Jefe de diseño", "sd@uv.com", "8745896", organizacion);
             EncargadoDAO encargadoDAO = new EncargadoDAO();
             Assert.AreEqual(AddResult.Success, encargadoDAO.AddEncargado(encargado));
