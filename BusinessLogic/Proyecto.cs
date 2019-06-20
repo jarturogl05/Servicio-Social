@@ -47,6 +47,11 @@ namespace BusinessLogic
             this.NumeroAlumnos = numAlumnos;
             this.Encargado = Encargado;
         }
+
+        public Proyecto(int idProyecto)
+        {
+            this.IDProyecto = idProyecto;
+        }
     }
 
    

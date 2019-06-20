@@ -17,21 +17,20 @@ namespace BusinessLogic.Tests
         public void AddSolicitudTestAñadir()
         {
 
-            Proyecto proyecto1 = new Proyecto();
-            proyecto1.NombreProyecto = "Web";
-            Proyecto proyecto2 = new Proyecto();
-            proyecto2.NombreProyecto = "Diseño";
-            Proyecto proyecto3 = new Proyecto();
-            proyecto3.NombreProyecto = "Programación";
-            Alumno alumno = new Alumno();
-            alumno.NombreAlumno = "Arturo pendragon";
-            List<Proyecto> proyectos = new List<Proyecto>();
-            proyectos.Add(proyecto1);
-            proyectos.Add(proyecto2);
-            proyectos.Add(proyecto3);
+            Proyecto proyecto1 = new Proyecto(2);
+            Proyecto proyecto2 = new Proyecto(3);
+            Proyecto proyecto3 = new Proyecto(4);
+            Alumno alumno = new Alumno("s17012912");
+            List<Proyecto> proyectos = new List<Proyecto>
+            {
+                proyecto1,
+                proyecto2,
+                proyecto3
+            };
+            DateTime dateTime = DateTime.Now;
 
 
-            Solicitud solicitud = new Solicitud("Mayo", "En espera", proyectos, alumno);
+            Solicitud solicitud = new Solicitud(dateTime.ToString(), "En espera", proyectos, alumno);
             SolicitudDAO solicitudDAO = new SolicitudDAO();
             Assert.AreEqual(AddResult.Success, solicitudDAO.AddSolicitud(solicitud));
         }
