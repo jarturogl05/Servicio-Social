@@ -44,6 +44,11 @@
   <ItemGroup>
     <Compile Include="AlumnoController.cs" />
     <Compile Include="AuthenticationController.cs" />
+    <Compile Include="ControladorCoordinador.cs" />
+    <Compile Include="ControladorEncargado.cs" />
+    <Compile Include="ControladorOrganización.cs" />
+    <Compile Include="ControladorProyecto.cs" />
+    <Compile Include="ControladorSolicitud.cs" />
     <Compile Include="DocumentoController.cs" />
     <Compile Include="OrganizacionController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

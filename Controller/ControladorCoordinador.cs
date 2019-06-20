@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static BusinessLogic.AddEnum;
+using BusinessLogic;
 
-namespace BusinessLogic
+namespace Controller
 {
     public class ControladorCoordinador
     {
