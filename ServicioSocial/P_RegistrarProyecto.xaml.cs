@@ -27,14 +27,6 @@ namespace ServicioSocial
             LlenarOrganizaciones();
         }
 
-        public P_RegistrarProyecto(Coordinador coordinador)
-        {
-            InitializeComponent();
-            LlenarOrganizaciones();
-            this.coordinador = coordinador;
-        }
-
-
         private void Cbb_organización_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cbb_organización.SelectedValue.ToString() != null)
@@ -47,9 +39,10 @@ namespace ServicioSocial
         {
             if(ValidarCamposVacios() && ValidarNumAlumnos())
             {
+                string IdCoordinador = Properties.Settings.Default.UserID;
                 ControladorProyecto ControladorProyecto = new ControladorProyecto();
                 if (ControladorProyecto.AddProyecto(txb_NombreProyecto.Text, int.Parse(txb_NúmeroAlumnos.Text),txb_Lugar.Text,
-                    txb_Horario.Text,txb_Actividades.Text, txb_Requisitos.Text, cbb_Responsable.SelectedItem, coordinador) == AddEnum.AddResult.Success)
+                    txb_Horario.Text,txb_Actividades.Text, txb_Requisitos.Text, cbb_Responsable.SelectedItem, IdCoordinador) == AddEnum.AddResult.Success)
                 {
                     MessageBox.Show("Proyecto agregado con éxito");
                     this.Close();

@@ -6,7 +6,7 @@
         WindowStartupLocation="CenterScreen"
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
-        Title="Información del proyecto" Height="700" Width="640">
+        Title="Información del proyecto" Height="900" Width="640">
     <ScrollViewer>
         <Grid Height="792" Width="632">
             <Label Content="Organización Vinculada" HorizontalAlignment="Left" Margin="35,155,0,0" VerticalAlignment="Top" FontSize="20" Height="40"/>
@@ -16,16 +16,20 @@
             <Label Content="Responsable" HorizontalAlignment="Left" Margin="35,502,0,0" VerticalAlignment="Top" Width="218" Height="40" FontSize="20"/>
             <Label Content="Horario" HorizontalAlignment="Left" Margin="35,574,0,0" VerticalAlignment="Top" Width="218" Height="40" FontSize="20"/>
             <Label Content="Requisitos" HorizontalAlignment="Left" Margin="35,656,0,0" VerticalAlignment="Top" Height="40" FontSize="20" Width="218"/>
-            <Button Content="Aceptar" FontSize="20" HorizontalAlignment="Left" Margin="331,751,0,0" VerticalAlignment="Top" Width="137"/>
+            <Button x:Name="btn_Aceptar" Content="Aceptar" FontSize="20" HorizontalAlignment="Left" Margin="262,750,0,0" VerticalAlignment="Top" Width="104" Click="Btn_Aceptar_Click" Height="32"/>
             <TextBlock x:Name="txbk_NumAlumnos" HorizontalAlignment="Left" Margin="310,242,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="35" Width="293" FontSize="20"/>
             <TextBlock x:Name="txbk_Organización" HorizontalAlignment="Left" Margin="310,155,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="293" FontSize="20"/>
-                <TextBlock x:Name="txbk_Actividades" TextWrapping="Wrap" FontSize="20" Height="62" Width="293" Margin="311,320,28,410"/>
+            <TextBox x:Name="txbk_Actividades" TextWrapping="Wrap" FontSize="20" Height="62" Width="293" Margin="311,320,28,410" ScrollViewer.VerticalScrollBarVisibility="Visible" BorderBrush="White"/>
             <TextBlock x:Name="txbk_Lugar" HorizontalAlignment="Left" Margin="310,419,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="293" FontSize="20"/>
             <TextBlock x:Name="txbk_Responsable" HorizontalAlignment="Left" Margin="310,502,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="293" FontSize="20"/>
             <TextBlock x:Name="txbk_Horario" HorizontalAlignment="Left" Margin="310,574,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="293" FontSize="20"/>
-                <TextBlock x:Name="txbl_Requisitos" TextWrapping="Wrap" FontSize="20" Height="66" Width="293" Margin="310,656,28,70"/>
+            <TextBox x:Name="txbl_Requisitos" TextWrapping="WrapWithOverflow" FontSize="20" Height="66" Width="293" ScrollViewer.VerticalScrollBarVisibility="Visible"  Margin="311,656,28,70" BorderBrush="White" />
             <Image Margin="458,10,29,665" Source="UV.png" Stretch="Fill"/>
 
         </Grid>
     </ScrollViewer>
+    
 </Window>
+
+
+    

@@ -41,9 +41,7 @@ namespace ServicioSocial
 
         private void Btn_AgregarProyecto_Click(object sender, RoutedEventArgs e)
         {
-            string id = Properties.Settings.Default.UserID;
-            Coordinador coordinador = new Coordinador(int.Parse(id));
-            P_RegistrarProyecto p_RegistrarProyecto = new P_RegistrarProyecto(coordinador);
+            P_RegistrarProyecto p_RegistrarProyecto = new P_RegistrarProyecto();
             p_RegistrarProyecto.ShowDialog();
         }
 
