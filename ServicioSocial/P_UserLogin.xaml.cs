@@ -64,8 +64,8 @@ namespace ServicioSocial
                 Properties.Settings.Default.UserID = authentication.GetUserName(textboxUser.Text.ToString(), passwordBoxPass.Password);
                 Properties.Settings.Default.UserType = authentication.GetUserType(textboxUser.Text.ToString(), passwordBoxPass.Password);
                 CheckRemember();
-                this.Close();
                 OpenWindow();
+                this.Close();
             }
             else
             {
@@ -75,23 +75,23 @@ namespace ServicioSocial
 
         private void OpenWindow()
         {
-            if (Properties.Settings.Default.UserType == "Alumno")
+            string typeUser = Properties.Settings.Default.UserType;
+            switch (typeUser)
             {
-                P_PrincipalAlumno p_PrincipalAlumno = new P_PrincipalAlumno();
-                p_PrincipalAlumno.Show();
-                this.Close();
-            }else if (Properties.Settings.Default.UserType == "Coordinador")
-            {
-                P_PrincipalCoordinador p_PrincipalCoordinador = new P_PrincipalCoordinador();
-                p_PrincipalCoordinador.Show();
-                this.Close();
+                case "Coordinador":
+                    P_PrincipalCoordinador p_PrincipalCoordinador = new P_PrincipalCoordinador();
+                    p_PrincipalCoordinador.Show();
+                    break;
+                case "Director":
+                    P_PrincipalDirector p_PrincipalDirector = new P_PrincipalDirector();
+                    p_PrincipalDirector.Show();
+                    break;
+                case "Alumno":
+                    P_PrincipalAlumno p_PrincipalAlumno = new P_PrincipalAlumno();
+                    p_PrincipalAlumno.Show();
+                    break;
             }
-            else
-            {
-                P_PrincipalDirector p_PrincipalDirector = new P_PrincipalDirector();
-                p_PrincipalDirector.Show();
-                this.Close();
-            }
+            
         }
 
         private void ButtonSignUp_Click(object sender, RoutedEventArgs e)

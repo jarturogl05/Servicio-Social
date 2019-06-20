@@ -17,12 +17,9 @@ namespace BusinessLogic.Tests
             [TestMethod()]
             public void AddProyectoTestAñadir()
             {
-                Coordinador coordinador = new Coordinador();
-                coordinador.NombreCoordinador = "Arturo";
-                Encargado encargado = new Encargado();
-                encargado.NombreEncargado = "José";
-
-                Proyecto proyecto = new Proyecto(01, "hola", 1, "espera", "matutino", "xalapa", "desarollo", "ninguno", coordinador, encargado);
+                Coordinador coordinador = new Coordinador(121231);
+                Encargado encargado = new Encargado("10");
+                Proyecto proyecto = new Proyecto("Desarrollo web", 1, "Disponible", "matutino", "xalapa", "desarollo", "ninguno", coordinador, encargado);
                 ProyectoDAO proyectoDAO = new ProyectoDAO();
                 Assert.AreEqual(AddResult.Success, proyectoDAO.AddProyecto(proyecto));
             }

@@ -25,6 +25,8 @@ namespace ServicioSocial
             InitializeComponent();
         }
 
+
+
         private void Btn_AgregarEncargado_Click(object sender, RoutedEventArgs e)
         {
             P_RegistrarEncargado p_RegistrarEncargado = new P_RegistrarEncargado();
@@ -39,8 +41,7 @@ namespace ServicioSocial
 
         private void Btn_AgregarProyecto_Click(object sender, RoutedEventArgs e)
         {
-            Coordinador coordinador = new Coordinador(12145);
-            P_RegistrarProyecto p_RegistrarProyecto = new P_RegistrarProyecto(coordinador);
+            P_RegistrarProyecto p_RegistrarProyecto = new P_RegistrarProyecto();
             p_RegistrarProyecto.ShowDialog();
         }
 

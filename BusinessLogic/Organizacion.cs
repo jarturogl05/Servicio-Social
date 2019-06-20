@@ -32,9 +32,9 @@ namespace BusinessLogic
             return rfc;
         }
 
-        public Organizacion(string nombre)
+        public Organizacion(string rfc)
         {
-            this.NombreOrganizacion = nombre;
+            this.rfc = rfc;
         }
     }
 }

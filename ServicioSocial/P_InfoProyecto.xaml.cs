@@ -58,5 +58,9 @@ namespace ServicioSocial
             ControladorEncargado controladorEncargado = new ControladorEncargado();
             return controladorEncargado.GetEncargado(proyecto.Encargado.IdEncargado);
         }
+        private void Btn_Aceptar_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }
