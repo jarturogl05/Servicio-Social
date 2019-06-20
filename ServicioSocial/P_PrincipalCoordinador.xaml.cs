@@ -48,5 +48,23 @@ namespace ServicioSocial
         {
             this.Close();
         }
+
+        private void Btn_ConsultarOrganizacion_Click(object sender, RoutedEventArgs e)
+        {
+            P_ConsultarEmpresa p_ConsultarEmpresa = new P_ConsultarEmpresa();
+            p_ConsultarEmpresa.ShowDialog();
+        }
+
+        private void Btn_ConsultarAlumno_Click(object sender, RoutedEventArgs e)
+        {
+            P_ConsultarAlumno p_ConsultarAlumno = new P_ConsultarAlumno();
+            p_ConsultarAlumno.ShowDialog();
+        }
+
+        private void Btn_RegistrarUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            P_RegisterUser p_RegisterUser = new P_RegisterUser();
+            p_RegisterUser.ShowDialog();
+        }
     }
 }

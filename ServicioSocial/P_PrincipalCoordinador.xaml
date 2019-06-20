@@ -13,6 +13,9 @@
         <Button x:Name="btn_CerrarSesión" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="421,511,0,0" VerticalAlignment="Top" Width="129" Height="33" FontSize="20" Click="Btn_CerrarSesión_Click"/>
         <Button x:Name="btn_AgregarOrganización" Content="Agregar Organización" HorizontalAlignment="Left" Margin="350,193,0,0" VerticalAlignment="Top" Width="200" Height="77" FontSize="20" Click="Btn_AgregarOrganización_Click"/>
         <Button x:Name="btn_AgregarProyecto" Content="Agregar Proyecto" HorizontalAlignment="Left" Margin="37,309,0,0" VerticalAlignment="Top" Width="200" Height="77" FontSize="20" Click="Btn_AgregarProyecto_Click"/>
+        <Button x:Name="btn_ConsultarOrganizacion" Content="Consultar Organizaciones" HorizontalAlignment="Left" Margin="350,309,0,0" VerticalAlignment="Top" Width="200" Height="77" FontSize="20" Click="Btn_ConsultarOrganizacion_Click" />
+        <Button x:Name="btn_ConsultarAlumno" Content="Consultar Alumnos" HorizontalAlignment="Left" Margin="37,420,0,0" VerticalAlignment="Top" Width="200" Height="77" FontSize="20" Click="Btn_ConsultarAlumno_Click" />
+        <Button x:Name="btn_RegistrarUsuario" Content="Registrar Usuario" HorizontalAlignment="Left" Margin="350,420,0,0" VerticalAlignment="Top" Width="200" Height="77" FontSize="20" Click="Btn_RegistrarUsuario_Click"/>
 
     </Grid>
 </Window>

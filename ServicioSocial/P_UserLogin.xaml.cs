@@ -20,6 +20,7 @@ namespace ServicioSocial
     {
         public P_UserLogin()
         {
+            Properties.Settings.Default.Reset();
             InitializeComponent();
             if (Properties.Settings.Default.Remember == true && !String.IsNullOrEmpty(Properties.Settings.Default.Username.ToString()))
             {
@@ -74,7 +75,23 @@ namespace ServicioSocial
 
         private void OpenWindow()
         {
-            MessageBox.Show("Not implemented Exception, jeje");
+            if (Properties.Settings.Default.UserType == "Alumno")
+            {
+                P_PrincipalAlumno p_PrincipalAlumno = new P_PrincipalAlumno();
+                p_PrincipalAlumno.Show();
+                this.Close();
+            }else if (Properties.Settings.Default.UserType == "Coordinador")
+            {
+                P_PrincipalCoordinador p_PrincipalCoordinador = new P_PrincipalCoordinador();
+                p_PrincipalCoordinador.Show();
+                this.Close();
+            }
+            else
+            {
+                P_PrincipalDirector p_PrincipalDirector = new P_PrincipalDirector();
+                p_PrincipalDirector.Show();
+                this.Close();
+            }
         }
 
         private void ButtonSignUp_Click(object sender, RoutedEventArgs e)
