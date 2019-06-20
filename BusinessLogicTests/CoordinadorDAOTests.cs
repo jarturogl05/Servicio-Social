@@ -14,7 +14,7 @@ namespace BusinessLogic.Tests
     public class CoordinadorDAOTests
     {
         [TestMethod()]
-        public void AddCoordinadorTestAñadir()
+        public void AddCoordinadorTestAñadirRepetido()
         {
             string NombreCoordinador = "José arturo";
             string Carrera = "Tecnologías Computacionales";
@@ -22,16 +22,20 @@ namespace BusinessLogic.Tests
             Coordinador coordinador = new Coordinador(NombreCoordinador, Carrera, NumeroPersonal);
             CoordinadorDAO coordinadorDAO = new CoordinadorDAO();
 
-            Assert.AreEqual(AddResult.Success, coordinadorDAO.AddCoordinador(coordinador));
+            Assert.AreEqual(AddResult.UnknowFail, coordinadorDAO.AddCoordinador(coordinador));
         }
 
         [TestMethod()]
-        [ExpectedException(typeof(SqlException))]
-        public void AddCoordinadorTestSQLException()
+        public void AddCoordinadorTestNombreLargo()
         {
-            Coordinador coordinador = new Coordinador();
+            string NombreCoordinador = "José arturoooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo";
+            string Carrera = "Tecnologías Computacionales";
+            int NumeroPersonal = 10223;
+            Coordinador coordinador = new Coordinador(NombreCoordinador, Carrera, NumeroPersonal);
             CoordinadorDAO coordinadorDAO = new CoordinadorDAO();
-            coordinadorDAO.AddCoordinador(coordinador);
+            Assert.AreEqual(AddResult.UnknowFail, coordinadorDAO.AddCoordinador(coordinador));
+
         }
+
     }
 }
