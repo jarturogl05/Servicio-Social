@@ -19,7 +19,9 @@ namespace BusinessLogic
             NúmeroInválido,
             NúmeroVálido,
             RfcInválido,
-            RfcVálido
+            RfcVálido,
+            MatriculaVálida,
+            MatriculaInválida
 
         }
 
@@ -73,7 +75,15 @@ namespace BusinessLogic
             }
             return ResultadosValidación.RfcInválido;
         }
-
+        public ResultadosValidación ValidarMatricula(string matricula)
+        {
+            string patrón = @"^[A-Z][0-9]+$";
+            if (Regex.IsMatch(matricula, patrón))
+            {
+                return ResultadosValidación.MatriculaVálida;
+            }
+            return ResultadosValidación.MatriculaInválida;
+        }
 
     }
 }

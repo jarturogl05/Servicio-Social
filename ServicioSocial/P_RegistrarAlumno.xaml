@@ -12,7 +12,7 @@
         <Label x:Name="labelBloque" Content="Bloque" HorizontalAlignment="Left" Margin="43,241,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
         <Label x:Name="labelCarrera" Content="Carrera" HorizontalAlignment="Left" Margin="43,395,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
         <Label x:Name="labelSeccion" Content="Seccion" HorizontalAlignment="Left" Margin="43,162,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
-        <TextBox x:Name="textboxMatricula" HorizontalAlignment="Left" Height="29" Margin="321,81,0,0" VerticalAlignment="Top" Width="276" FontSize="20" MaxLength="9"/>
+        <TextBox x:Name="textboxMatricula" HorizontalAlignment="Left" Height="29" Margin="321,81,0,0" VerticalAlignment="Top" Width="276" FontSize="20" MaxLength="9" CharacterCasing="Upper"/>
         <ComboBox x:Name="comboSeccion" HorizontalAlignment="Left" Margin="321,162,0,0" VerticalAlignment="Top" Width="276" Height="29" FontSize="20">
             <ComboBoxItem Content="1" FontSize="20"/>
             <ComboBoxItem Content="2" FontSize="20"/>

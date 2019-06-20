@@ -13,7 +13,7 @@
         <Label x:Name="labelDireccion" Content="Direccion" HorizontalAlignment="Left" Margin="43,247,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
         <Label x:Name="labelTelefono" Content="Telefono" HorizontalAlignment="Left" Margin="43,395,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
         <Label x:Name="labelNombre" Content="Nombre de la empresa" HorizontalAlignment="Left" Margin="43,162,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
-        <TextBox x:Name="textboxRFC" HorizontalAlignment="Left" Height="29" Margin="321,81,0,0" VerticalAlignment="Top" Width="278" FontSize="20" MaxLength="13"/>
+        <TextBox x:Name="textboxRFC" HorizontalAlignment="Left" Height="29" Margin="321,81,0,0" VerticalAlignment="Top" Width="278" FontSize="20" MaxLength="13" CharacterCasing="Upper"/>
         <TextBox x:Name="textboxNombre" HorizontalAlignment="Left" Height="29" Margin="321,162,0,0" VerticalAlignment="Top" Width="278" FontSize="20" MaxLength="50"/>
         <TextBox x:Name="textboxDireccion" HorizontalAlignment="Left" Height="29" Margin="321,241,0,0" VerticalAlignment="Top" Width="278" FontSize="20" MaxLength="50"/>
         <TextBox x:Name="textboxSector" HorizontalAlignment="Left" Height="29" Margin="321,320,0,0" VerticalAlignment="Top" Width="278" FontSize="20" MaxLength="50"/>

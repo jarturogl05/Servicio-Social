@@ -18,6 +18,10 @@ namespace BusinessLogic.Tests
         {
             OrganizacionDAO organizacionDAO = new OrganizacionDAO();
             Organizacion organizacion = new Organizacion("BADD990524I55", "David", "Facultad de Economia", "2288455625", "Educativo", "davisbd100@gmail.com");
+            if (organizacionDAO.GetOrganizacionByRFC(organizacion.rfc) != null)
+            {
+                organizacionDAO.DeleteOrganizacionByRFC(organizacion.rfc);
+            }
             Assert.AreEqual(AddResult.Success, organizacionDAO.AddOrganizacion(organizacion));
         }
 
@@ -30,28 +34,39 @@ namespace BusinessLogic.Tests
         }
 
         [TestMethod()]
+        public void AddOrganizacionTestNull()
+        {
+            OrganizacionDAO organizacionDAO = new OrganizacionDAO();
+            Organizacion organizacion = new Organizacion();
+            Assert.AreEqual(organizacionDAO.AddOrganizacion(organizacion), AddResult.NullObject);
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(FormatException))]
+        public void AddOrganizacionTestEmpty()
+        {
+            OrganizacionDAO organizacionDAO = new OrganizacionDAO();
+            Organizacion organizacion = new Organizacion("", "David", "Facultad de Economia", "2288455625", "Educativo", "davisbd100@gmail.com");
+            organizacionDAO.AddOrganizacion(organizacion);
+        }
+
+        [TestMethod()]
+        [ExpectedException(typeof(FormatException))]
+        public void AddOrganizacionTestWrongFormat()
+        {
+            OrganizacionDAO organizacionDAO = new OrganizacionDAO();
+            Organizacion organizacion = new Organizacion("S17012959", "David", "Facultad de Economia", "2288455625", "Educativo", "davisbd100@gmail.com");
+            organizacionDAO.AddOrganizacion(organizacion);
+        }
+
+        [TestMethod()]
         public void GetOrganizacionTest()
         {
             OrganizacionDAO organizacionDAO = new OrganizacionDAO();
             List<Organizacion> organizacionList = organizacionDAO.GetOrganizacion();
-            Assert.AreEqual(false, organizacionList.Any());
+            Assert.AreEqual(true, organizacionList.Any());
         }
 
-        [TestMethod()]
-        [ExpectedException(typeof(SqlException))]
-        public void GetOrganizacionSQLExceptionTest()
-        {
-            OrganizacionDAO organizacionDAO = new OrganizacionDAO();
-            List<Organizacion> organizacionList = organizacionDAO.GetOrganizacion();
-        }
-
-        [TestMethod()]
-        [ExpectedException(typeof(SqlException))]
-        public void GetOrganizacionByNameSQLExceptionTest()
-        {
-            OrganizacionDAO organizacion = new OrganizacionDAO();
-            organizacion.GetOrganizacionByName("BADD990525I55");
-        }
 
         [TestMethod()]
         public void GetOrganizacionByNameTest()
@@ -68,5 +83,6 @@ namespace BusinessLogic.Tests
             Organizacion organizacion = new Organizacion();
             Assert.AreEqual(null, organizacionDAO.GetOrganizacionByName("Hector").Sector);
         }
+
     }
 }
