@@ -32,14 +32,6 @@ namespace ServicioSocial
             
         }
 
-        public P_ProyectosEspera(Alumno alumno)
-        {
-            InitializeComponent();
-            LlenarGrid();
-            this.alumno = alumno;
-
-        }
-
 
         public void LlenarGrid()
         {
@@ -80,7 +72,7 @@ namespace ServicioSocial
             {
                 ControladorSolicitud controladorSolicitud = new ControladorSolicitud();
                 List<Proyecto> proyectosSeleccionados = SelecciónProyectos();
-                if (controladorSolicitud.AñadirSolicitud(proyectosSeleccionados, alumno ) == AddEnum.AddResult.Success)
+                if (controladorSolicitud.AñadirSolicitud(proyectosSeleccionados, Properties.Settings.Default.UserID) == AddEnum.AddResult.Success)
                 {
                     MessageBox.Show("Solicitud creada con éxito");
                     this.Close();

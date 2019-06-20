@@ -32,6 +32,7 @@
                 </TransformGroup>
             </Image.RenderTransform>
         </Image>
+        <Label Content="Presiona la tecla ctrl + click para seleccionar de manera &#xD;&#xA;múltiple" HorizontalAlignment="Left" Margin="25,54,0,0" VerticalAlignment="Top" Height="89" Width="556" FontSize="20"/>
 
     </Grid>
 </Window>

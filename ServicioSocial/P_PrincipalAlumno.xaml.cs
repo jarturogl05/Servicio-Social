@@ -30,8 +30,7 @@ namespace ServicioSocial
         {
             if (BuscarSolicitud())
             {
-                Alumno alumno = new Alumno(Properties.Settings.Default.UserID);
-                P_ProyectosEspera p_ProyectosEspera = new P_ProyectosEspera(alumno);
+                P_ProyectosEspera p_ProyectosEspera = new P_ProyectosEspera();
                 p_ProyectosEspera.ShowDialog();
             }
 
@@ -39,8 +38,7 @@ namespace ServicioSocial
         private bool BuscarSolicitud()
         {
             ControladorSolicitud controladorSolicitud = new ControladorSolicitud();
-            Alumno alumno = new Alumno(Properties.Settings.Default.UserID);
-            if (!controladorSolicitud.BuscarSolicitud(alumno))
+            if (!controladorSolicitud.BuscarSolicitud(Properties.Settings.Default.UserID))
             {
                 MessageBox.Show("Ya tienes una solicitud creada");
                 return false;
