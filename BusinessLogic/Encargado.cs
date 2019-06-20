@@ -15,7 +15,7 @@ namespace BusinessLogic
         public string TelefonoEncargado { get; set; }
 
         public Organizacion Organizacion;
-
+        private int v;
 
         public Encargado()
         {
@@ -52,8 +52,9 @@ namespace BusinessLogic
           
         }
 
-
-
-
+        public Encargado(string idEncargado)
+        {
+            this.IdEncargado = idEncargado;
+        }
     }
 }
