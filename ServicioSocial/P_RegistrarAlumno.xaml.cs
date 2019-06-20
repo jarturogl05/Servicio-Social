@@ -59,6 +59,9 @@ namespace ServicioSocial
             {
                 MessageBox.Show("Existen campos sin llenar");
                 check = CheckResult.Failed;
+            }else if (validarCampos.ValidarMatricula(textboxMatricula.Text) == ValidarCampos.ResultadosValidación.MatriculaInválida)
+            {
+                MessageBox.Show("Formato de matricula incorrecto");
             }
             else if (validarCampos.ValidarPassword(alumnoPassword.Password) == ValidarCampos.ResultadosValidación.ContraseñaInválida)
             {

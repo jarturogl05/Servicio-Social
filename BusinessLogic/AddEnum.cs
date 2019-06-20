@@ -11,7 +11,7 @@ namespace BusinessLogic
         public enum AddResult
         {
             Success,
-            NullOrganization,
+            NullObject,
             InvalidOrganization,
             UnknowFail,
             SQLFail,

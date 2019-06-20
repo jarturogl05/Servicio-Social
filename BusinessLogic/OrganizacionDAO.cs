@@ -9,24 +9,51 @@ using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
-    
     public class OrganizacionDAO : IOrganizacionDAO
     {
+        private AddResult CheckObjectOrganizacion(Organizacion organizacion)
+        {
+            ValidarCampos validarCampos = new ValidarCampos();
+            AddResult result = AddResult.UnknowFail;
+            if (organizacion.rfc == String.Empty || organizacion.NombreOrganizacion == String.Empty || organizacion.DireccionOrganizacion == String.Empty || organizacion.Sector == String.Empty || organizacion.TelefonoOrganizacion== String.Empty || organizacion.CorreoOrganizacion == String.Empty)
+            {
+                throw new FormatException("El objeto contiene campos vacios");
+            }else if(validarCampos.ValidarRFC(organizacion.rfc) == ValidarCampos.ResultadosValidación.RfcInválido)
+            {
+                throw new FormatException("El RFC ingresado no cumple con los criterios" + organizacion.rfc);
+            }else if(validarCampos.ValidarNúmero(organizacion.TelefonoOrganizacion) == ValidarCampos.ResultadosValidación.TeléfonoInválido)
+            {
+                throw new FormatException("El telefono contiene caracteres no permitidos" + organizacion.TelefonoOrganizacion);
+            }else if (validarCampos.ValidarCorreo(organizacion.CorreoOrganizacion) == ValidarCampos.ResultadosValidación.Correoinválido)
+            {
+                throw new FormatException("El correo no cumple con los criterios: " + organizacion.CorreoOrganizacion);
+            }
+            else
+            {
+                result = AddResult.Success;
+            }
+            return result;
+        }
         public AddResult AddOrganizacion(Organizacion organizacion)
         {
             AddResult resultado = AddResult.UnknowFail;
             DbConnection dbConnection = new DbConnection();
+            AddResult checkForEmpty = AddResult.UnknowFail;
+            try
+            {
+                checkForEmpty = CheckObjectOrganizacion(organizacion);
+            }
+            catch (ArgumentNullException)
+            {
+                resultado = AddResult.NullObject;
+                return resultado;
+            }catch(FormatException ex)
+            {
+                throw ex;
+            }
             using (SqlConnection connection = dbConnection.GetConnection())
             {
-                try
-                {
-                    connection.Open();
-                }catch(SqlException)
-                {
-                    resultado = AddResult.SQLFail;
-                    return resultado;
-                }
-
+                connection.Open();
                 using (SqlCommand command = new SqlCommand("INSERT INTO dbo.Organizacion VALUES(@rfc, @nombre, @direccion,@sector, @telefono, @correo)", connection))
                 {
                     command.Parameters.Add(new SqlParameter("@rfc", organizacion.rfc));
@@ -35,7 +62,15 @@ namespace BusinessLogic
                     command.Parameters.Add(new SqlParameter("@Sector", organizacion.Sector));
                     command.Parameters.Add(new SqlParameter("@Telefono", organizacion.TelefonoOrganizacion));
                     command.Parameters.Add(new SqlParameter("@correo", organizacion.CorreoOrganizacion));
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException)
+                    {
+                        resultado = AddResult.SQLFail;
+                        return resultado;
+                    }
                     resultado = AddResult.Success;
                 }
                 connection.Close();

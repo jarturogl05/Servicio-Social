@@ -15,7 +15,7 @@ namespace LoginAuth.Tests
         public void CredentialsAuthenticationTest()
         {
             LoginAuthentication login = new LoginAuthentication();
-            Assert.AreEqual(login.CredentialsAuthentication("eldavis", "del2al5"), LoginAuthentication.validationResult.Success);
+            Assert.AreEqual(login.CredentialsAuthentication("s17012959", "A2B4c6d8"), LoginAuthentication.validationResult.Success);
         }
     }
 }

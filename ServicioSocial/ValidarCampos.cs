@@ -19,7 +19,10 @@ namespace ServicioSocial
             NúmeroInválido,
             NúmeroVálido,
             RfcInválido,
-            RfcVálido
+            RfcVálido,
+            MatriculaVálida,
+            MatriculaInválida
+
 
         }
 
@@ -74,6 +77,15 @@ namespace ServicioSocial
             return ResultadosValidación.RfcInválido;
         }
 
+        public ResultadosValidación ValidarMatricula(string matricula)
+        {
+            string patrón = @"^[A-Z][0-9]+$";
+            if (Regex.IsMatch(matricula, patrón))
+            {
+                return ResultadosValidación.MatriculaVálida;
+            }
+            return ResultadosValidación.MatriculaInválida;
+        }
 
     }
 }

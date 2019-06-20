@@ -11,22 +11,49 @@ namespace BusinessLogic
 {
     public class AlumnoDAO : IAlumnoDAO
     {
+        private AddResult CheckObjectAlumno(Alumno alumno)
+        {
+            ValidarCampos validarCampos = new ValidarCampos();
+            AddResult result = AddResult.UnknowFail;
+            if (alumno.Bloque == String.Empty || alumno.Carrera == String.Empty || alumno.Correo == String.Empty || alumno.Estado == String.Empty || alumno.Matricula == String.Empty || alumno.NombreAlumno == String.Empty || alumno.Seccion == String.Empty || alumno.Visibilidad == String.Empty)
+            {
+                throw new FormatException("El objeto contiene campos vacios");
+            }
+            else if (validarCampos.ValidarMatricula(alumno.Matricula) == ValidarCampos.ResultadosValidación.MatriculaInválida)
+            {
+                throw new FormatException("La matricula ingresada no cumple con los criterios " + alumno.Matricula);
+            }
+            else if (validarCampos.ValidarCorreo(alumno.Correo) == ValidarCampos.ResultadosValidación.Correoinválido)
+            {
+                throw new FormatException("El correo no cumple con los criterios: " + alumno.Correo);
+            }
+            else
+            {
+                result = AddResult.Success;
+            }
+            return result;
+        }
         public AddResult AddAlumno(Alumno alumno)
         {
             AddResult resultado = AddResult.UnknowFail;
             DbConnection dbConnection = new DbConnection();
+            AddResult checkForEmpty = AddResult.UnknowFail;
+            try
+            {
+                checkForEmpty = CheckObjectAlumno(alumno);
+            }
+            catch (ArgumentNullException)
+            {
+                resultado = AddResult.NullObject;
+                return resultado;
+            }
+            catch (FormatException ex)
+            {
+                throw ex;
+            }
             using (SqlConnection connection = dbConnection.GetConnection())
             {
-                try
-                {
-                    connection.Open();
-                }
-                catch (SqlException)
-                {
-                    resultado = AddResult.SQLFail;
-                    return resultado;
-                }
-
+                connection.Open();
                 using (SqlCommand command = new SqlCommand("INSERT INTO dbo.Alumno VALUES(@Matricula, @Seccion, @Correo,@Bloque, @Nombre, @Carrera, @Estado, @Visibilidad)", connection))
                 {
                     command.Parameters.Add(new SqlParameter("@Matricula", alumno.Matricula));
@@ -37,7 +64,14 @@ namespace BusinessLogic
                     command.Parameters.Add(new SqlParameter("@Carrera", alumno.Carrera));
                     command.Parameters.Add(new SqlParameter("@Estado", alumno.Estado));
                     command.Parameters.Add(new SqlParameter("@Visibilidad", alumno.Visibilidad));
-                    command.ExecuteNonQuery();
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }catch (SqlException)
+                    {
+                        resultado = AddResult.SQLFail;
+                        return resultado;
+                    }
                     resultado = AddResult.Success;
                 }
                 connection.Close();
