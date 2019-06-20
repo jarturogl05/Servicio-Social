@@ -49,6 +49,11 @@ namespace ServicioSocial
 
         private void Btn_CerrarSesión_Click(object sender, RoutedEventArgs e)
         {
+            Properties.Settings.Default.UserID = String.Empty;
+            Properties.Settings.Default.UserType = String.Empty;
+            Properties.Settings.Default.Save();
+            P_UserLogin p_UserLogin = new P_UserLogin();
+            p_UserLogin.Show();
             this.Close();
         }
     }
