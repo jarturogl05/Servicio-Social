@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
         Title="Servicio Social - Inicio de Sesion" Height="480" Width="480
-        " ResizeMode="CanMinimize">
+        " ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Button x:Name="buttonLogin" Content="Iniciar Sesión" HorizontalAlignment="Left" Margin="259,379,0,0" VerticalAlignment="Top" Width="139" Height="32" FontSize="18" FontFamily="Arial" Click="ButtonLogin_Click"/>
         <Label x:Name="labelUser" Content="Usuario&#xD;&#xA;" HorizontalAlignment="Left" Margin="169,115,0,0" VerticalAlignment="Top" FontSize="24" Height="47" FontFamily="Arial Black"/>

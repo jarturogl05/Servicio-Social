@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
-        Title="Registrar Empresa" Height="800" Width="640" ResizeMode="CanMinimize">
+        Title="Registrar Empresa" Height="800" Width="640" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label x:Name="labelRFC" Content="RFC" HorizontalAlignment="Left" Margin="43,81,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
         <Label x:Name="labelCorreo" Content="Correo" HorizontalAlignment="Left" Margin="43,477,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>

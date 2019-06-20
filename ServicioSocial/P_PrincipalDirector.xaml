@@ -11,6 +11,7 @@
         <Label Content="¿Qué Desea Hacer?" HorizontalAlignment="Left" Margin="32,66,0,0" VerticalAlignment="Top" Height="59" Width="255" FontSize="24"/>
         <Button x:Name="btn_AgregarCoordinador" Content="Agregar Coordinador" HorizontalAlignment="Left" Margin="32,191,0,0" VerticalAlignment="Top" Width="208" Height="77" FontSize="20" Click="Btn_AgregarCoordinador_Click" />
         <Button x:Name="btn_CerrarSesión" Content="Cerrar Sesión" HorizontalAlignment="Left" Margin="421,413,0,0" VerticalAlignment="Top" Width="129" Height="33" FontSize="20" Click="Btn_CerrarSesión_Click"/>
+        <Button x:Name="btn_AgregarUsuario" Content="Agregar Usuario" HorizontalAlignment="Left" Margin="323,191,0,0" VerticalAlignment="Top" Width="208" Height="77" FontSize="20" Click="Btn_AgregarUsuario_Click"/>
 
 
     </Grid>

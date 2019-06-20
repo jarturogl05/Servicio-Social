@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
-        Title="Registrar Alumno" Height="800" Width="640" ResizeMode="CanMinimize">
+        Title="Registrar Alumno" Height="800" Width="640" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label x:Name="labelMatricula" Content="Matrícula" HorizontalAlignment="Left" Margin="43,81,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
         <Label x:Name="labelNombre" Content="Nombre" HorizontalAlignment="Left" Margin="43,315,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial Black"/>
@@ -29,9 +29,11 @@
         </ComboBox>
         <TextBox x:Name="textboxNombre" HorizontalAlignment="Left" Height="29" Margin="321,320,0,0" VerticalAlignment="Top" Width="276" FontSize="20" MaxLength="50"/>
         <ComboBox x:Name="comboCarrera" HorizontalAlignment="Left" Margin="321,400,0,0" VerticalAlignment="Top" Width="276" Height="29" FontSize="20">
+            <ComboBoxItem Content="Ciencias y Técnicas Estadísticas" FontSize="20"/>
+            <ComboBoxItem Content="Estadística" FontSize="20"/>
             <ComboBoxItem Content="Ingeniería de Software" FontSize="20"/>
-            <ComboBoxItem Content="Redes" FontSize="20"/>
-            <ComboBoxItem Content="Tecnologias computacionales" FontSize="20"/>
+            <ComboBoxItem Content="Redes y Servicios de Cómputo"/>
+            <ComboBoxItem Content="Tecnologías Computacionales"/>
         </ComboBox>
         <PasswordBox x:Name="alumnoPassword" HorizontalAlignment="Left" Margin="321,478,0,0" VerticalAlignment="Top" Width="276" Height="28" MaxLength="50"/>
         <PasswordBox x:Name="alumnoPasswordRepite" HorizontalAlignment="Left" Margin="321,560,0,0" VerticalAlignment="Top" Width="276" Height="28" MaxLength="50"/>

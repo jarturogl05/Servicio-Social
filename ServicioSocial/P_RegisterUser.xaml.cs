@@ -97,10 +97,19 @@ namespace ServicioSocial
 
         private void ButtonAceptar_Click(object sender, RoutedEventArgs e)
         {
-            if (CheckFields() == CheckResult.Passed)
+            if (comboboxUserType.Text == "Coordinador" || comboboxUserType.Text == "Director")
             {
-                UsuarioController usuarioController = new UsuarioController();
-                ComprobarResultado((OperationResult)usuarioController.AddUsuario(textboxName.Text, textboxEmail.Text, comboboxUserType.Text, textboxUserName.Text, passwordBoxUserPass.Password));
+                if (Properties.Settings.Default.UserType == "Director")
+                {
+                    if (CheckFields() == CheckResult.Passed)
+                    {
+                        UsuarioController usuarioController = new UsuarioController();
+                        ComprobarResultado((OperationResult)usuarioController.AddUsuario(textboxName.Text, textboxEmail.Text, comboboxUserType.Text, textboxUserName.Text, passwordBoxUserPass.Password));
+                    }
+                }else
+                {
+                    MessageBox.Show("Un usuario de tipo: " + Properties.Settings.Default.UserType + " no tiene los permisos suficientes en el sistema para registrar un usuario de tipo: " + comboboxUserType.Text + ", consulte con un administrador");
+                }
             }
         }
 

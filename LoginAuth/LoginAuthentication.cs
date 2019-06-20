@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -20,6 +21,18 @@ namespace LoginAuth
             PasswordIncorrect
         }
 
+        private String PassHash(String data)
+        {
+            SHA1 sha = SHA1.Create();
+            byte[] hashData = sha.ComputeHash(Encoding.Default.GetBytes(data));
+            StringBuilder stringBuilderValue = new StringBuilder();
+
+            for (int i = 0; i < hashData.Length; i++)
+            {
+                stringBuilderValue.Append(hashData[i].ToString());
+            }
+            return stringBuilderValue.ToString();
+        }
         public validationResult CredentialsAuthentication(String user, String pass)
         {
             validationResult result = validationResult.UnknownFail;
@@ -31,7 +44,7 @@ namespace LoginAuth
                 using (SqlCommand command = new SqlCommand("SELECT [Tipo_Usuario] FROM [dbo].[Usuarios] WHERE Usuario = @usuario AND Contraseña = @password", connection))
                 {
                     command.Parameters.Add(new SqlParameter("@usuario", user));
-                    command.Parameters.Add(new SqlParameter("@password", pass));
+                    command.Parameters.Add(new SqlParameter("@password", PassHash(pass)));
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -62,7 +75,7 @@ namespace LoginAuth
                 using (SqlCommand command = new SqlCommand("SELECT [Tipo_Usuario] FROM [dbo].[Usuarios] WHERE Usuario = @usuario AND Contraseña = @password", connection))
                 {
                     command.Parameters.Add(new SqlParameter("@usuario", user));
-                    command.Parameters.Add(new SqlParameter("@password", pass));
+                    command.Parameters.Add(new SqlParameter("@password", PassHash(pass)));
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
@@ -84,7 +97,7 @@ namespace LoginAuth
                 using (SqlCommand command = new SqlCommand("SELECT [Usuario] FROM [dbo].[Usuarios] WHERE Usuario = @usuario AND Contraseña = @password", connection))
                 {
                     command.Parameters.Add(new SqlParameter("@usuario", user));
-                    command.Parameters.Add(new SqlParameter("@password", pass));
+                    command.Parameters.Add(new SqlParameter("@password", PassHash(pass)));
                     SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {

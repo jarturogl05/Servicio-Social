@@ -34,5 +34,11 @@ namespace ServicioSocial
         {
             this.Close();
         }
+
+        private void Btn_AgregarUsuario_Click(object sender, RoutedEventArgs e)
+        {
+            P_RegisterUser p_RegisterUser = new P_RegisterUser();
+            p_RegisterUser.ShowDialog();
+        }
     }
 }

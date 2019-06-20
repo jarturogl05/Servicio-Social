@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServicioSocial"
         mc:Ignorable="d"
-        Title="Consultar alumnos" Height="450" Width="800" ResizeMode="CanMinimize">
+        Title="Consultar alumnos" Height="450" Width="800" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
     <Grid>
         <DataGrid x:Name="gridAlumno" HorizontalAlignment="Left" Height="330" Margin="10,10,0,0" VerticalAlignment="Top" Width="774"/>
         <Button x:Name="buttonSeleccionar" Content="Ver Datos" HorizontalAlignment="Left" Margin="469,376,0,0" VerticalAlignment="Top" Width="140" FontSize="20" FontFamily="Arial" Height="29" Click="ButtonSeleccionar_Click"/>

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using static BusinessLogic.AddEnum;
@@ -11,6 +12,18 @@ namespace BusinessLogic
 {
     public class UsuarioDAO : IUsuarioDAO
     {
+        public String PassHash(String data)
+        {
+            SHA1 sha = SHA1.Create();
+            byte[] hashData = sha.ComputeHash(Encoding.Default.GetBytes(data));
+            StringBuilder stringBuilderValue = new StringBuilder();
+
+            for (int i = 0; i < hashData.Length; i++)
+            {
+                stringBuilderValue.Append(hashData[i].ToString());
+            }
+            return stringBuilderValue.ToString();
+        }
         public AddResult AddUsuario(Usuario usuario)
         {
             AddResult resultado = AddResult.UnknowFail;
@@ -35,7 +48,7 @@ namespace BusinessLogic
                     command.Parameters.Add(new SqlParameter("@tipo", usuario.UserType));
                     command.Parameters.Add(new SqlParameter("@estatus", ""));
                     command.Parameters.Add(new SqlParameter("@usuario", usuario.UserName));
-                    command.Parameters.Add(new SqlParameter("@contraseña", usuario.Password));
+                    command.Parameters.Add(new SqlParameter("@contraseña", PassHash(usuario.Password)));
                     command.ExecuteNonQuery();
                     resultado = AddResult.Success;
                 }
