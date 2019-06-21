@@ -9,8 +9,24 @@ using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
+
+    /// <summary>Clase con los métodos para añadir, consultar y eliminar organizaciones de la base de datos</summary>
+    /// <seealso cref="BusinessLogic.IOrganizacionDAO" />
     public class OrganizacionDAO : IOrganizacionDAO
     {
+
+        /// <summary>Checa un objeto organizacion.</summary>
+        /// <param name="organizacion">La organizacion.</param>
+        /// <returns></returns>
+        /// <exception cref="FormatException">
+        /// El objeto contiene campos vacios
+        /// or
+        /// El RFC ingresado no cumple con los criterios" + organizacion.rfc
+        /// or
+        /// El telefono contiene caracteres no permitidos" + organizacion.TelefonoOrganizacion
+        /// or
+        /// El correo no cumple con los criterios: " + organizacion.CorreoOrganizacion
+        /// </exception>
         private AddResult CheckObjectOrganizacion(Organizacion organizacion)
         {
             ValidarCampos validarCampos = new ValidarCampos();
@@ -34,6 +50,10 @@ namespace BusinessLogic
             }
             return result;
         }
+
+        /// <summary>Añade la organizacion.</summary>
+        /// <param name="organizacion">La organizacion.</param>
+        /// <returns></returns>
         public AddResult AddOrganizacion(Organizacion organizacion)
         {
             AddResult resultado = AddResult.UnknowFail;
@@ -77,6 +97,9 @@ namespace BusinessLogic
             }
             return resultado;
         }
+
+        /// <summary>Obtiene la lista de las organizacion en la base de datos.</summary>
+        /// <returns>Lista de Organizacion</returns>
         public List<Organizacion> GetOrganizacion()
         {
             List<Organizacion> listaOrganizacion = new List<Organizacion>();
@@ -110,6 +133,10 @@ namespace BusinessLogic
             }
             return listaOrganizacion;
         }
+
+        /// <summary>Obtiene la organizacion por el RFC.</summary>
+        /// <param name="toSearchInBD">El RFC a buscar en la base de datos.</param>
+        /// <returns>Una Organizacion</returns>
         public Organizacion GetOrganizacionByName(String toSearchInBD)
         {
             Organizacion organizacion = new Organizacion();
@@ -142,6 +169,10 @@ namespace BusinessLogic
             }
             return organizacion;
         }
+
+        /// <summary>Obtiene la organizacion por el RFC.</summary>
+        /// <param name="toSearchInBD">El RFC a buscar en la base de datos.</param>
+        /// <returns>Una Organizacion</returns>
         public Organizacion GetOrganizacionByRFC(String toSearchInBD)
         {
             Organizacion organizacion = new Organizacion();
@@ -174,6 +205,10 @@ namespace BusinessLogic
             }
             return organizacion;
         }
+
+        /// <summary>Borra la organizacion por el RFC.</summary>
+        /// <param name="toDeleteInDB">El RFC a borrar en la base de datos.</param>
+        /// <returns>El resultado de la operacion</returns>
         public AddResult DeleteOrganizacionByRFC(String toDeleteInDB)
         {
             DbConnection dbconnection = new DbConnection();
@@ -200,6 +235,9 @@ namespace BusinessLogic
 
         }
 
+        /// <summary>Obtiene una organizacion por encargado.</summary>
+        /// <param name="IDEncargado">El ID de encargado.</param>
+        /// <returns>Una Organizacion</returns>
         public Organizacion GetOrganizacionByEncargado(string IDEncargado)
         {
             Organizacion organizacion = new Organizacion();

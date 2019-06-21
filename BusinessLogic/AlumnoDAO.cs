@@ -9,8 +9,22 @@ using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
+
+    /// <summary>Clase que contiene todos los metodos para guardar, consultar y borrar alumno</summary>
+    /// <seealso cref="BusinessLogic.IAlumnoDAO" />
     public class AlumnoDAO : IAlumnoDAO
     {
+
+        /// <summary>Revisa el objeto alumno en busca de inconsistencias.</summary>
+        /// <param name="alumno">El alumno.</param>
+        /// <returns>El resultado de la validacion</returns>
+        /// <exception cref="FormatException">
+        /// El objeto contiene campos vacios
+        /// or
+        /// La matricula ingresada no cumple con los criterios " + alumno.Matricula
+        /// or
+        /// El correo no cumple con los criterios: " + alumno.Correo
+        /// </exception>
         private AddResult CheckObjectAlumno(Alumno alumno)
         {
             ValidarCampos validarCampos = new ValidarCampos();
@@ -33,6 +47,10 @@ namespace BusinessLogic
             }
             return result;
         }
+
+        /// <summary>Añade el alumno.</summary>
+        /// <param name="alumno">El alumno.</param>
+        /// <returns>El resultado de la operacion</returns>
         public AddResult AddAlumno(Alumno alumno)
         {
             AddResult resultado = AddResult.UnknowFail;
@@ -78,8 +96,11 @@ namespace BusinessLogic
             }
             return resultado;
         }
+        /// <summary>Obtiene la lista de alumno de la base de datos.</summary>
+        /// <returns>Una lista de Alumno</returns>
         public List<Alumno> GetAlumno()
         {
+
             List<Alumno> listaAlumno = new List<Alumno>();
             DbConnection dbconnection = new DbConnection();
             using (SqlConnection connection = dbconnection.GetConnection())
@@ -113,6 +134,10 @@ namespace BusinessLogic
             }
             return listaAlumno;
         }
+
+        /// <summary>Obtiene un alumno por su nombre.</summary>
+        /// <param name="toSearchInBD">El nombre a buscar en la base de datos.</param>
+        /// <returns>Un Alumno</returns>
         public Alumno GetAlumnoByName(String toSearchInBD)
         {
             Alumno alumno = new Alumno();
@@ -147,6 +172,10 @@ namespace BusinessLogic
             }
             return alumno;
         }
+
+        /// <summary>Obtiene un alumno por su matricula.</summary>
+        /// <param name="toSearchInBD">La matricula a buscar en la base de datos.</param>
+        /// <returns>Un Alumno</returns>
         public Alumno GetAlumnoByMatricula(String toSearchInBD)
         {
             Alumno alumno = new Alumno();
@@ -181,6 +210,10 @@ namespace BusinessLogic
             }
             return alumno;
         }
+
+        /// <summary>Borra al alumno por su matricula.</summary>
+        /// <param name="toSearchInBD">La matricula a borrar en el sistema.</param>
+        /// <returns>El resultado de la operacion</returns>
         public AddResult DeleteAlumnoByMatricula(String toSearchInBD)
         {
             AddResult result = AddResult.UnknowFail;

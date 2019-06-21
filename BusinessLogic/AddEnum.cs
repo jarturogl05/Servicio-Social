@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
+
+    /// <summary>Clase con una enumeracion para los posibles resultados de una operacion</summary>
     public class AddEnum
     {
         public enum AddResult
