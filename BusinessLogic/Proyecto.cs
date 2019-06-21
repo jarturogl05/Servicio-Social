@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
+
+    /// <summary>Clase con los atributos del proyecto</summary>
     public class Proyecto
     {
         public int IDProyecto { get; set; }

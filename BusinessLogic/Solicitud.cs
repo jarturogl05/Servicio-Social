@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
+    /// <summary>Clase con los atributos del una solicitud</summary>
     public class Solicitud
     {
         public string FechaSolicitud { get; set; }

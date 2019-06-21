@@ -9,8 +9,14 @@ using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
-     public  class SolicitudDAO : ISolicitudDAO
+    /// <summary>Clase con métodos para añadir y consultar solicitudes en la base de datos</summary>
+    /// <seealso cref="BusinessLogic.ISolicitudDAO" />
+    public class SolicitudDAO : ISolicitudDAO
     {
+        /// <summary>  Añade una solicitud a la base de datos</summary>
+        /// <param name="solicitud"> Una solicitud</param>
+        /// <returns>El resultado de la operación</returns>
+        /// <exception cref="SqlException">En caso de error en la base de datos</exception>
         public AddResult AddSolicitud(Solicitud solicitud)
         {
             AddResult resultado = AddResult.UnknowFail;
@@ -50,6 +56,10 @@ namespace BusinessLogic
             return resultado;
         }
 
+        /// <summary>Obtiene la solicitud de un alumno</summary>
+        /// <param name="alumno">El alumno</param>
+        /// <returns>Una solicitud</returns>
+        /// <exception cref="SqlException">En caso de un error en la base de datos</exception>
         public Solicitud GetSolicitudByAlumno(Alumno alumno)
         {
             Solicitud solicitud = new Solicitud();
