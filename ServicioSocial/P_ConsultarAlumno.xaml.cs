@@ -55,7 +55,6 @@ namespace ServicioSocial
             }
             else
             {
-                MessageBox.Show("No se encuentran alumnos registrados");
                 this.Close();
             }
         }
