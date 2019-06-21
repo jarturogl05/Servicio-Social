@@ -60,6 +60,9 @@ namespace ServicioSocial
         {
             this.Close();
         }
+
+        /// <summary>Comprueba el resultado de la operacion.</summary>
+        /// <param name="result">El resultado.</param>
         private void ComprobarResultado(OperationResult result)
         {
             if (result == OperationResult.Success)

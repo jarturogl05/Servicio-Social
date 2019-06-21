@@ -16,6 +16,8 @@ using static LoginAuth.LoginAuthentication;
 
 namespace ServicioSocial
 {
+
+    /// <summary>Interaction logic for P_RegistrarEmpresa.xaml</summary>
     public partial class P_UserLogin : Window
     {
         public P_UserLogin()
@@ -27,6 +29,8 @@ namespace ServicioSocial
                 rememberMeCheckbox.IsChecked = true;
             }
         }
+
+        /// <summary>Checa la casilla remember para guardar o no los datos.</summary>
         private void CheckRemember()
         {
             if (rememberMeCheckbox.IsChecked == true)
@@ -49,6 +53,7 @@ namespace ServicioSocial
             TryLogin();
         }
 
+        /// <summary>Intenta realizar el log-in.</summary>
         private void TryLogin()
         {
             AuthenticationController authentication = new AuthenticationController();
@@ -72,6 +77,7 @@ namespace ServicioSocial
             }
         }
 
+        /// <summary>Abre una nueva ventana dependiendo el tipo de usuario.</summary>
         private void OpenWindow()
         {
             string typeUser = Properties.Settings.Default.UserType;
