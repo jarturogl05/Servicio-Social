@@ -34,6 +34,9 @@ namespace ServicioSocial
         }
 
 
+        /// <summary>
+        ///   <para>Llena el datagrid con proyectos</para>
+        /// </summary>
         public void LlenarGrid()
         {
             ControladorProyecto controladorProyecto = new ControladorProyecto();
@@ -50,6 +53,9 @@ namespace ServicioSocial
 
         }
 
+        /// <summary>Handles the Click event of the Btn_MostrarInfo control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Btn_MostrarInfo_Click(object sender, RoutedEventArgs e)
         {
             int posición = dgrid_ProyectosEspera.SelectedIndex;
@@ -67,6 +73,9 @@ namespace ServicioSocial
 
         }
 
+        /// <summary>Handles the Click event of the Button control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (ValidarSeleccion())
@@ -85,6 +94,8 @@ namespace ServicioSocial
             }
         }
 
+        /// <summary>  obtiene la lista de proyectos</summary>
+        /// <returns></returns>
         private List<Proyecto> SelecciónProyectos()
         {
             List<Proyecto> proyectos = new List<Proyecto>();
@@ -101,6 +112,8 @@ namespace ServicioSocial
             return proyectos;
         }
 
+        /// <summary>  Valida que sel seleccionen 3 proyectos</summary>
+        /// <returns>resultado de la validación</returns>
         public bool ValidarSeleccion()
         {
             if (SelecciónProyectos().Count == 3)
@@ -114,6 +127,9 @@ namespace ServicioSocial
             }
         }
 
+        /// <summary>Handles the 1 event of the Button_Click control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             this.Close();

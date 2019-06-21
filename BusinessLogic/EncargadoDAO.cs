@@ -9,9 +9,17 @@ using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
+
+    /// <summary>
+    /// Contiene métodos para realizar consultas sobre el objeto ENCARGADO en la base de datos
+    /// </summary>
     public class EncargadoDAO : IEncargadoDAO
     {
 
+        /// <summary>obtiene un encargado por su ID.</summary>
+        /// <param name="toSearch">ID a buscar.</param>
+        /// <returns>un encargado</returns>
+        /// <exception cref=" SqlException"> En caso de ocurrir un error en la base de datos</exception>
         public Encargado GetEncargadoByID(string toSearch)
         {
             Encargado encargado = new Encargado();
@@ -46,6 +54,10 @@ namespace BusinessLogic
             return encargado;
         }
 
+        /// <summary>Obtiene encargados por su organización.</summary>
+        /// <param name="organización">la organización del encargado.</param>
+        /// <returns>Lista de encargados </returns>
+        /// <exception cref=" SqlException"> en caso de que ocurra un error en la base de datos</exception>
         public List<Encargado> GetEncargadoByOrganización(Organizacion organización)
         {
             List<Encargado> listaEncargados = new List<Encargado>();
@@ -87,6 +99,9 @@ namespace BusinessLogic
             return listaEncargados;
         }
 
+        /// <summary>Obtiene todos los encargados de la base de datos.</summary>
+        /// <returns>lista de encargados</returns>
+        /// <exception cref="SqlException"> en caso de error en la base de datos</exception>
         public List<Encargado> GetEncargado()
         {
             List<Encargado> listaEncargado = new List<Encargado>();
@@ -124,6 +139,10 @@ namespace BusinessLogic
             return listaEncargado;
         }
 
+        /// <summary>Añade un encargado a la base de datos.</summary>
+        /// <param name="encargado">El encargado.</param>
+        /// <returns>Resultado de la operación</returns>
+        /// <exception cref=" SqlException">En caso de que ocurra un error al agregar el Encargado</exception>
         public AddResult AddEncargado(Encargado encargado)
         {
             AddResult resultado = AddResult.UnknowFail;

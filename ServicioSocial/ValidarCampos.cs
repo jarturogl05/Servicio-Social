@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace ServicioSocial
 {
-   public class ValidarCampos
+    /// <summary>Clase que tiene como funcionalidad validar la estructura de los datos introducidos por el usuario</summary>
+    public class ValidarCampos
     {
         public enum ResultadosValidación
         {
@@ -26,6 +27,10 @@ namespace ServicioSocial
 
         }
 
+
+        /// <summary>  Valida la estructura correcta de una contraseña. Debe contener por lo menos 8 caracteres, una mayúscula y un número</summary>
+        /// <param name="contraseña">  contraseña.</param>
+        /// <returns>Resultado de la validación</returns>
         public ResultadosValidación ValidarPassword(string contraseña)
         {
             string patrón = @"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,50}$";
@@ -38,6 +43,9 @@ namespace ServicioSocial
 
         }
 
+        /// <summary>  Validar que el número no tenga letras ni caracteres especiales</summary>
+        /// <param name="númeroInt">número int.</param>
+        /// <returns>Resultado de la validación</returns>
         public ResultadosValidación ValidarNúmero(string númeroInt)
         {
             string patrón = @"^[0-9]*$";
