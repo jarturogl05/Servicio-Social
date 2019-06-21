@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-   public class Encargado
+
+    /// <summary>Clase con los parámetros del encargado y sus constructores</summary>
+    public class Encargado
     {
         public string IdEncargado { get; set; }
         public string NombreEncargado { get; set; }

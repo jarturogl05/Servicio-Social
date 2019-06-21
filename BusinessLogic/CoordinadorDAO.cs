@@ -9,9 +9,18 @@ using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
+
+
+    /// <summary>Clase con los métodos para añadir y consultar coordinadores de la base de datos</summary>
+    /// <seealso cref="BusinessLogic.ICoordinadorDAO" />
     public class CoordinadorDAO : ICoordinadorDAO
     {
 
+
+        /// <summary>Añade un coordinador a la base de datos</summary>
+        /// <param name="coordinador">El coordinador a ñadir</param>
+        /// <returns>el resultado de la operación</returns>
+        /// <exception cref="SqlException">En caso de que ocurra un error en la base de datos</exception>
         public AddResult AddCoordinador(Coordinador coordinador)
         {
             AddResult resultado = AddResult.UnknowFail;

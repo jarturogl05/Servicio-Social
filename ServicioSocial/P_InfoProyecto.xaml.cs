@@ -37,6 +37,7 @@ namespace ServicioSocial
 
         }
 
+        /// <summary>  Muestra los datos en la pantalla</summary>
         private void MostrarDatos()
         {
             txbk_Organización.Text = GetNombreOrganización();
@@ -48,17 +49,24 @@ namespace ServicioSocial
             txbl_Requisitos.Text = proyecto.Requisitos;
         }
 
+        /// <summary>  obtiene el nombre de la organización</summary>
+        /// <returns>el nombre de la organización</returns>
         private string GetNombreOrganización()
         {
             ControladorOrganización controladorOrganización = new ControladorOrganización();
             return controladorOrganización.GetOrganizacionByEmpleado(proyecto.Encargado.IdEncargado);
         }
 
+        /// <summary>  obtiene el nombre del encargado</summary>
+        /// <returns>el nombre de la organización</returns>
         private string GetNombreEncargado()
         {
             ControladorEncargado controladorEncargado = new ControladorEncargado();
             return controladorEncargado.GetEncargado(proyecto.Encargado.IdEncargado);
         }
+        /// <summary>Handles the Click event of the Btn_Aceptar control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Btn_Aceptar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

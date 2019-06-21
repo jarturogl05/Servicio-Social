@@ -30,6 +30,9 @@ namespace ServicioSocial
 
 
 
+        /// <summary>Handles the Click event of the Btn_Aceptar control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Btn_Aceptar_Click(object sender, RoutedEventArgs e)
         {
 
@@ -49,7 +52,8 @@ namespace ServicioSocial
             }
 
         }
-
+        /// <summary>  Validar si existen campos vacios</summary>
+        /// <returns>Resultado de la validación</returns>
         private bool ValidarCamposVacios()
         {
             if(string.IsNullOrEmpty(txb_NombreCompleto.Text) || string.IsNullOrEmpty(txb_Cargo.Text) || string.IsNullOrEmpty(txt_Teléfono.Text)
@@ -60,7 +64,8 @@ namespace ServicioSocial
             }
             return true;
         }
-
+        /// <summary>  Valida la la estructura del correo electónico</summary>
+        /// <returns>el resultado de la validación</returns>
         private bool ValidarCorreo()
         {
             ValidarCampos ValidarCampos = new ValidarCampos();
@@ -72,6 +77,7 @@ namespace ServicioSocial
             return true;
         }
 
+        /// <summary>  Llena el combobox con las organizaciones</summary>
         private void LlenarOrganizaciones()
         {
             ControladorOrganización controladorOrganización = new ControladorOrganización();
@@ -87,7 +93,8 @@ namespace ServicioSocial
 
             
         }
-
+        /// <summary>  Valida la la estructura del teléfono</summary>
+        /// <returns>el resultado de la validación</returns>
         private bool ValidarTeléfono()
         {
             ValidarCampos ValidarCampos = new ValidarCampos();
@@ -99,6 +106,9 @@ namespace ServicioSocial
             return true;
         }
 
+        /// <summary>Handles the Click event of the Btn_Cancelar control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Btn_Cancelar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
