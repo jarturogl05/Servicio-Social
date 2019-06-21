@@ -9,10 +9,18 @@ using static BusinessLogic.AddEnum;
 
 namespace BusinessLogic
 {
+    /// <summary>Clase con métodos para añadir proyectos y consultarlos</summary>
+    /// <seealso cref="BusinessLogic.IProyectoDAO" />
     public class ProyectoDAO : IProyectoDAO
     {
 
-         public Proyecto GetProyectoByID(String toSearch)
+        /// <summary>
+        ///   <para>Obtiene un proyecto por ID</para>
+        /// </summary>
+        /// <param name="toSearch">  Id del proyecto</param>
+        /// <returns>un proyecto</returns>
+        /// <exception cref="SqlException">En caso de error en la base de datos</exception>
+        public Proyecto GetProyectoByID(String toSearch)
         {
             Proyecto proyecto = new Proyecto();
             DbConnection dbConnection = new DbConnection();
@@ -40,6 +48,10 @@ namespace BusinessLogic
 
         }
 
+        /// <summary>  Añade un proyecto a la base de datos</summary>
+        /// <param name="proyecto">  El proyecto</param>
+        /// <returns>El resultado de la operación</returns>
+        /// <exception cref="SqlException">En caso de ocurrir un error en la base de datos</exception>
         public AddResult AddProyecto(Proyecto proyecto)
         {
             AddResult resultado = AddResult.UnknowFail;
@@ -69,6 +81,9 @@ namespace BusinessLogic
             return resultado;
         }
 
+        /// <summary>  obtiene una lista de proyectos con estado "Disponible"</summary>
+        /// <returns>una lista de proyectos</returns>
+        /// <exception cref="SqlException">En caso de ocurrir un error en la base de datos</exception>
         public List<Proyecto> GetProyectos()
         {
             List<Proyecto> proyectos = new List<Proyecto>();
@@ -118,6 +133,9 @@ namespace BusinessLogic
             return proyectos;
         }
 
+        /// <summary>  Obtener proyectos para llenar la tabla de crear solicitud</summary>
+        /// <returns>lista con proyectos</returns>
+        /// <exception cref="SqlException">En caso de ocurrir un error en la base de datos</exception>
         public List<Proyecto> GetProyectosGrid()
         {
             List<Proyecto> proyectos = new List<Proyecto>();

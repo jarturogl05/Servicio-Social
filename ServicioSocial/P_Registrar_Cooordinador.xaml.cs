@@ -34,6 +34,9 @@ namespace ServicioSocial
 
         }
 
+        /// <summary>Handles the Click event of the Btn_Aceptar control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Btn_Aceptar_Click(object sender, RoutedEventArgs e)
         {
             ControladorCoordinador controladorCoordinador = new ControladorCoordinador();
@@ -54,6 +57,8 @@ namespace ServicioSocial
             
         }
 
+        /// <summary>  Validar si existen campos vacios</summary>
+        /// <returns>Resultado de la validación</returns>
         private bool ValidarCamposVacios()
         {
             if(string.IsNullOrEmpty(txb_NombreCompleto.Text) || string.IsNullOrEmpty(txb_Correo.Text) || string.IsNullOrEmpty(txb_NúmeroPersonal.Text)
@@ -65,6 +70,8 @@ namespace ServicioSocial
             return true;            
         }
 
+        /// <summary>  Valida la la estructura de la contraseña</summary>
+        /// <returns>el resultado de la validación</returns>
         private bool ValidarPassword()
         {
             ValidarCampos validarCampos = new ValidarCampos();
@@ -77,6 +84,8 @@ namespace ServicioSocial
             return true;
         }
 
+        /// <summary>  Valida que el número personal solo contenga números</summary>
+        /// <returns>el resultado de la operación</returns>
         private bool ValidarNúmeroPersonal()
         {
             ValidarCampos validarCampos = new ValidarCampos();
@@ -88,6 +97,8 @@ namespace ServicioSocial
             return true;
         }
 
+        /// <summary>  Valida la la estructura del correo electónico</summary>
+        /// <returns>el resultado de la validación</returns>
         private bool ValidarCorreo()
         {
             ValidarCampos validarCampos = new ValidarCampos();
@@ -99,6 +110,9 @@ namespace ServicioSocial
             return true;
         }
 
+        /// <summary>Handles the Click event of the Btn_Cancelar control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Btn_Cancelar_Click(object sender, RoutedEventArgs e)
         {
             

@@ -28,6 +28,9 @@ namespace ServicioSocial
             LlenarOrganizaciones();
         }
 
+        /// <summary>Handles the SelectionChanged event of the Cbb_organización control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="SelectionChangedEventArgs"/> instance containing the event data.</param>
         private void Cbb_organización_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (cbb_organización.SelectedValue.ToString() != null)
@@ -36,6 +39,9 @@ namespace ServicioSocial
             }
         }
 
+        /// <summary>Handles the Click event of the Btn_Aceptar control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Btn_Aceptar_Click(object sender, RoutedEventArgs e)
         {
             if(ValidarCamposVacios() && ValidarNumAlumnos())
@@ -54,9 +60,8 @@ namespace ServicioSocial
                 }
             }
         }
-
-
-
+        /// <summary>  Validar si existen campos vacios</summary>
+        /// <returns>Resultado de la validación</returns>
         private bool ValidarCamposVacios()
         {
             if(string.IsNullOrEmpty(txb_NombreProyecto.Text) || string.IsNullOrEmpty(txb_NúmeroAlumnos.Text) ||
@@ -70,7 +75,8 @@ namespace ServicioSocial
 
             return true;
         }
-
+        /// <summary>  Valida que el número de alumnos sea entre 1 y 3</summary>
+        /// <returns>el resultado de la operación</returns>
         private bool ValidarNumAlumnos()
         {
             ValidarCampos validarCampos = new ValidarCampos();
@@ -82,6 +88,7 @@ namespace ServicioSocial
             return true;
         }
 
+        /// <summary>  Llena el combobox de las organizaciones</summary>
         public void LlenarOrganizaciones()
         {
             ControladorOrganización controladorOrganización = new ControladorOrganización();
@@ -97,6 +104,7 @@ namespace ServicioSocial
 
         }
 
+        /// <summary>  Llena el combobox con encargados</summary>
         private void LlenarEncargados()
         {
 
@@ -119,6 +127,9 @@ namespace ServicioSocial
             
         }
 
+        /// <summary>Handles the Click event of the Btn_Cancelar control.</summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The <see cref="RoutedEventArgs"/> instance containing the event data.</param>
         private void Btn_Cancelar_Click(object sender, RoutedEventArgs e)
         {
             this.Close();

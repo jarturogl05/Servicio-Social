@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
+    /// <summary>Clase con los atributos del coordinador</summary>
     public class Coordinador
     {
 
