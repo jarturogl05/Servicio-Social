@@ -20,7 +20,6 @@ namespace ServicioSocial
     {
         public P_UserLogin()
         {
-            Properties.Settings.Default.Reset();
             InitializeComponent();
             if (Properties.Settings.Default.Remember == true && !String.IsNullOrEmpty(Properties.Settings.Default.Username.ToString()))
             {
