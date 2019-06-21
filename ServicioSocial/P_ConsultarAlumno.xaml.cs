@@ -45,6 +45,8 @@ namespace ServicioSocial
         {
             this.Close();
         }
+
+        /// <summary>Actualiza el grid si contiene datos.</summary>
         private void UpdateGrid()
         {
             AlumnoController alumnoController = new AlumnoController();

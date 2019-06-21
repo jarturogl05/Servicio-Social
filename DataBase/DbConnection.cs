@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 
 namespace DataBase
 {
+
+    /// <summary>Clase que controla la conexión a la base de datos</summary>
     public class DbConnection
     {
         private SqlConnection connection;
         private string connectionString;
 
         public DbConnection()
-
 
         {
             connectionString = ConfigurationManager.ConnectionStrings["ConnectionToSQL"].ConnectionString;
@@ -23,11 +24,14 @@ namespace DataBase
 
         }
 
+        /// <summary>Obtiene la coneccion.</summary>
+        /// <returns>La coneccion</returns>
         public SqlConnection GetConnection()
         {
             return connection;
         }
 
+        /// <summary>Cierra la coneccion.</summary>
         public void CloseConnection()
         {
             if (connection != null)

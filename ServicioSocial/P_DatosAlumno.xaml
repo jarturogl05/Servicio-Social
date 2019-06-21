@@ -39,7 +39,7 @@
             <ComboBoxItem Content="Asignado" FontSize="20"/>
             <ComboBoxItem Content="No Asignado" FontSize="20"/>
         </ComboBox>
-        <ComboBox x:Name="comboCarrera" HorizontalAlignment="Left" Margin="321,400,0,0" VerticalAlignment="Top" Width="276" Height="29" FontSize="20">
+        <ComboBox x:Name="comboCarrera" HorizontalAlignment="Left" Margin="321,400,0,0" VerticalAlignment="Top" Width="276" Height="29" FontSize="20" IsEnabled="False">
             <ComboBoxItem Content="Ciencias y Técnicas Estadísticas" FontSize="20"/>
             <ComboBoxItem Content="Estadística" FontSize="20"/>
             <ComboBoxItem Content="Ingeniería de Software" FontSize="20"/>
