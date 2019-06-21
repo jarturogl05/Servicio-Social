@@ -58,13 +58,26 @@ namespace ServicioSocial
         private void Btn_ConsultarOrganizacion_Click(object sender, RoutedEventArgs e)
         {
             P_ConsultarEmpresa p_ConsultarEmpresa = new P_ConsultarEmpresa();
-            p_ConsultarEmpresa.ShowDialog();
+            try
+            {
+                p_ConsultarEmpresa.ShowDialog();
+            }
+            catch (InvalidOperationException)
+            {
+                MessageBox.Show("No se encuentran organizaciones registradas");
+            }
         }
 
         private void Btn_ConsultarAlumno_Click(object sender, RoutedEventArgs e)
         {
             P_ConsultarAlumno p_ConsultarAlumno = new P_ConsultarAlumno();
-            p_ConsultarAlumno.ShowDialog();
+            try
+            {
+                p_ConsultarAlumno.ShowDialog();
+            }catch (InvalidOperationException)
+            {
+                MessageBox.Show("No se encuentran alumnos registrados");
+            }
         }
 
         private void Btn_RegistrarUsuario_Click(object sender, RoutedEventArgs e)

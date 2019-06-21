@@ -56,7 +56,6 @@ namespace ServicioSocial
             }
             else
             {
-                MessageBox.Show("No se encuentran organizaciones registradas");
                 this.Close();
             }
         }
