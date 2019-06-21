@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
+
+    /// <summary>Clase con los parametros del objeto Organizacion</summary>
     public class Organizacion
     {
         public String rfc { get; set; }

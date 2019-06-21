@@ -38,6 +38,9 @@ namespace ServicioSocial
             SQLFail,
             ExistingRecord
         }
+
+        /// <summary>Checa los campos vacios.</summary>
+        /// <returns>El resultado del chequeo</returns>
         private CheckResult CheckEmptyFields()
         {
             CheckResult check = CheckResult.Failed;
@@ -51,6 +54,9 @@ namespace ServicioSocial
             }
             return check;
         }
+
+        /// <summary>Checa los campos en busqueda de datos no validos.</summary>
+        /// <returns>El resultado del chequeo</returns>
         private CheckResult CheckFields()
         {
             CheckResult check = CheckResult.Failed;
@@ -73,6 +79,9 @@ namespace ServicioSocial
             }
             return check;
         }
+
+        /// <summary>Comprueba el resultado de la operacion.</summary>
+        /// <param name="result">El resultado.</param>
         private void ComprobarResultado(OperationResult result)
         {
             if (result == OperationResult.Success)

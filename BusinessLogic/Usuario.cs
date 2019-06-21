@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
+
+    /// <summary>Clase con los parametros del objeto Usuario</summary>
     public class Usuario
     {
         public String UserName { get; set; }

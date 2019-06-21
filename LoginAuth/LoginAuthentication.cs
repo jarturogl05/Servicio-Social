@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 
 namespace LoginAuth
 {
+
+    /// <summary>Autentica al usuario conforme a los datos en la base de datos</summary>
     public class LoginAuthentication
     {
         
@@ -21,6 +23,9 @@ namespace LoginAuth
             PasswordIncorrect
         }
 
+        /// <summary>Hashea un parametro ingresado.</summary>
+        /// <param name="data">El parametro.</param>
+        /// <returns>El parametro en SHA1</returns>
         private String PassHash(String data)
         {
             SHA1 sha = SHA1.Create();
@@ -33,6 +38,11 @@ namespace LoginAuth
             }
             return stringBuilderValue.ToString();
         }
+
+        /// <summary>Compara los datos ingresados con la base de datos para buscar coincidencias.</summary>
+        /// <param name="user">El usuario.</param>
+        /// <param name="pass">La contraseña.</param>
+        /// <returns>El resultado de la autenticacion</returns>
         public validationResult CredentialsAuthentication(String user, String pass)
         {
             validationResult result = validationResult.UnknownFail;
@@ -65,6 +75,11 @@ namespace LoginAuth
             }
             return result;
         }
+
+        /// <summary>Obtiene el tipo de usuario.</summary>
+        /// <param name="user">El usuario.</param>
+        /// <param name="pass">La contraseña.</param>
+        /// <returns>El tipo de usuario</returns>
         public String GetUserType(String user, String pass)
         {
             String result = "";
@@ -87,6 +102,11 @@ namespace LoginAuth
             }
             return result;
         }
+
+        /// <summary>Obtiene el nombre de usuario.</summary>
+        /// <param name="user">El usuario.</param>
+        /// <param name="pass">La contraseña.</param>
+        /// <returns>El nombre de usuario</returns>
         public String GetUserName(String user, String pass)
         {
             String result = "";
